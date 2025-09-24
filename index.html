@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>HTML files in this folder</title>
+    <style>
+        body { font-family: system-ui, sans-serif; margin: 2rem; }
+        .btn { display: inline-block; padding: 0.6rem 1rem; background: #0b5ed7; color: #fff; border-radius: 6px; cursor: pointer; user-select: none; }
+        .btn:hover { background: #0a58ca; }
+        #status { margin: 0.75rem 0 1rem; color: #666; }
+        ul { padding-left: 1.2rem; }
+        li { margin: 0.25rem 0; }
+        a { color: #0b5ed7; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>HTML files in this folder</h1>
+
+    <input id="picker" type="file" webkitdirectory directory multiple hidden />
+    <label class="btn" for="picker">Choose this folder…</label>
+    <div id="status">Select the folder containing this page to list other HTML files.</div>
+    <ul id="list"></ul>
+
+    <script>
+        const picker = document.getElementById('picker');
+        const list = document.getElementById('list');
+        const statusEl = document.getElementById('status');
+        const currentName = decodeURIComponent((location.pathname.split('/').pop() || '').toLowerCase());
+
+        function render(names) {
+            list.innerHTML = '';
+            if (!names.length) {
+                statusEl.textContent = 'No other HTML files found.';
+                return;
+            }
+            statusEl.textContent = '';
+            for (const name of names) {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = name;           // relative link to file in the same folder
+                a.textContent = name;
+                li.appendChild(a);
+                list.appendChild(li);
+            }
+        }
+
+        picker.addEventListener('change', () => {
+            const files = Array.from(picker.files || []);
+            const names = [];
+
+            for (const f of files) {
+                const name = f.name;
+                const lower = name.toLowerCase();
+                const rel = f.webkitRelativePath || name; // e.g. "about.html" or "sub/page.html"
+                const isTopLevel = !rel.includes('/');    // only files directly in this folder
+                const isHtml = lower.endsWith('.html') || lower.endsWith('.htm');
+                const isCurrent = lower === currentName;
+
+                if (isTopLevel && isHtml && !isCurrent) names.push(name);
+            }
+
+            names.sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }));
+            render(names);
+        });
+    </script>
+</body>
+</html>
