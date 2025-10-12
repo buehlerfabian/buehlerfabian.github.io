@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>01-grundlagen</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>02-flow-control</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7510,18 +7510,32 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ee43a8ae">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c6af4363">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Mathematische-Operatoren">Mathematische Operatoren<a class="anchor-link" href="#Mathematische-Operatoren">¶</a></h1>
+<h1 id="Boolsche-Ausdr%C3%BCcke">Boolsche Ausdrücke<a class="anchor-link" href="#Boolsche-Ausdr%C3%BCcke">¶</a></h1>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=42773f88">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d49f4f27">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>In Programmen hat man oft "wenn ... dann ..." Situationen.
+Im "wenn"-Teil steht eine Bedingung, die entweder wahr (True) oder falsch (False) ist.
+Diese Bedingungen werden in Python mit boolschen Ausdrücken dargestellt.</p>
+<p>Häufig ergeben sich boolsche Ausdrücke mit Vergleichsoperatoren.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e3ff2a37">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7530,59 +7544,56 @@ a.anchor-link {
 <table>
 <thead>
 <tr>
-<th>Operator</th>
+<th>Symbol</th>
 <th>Bedeutung</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>+</td>
-<td>Addition</td>
+<td><code>==</code></td>
+<td>Gleichheit</td>
 </tr>
 <tr>
-<td>-</td>
-<td>Subtraktion</td>
+<td><code>!=</code></td>
+<td>Ungleichheit</td>
 </tr>
 <tr>
-<td>*</td>
-<td>Multiplikation</td>
+<td><code>&lt;</code></td>
+<td>kleiner</td>
 </tr>
 <tr>
-<td>/</td>
-<td>Division</td>
+<td><code>&gt;</code></td>
+<td>größer</td>
 </tr>
 <tr>
-<td>//</td>
-<td>ganzzahlige Division</td>
+<td><code>&lt;=</code></td>
+<td>kleiner oder gleich</td>
 </tr>
 <tr>
-<td>%</td>
-<td>Modulo (Rest der Division)</td>
-</tr>
-<tr>
-<td>**</td>
-<td>Potenzierung</td>
+<td><code>&gt;=</code></td>
+<td>größer oder gleich</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=48a49a4e">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d40b3137">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>  
-<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>  
-<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>  
-<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>  
-<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>  
-<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span>  
-<span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>  
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"5 == 5 ist </span><span class="si">{</span><span class="mi">5</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">5</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"5 == 3 ist </span><span class="si">{</span><span class="mi">5</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"5 != 3 ist </span><span class="si">{</span><span class="mi">5</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">3</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"5 != 5 ist </span><span class="si">{</span><span class="mi">5</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">5</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"3 &lt; 5 ist </span><span class="si">{</span><span class="mi">3</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"5 &lt; 5 ist </span><span class="si">{</span><span class="mi">5</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7595,31 +7606,69 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>5
-1
-6
-1.5
-1
-1
-9
+<pre>5 == 5 ist True
+5 == 3 ist False
+5 != 3 ist True
+5 != 5 ist False
+3 &lt; 5 ist True
+5 &lt; 5 ist False
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=22261147">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ba1b32ee">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Erzeugung von Leerzeilen:
-Die Zeichenkette <code>\n</code> in einem String erzeugt eine neue Zeile.</p>
+<p>Vergleiche funktionieren auch mit Variablen:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=859e4ede">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=18075c62">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Für a = </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> und b = </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2"> ist a &lt; b </span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">b</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Für a = 10 und b = 20 ist a &lt; b True.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=da4b1724">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Man kann boolsche Werte in Variablen abspeichern:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=bafb26c9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7627,9 +7676,9 @@ Die Zeichenkette <code>\n</code> in einem String erzeugt eine neue Zeile.</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Text</span><span class="se">\n</span><span class="s2">Text"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Text"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">vergleich1</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">3</span>
+<span class="n">vergleich2</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">&lt;</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"vergleich1 ist </span><span class="si">{</span><span class="n">vergleich1</span><span class="si">}</span><span class="s2">, vergleich2 ist </span><span class="si">{</span><span class="n">vergleich2</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7642,205 +7691,46 @@ Die Zeichenkette <code>\n</code> in einem String erzeugt eine neue Zeile.</p>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Text
-Text
-
-
-Text
+<pre>vergleich1 ist True, vergleich2 ist False
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f81833bb">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=529e0227">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Reihenfolge der Operatoren:</p>
-<ul>
-<li>Klammern haben Vorrang</li>
-<li>Multiplikation vor Addition</li>
-<li>Potenzierung vor Multiplikation vor Addition</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a62f6bb7">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># Multiplikation vor Addition</span>
-<span class="nb">print</span><span class="p">((</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># Klammern haben Vorrang</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">5</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Potenzierung vor Multiplikation vor Addition</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>13
-25
-53
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d402a2f2">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Datentypen">Datentypen<a class="anchor-link" href="#Datentypen">¶</a></h1>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5d000aa8">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Boolsche Ausdrücke können mit logischen Operatoren kombiniert werden.</p>
 <table>
 <thead>
 <tr>
-<th>Typname</th>
-<th>Art der Daten</th>
+<th>Python</th>
+<th>Bedeutung</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>integer</td>
-<td>ganze Zahlen</td>
+<td><code>and</code></td>
+<td>und-Verknüpfung (beide Bedingungen müssen wahr sein)</td>
 </tr>
 <tr>
-<td>float</td>
-<td>Gleitkommazahlen</td>
+<td><code>or</code></td>
+<td>oder-Verknüpfung (mindestens eine Bedingung muss wahr sein)</td>
 </tr>
 <tr>
-<td>String</td>
-<td>Zeichenketten</td>
-</tr>
-<tr>
-<td>Boolean</td>
-<td>Wahrheitswert (<code>True</code> oder <code>False</code>)</td>
-</tr>
-<tr>
-<td>NoneType</td>
-<td>Wert <code>None</code></td>
+<td><code>not</code></td>
+<td>Negation (kehrt den Wahrheitswert um)</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6d323bab">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">42</span><span class="p">))</span>  <span class="c1"># Integer (Ganzzahl)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mf">3.14</span><span class="p">))</span>  <span class="c1"># Float (Gleitkommazahl)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s2">"Hallo"</span><span class="p">))</span>  <span class="c1"># String (Text)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="kc">True</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="kc">False</span><span class="p">))</span>  <span class="c1"># Boolean (Wahrheitswert)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="kc">None</span><span class="p">))</span>  <span class="c1"># NoneType (kein Wert)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>&lt;class 'int'&gt;
-&lt;class 'float'&gt;
-&lt;class 'str'&gt;
-&lt;class 'bool'&gt; &lt;class 'bool'&gt;
-&lt;class 'NoneType'&gt;
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b92d3d1f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Umgang-mit-Strings">Umgang mit Strings<a class="anchor-link" href="#Umgang-mit-Strings">¶</a></h1>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0b8c2368">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<table>
-<thead>
-<tr>
-<th>Operation</th>
-<th>Code</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Konkatenation (Verkettung)</td>
-<td><code>"Alice" + "Bob"</code></td>
-</tr>
-<tr>
-<td>Wiederholung</td>
-<td><code>"Alice" * 3</code></td>
-</tr>
-<tr>
-<td>Neue Zeile</td>
-<td><code>"\n"</code></td>
-</tr>
-<tr>
-<td>Umwandeln in Großbuchstaben</td>
-<td><code>"...".upper()</code></td>
-</tr>
-<tr>
-<td>Umwandeln in Kleinbuchstaben</td>
-<td><code>"...".lower()</code></td>
-</tr>
-<tr>
-<td>Leerzeichen entfernen am Rand</td>
-<td><code>"...".strip()</code></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d77b7a2c">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ba177bb1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7848,12 +7738,12 @@ Text
 <div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Alice"</span> <span class="o">+</span> <span class="s2">"Bob"</span><span class="p">)</span> 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Alice "</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>  
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Hallo</span><span class="se">\n</span><span class="s2">Welt"</span><span class="p">)</span> 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"mach mich groß"</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"MACH MICH KLEIN"</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"  zuschneiden bitte  "</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"(5 &gt; 3) and (3 &lt; 1): </span><span class="si">{</span><span class="p">(</span><span class="mi">5</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"(5 &gt; 3) and (3 &gt; 1): </span><span class="si">{</span><span class="p">(</span><span class="mi">5</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"(5 &gt; 3) or (3 &lt; 1): </span><span class="si">{</span><span class="p">(</span><span class="mi">5</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"(5 &lt; 3) or (3 &lt; 1): </span><span class="si">{</span><span class="p">(</span><span class="mi">5</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"not (5 &gt; 3): </span><span class="si">{</span><span class="ow">not</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"not (5 &lt; 3): </span><span class="si">{</span><span class="ow">not</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  
 </pre></div>
 </div>
 </div>
@@ -7866,154 +7756,29 @@ Text
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>AliceBob
-Alice Alice Alice 
-Hallo
-Welt
-MACH MICH GROSS
-mach mich klein
-zuschneiden bitte
+<pre>(5 &gt; 3) and (3 &lt; 1): False
+(5 &gt; 3) and (3 &gt; 1): True
+(5 &gt; 3) or (3 &lt; 1): True
+(5 &lt; 3) or (3 &lt; 1): False
+not (5 &gt; 3): False
+not (5 &lt; 3): True
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e4287bfc">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c832e96e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Mit f-Strings kann man Python-Ausdrücke in Strings einbetten. Alle Teile, die zwischen <code>{...}</code> eingeschlossen sind, werden als Python-Ausdrücke ausgewertet und das Ergebnis der Auswertung an dieser Stelle in den String eingefügt.</p>
+<p>Besonderheiten: <code>int</code>- und <code>float</code>-Typen können untereinander verglichen werden, <code>String</code>-Ausdrücke können nicht mit Zahlentypen verglichen werden. Jedoch können Strings untereinander verglichen werden.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=594cd5b1">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"2 + 2 = </span><span class="si">{</span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>2 + 2 = 4
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=83906306">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Mit <code>len(...)</code> kann man die Länge eines Strings ermitteln.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=75605ec3">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">"Guten Morgen!"</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>13
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b1563e5d">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Variablen-verwenden">Variablen verwenden<a class="anchor-link" href="#Variablen-verwenden">¶</a></h1>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4f6385fa">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Eine Variable ist wie eine "Schachtel" im Computerspeicher, wo man Daten ablegen kann. Weißt man einem Variablennamen mit <code>=</code> erstmals einen Wert zu, wird die entsprechende Variable im Computerspeicher angelegt.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d001eade">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Eine Variable mit Namen <code>alter</code> wird angelegt und mit dem Wert <code>15</code> belegt:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=2260f8fe">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">alter</span> <span class="o">=</span> <span class="mi">15</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=72710847">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Verwendet man im Folgenden den Namen <code>alter</code>, wird auf den gespeicherten Wert zugegriffen:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=96751f8c">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d537cf14">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8021,8 +7786,9 @@ zuschneiden bitte
 <div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">alter</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">alter</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"5 == 5.0: </span><span class="si">{</span><span class="mi">5</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">5.0</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"5 == '5': </span><span class="si">{</span><span class="mi">5</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'5'</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"'Hallo' == 'Hallo': </span><span class="si">{</span><span class="s1">'Hallo'</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'Hallo'</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8035,63 +7801,96 @@ zuschneiden bitte
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>15
-20
+<pre>5 == 5.0: True
+5 == '5': False
+'Hallo' == 'Hallo': True
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d54cdafc">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d98d1833">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Variablen haben einen Typ, der ihrem Inhalt entspricht:</p>
+<h1 id="Bedingungen-und-Bl%C3%B6cke">Bedingungen und Blöcke<a class="anchor-link" href="#Bedingungen-und-Bl%C3%B6cke">¶</a></h1>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b109b92b">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c19a51c2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">alter</span><span class="p">))</span>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Bei der Ablaufkontrolle (flow control) gibt es immer eine <strong>Bedingung</strong> und einen <strong>Codeabschnitt</strong>, der in Abhängigkeit von der Bedingung einmal, mehrmals oder gar nicht ausgeführt wird. Der Codeabschnitt, auf den sich die Bedingung bezieht, wird als <strong>eingerückter Codeblock</strong> eingegeben.</p>
+<p><strong>Wichtig:</strong></p>
+<ul>
+<li>Die Einrückung muss im ganzen Codeblock die gleiche Tiefe haben.</li>
+<li>Die Einrückung sollte mit der Tabulator-Taste und nicht mit Leerzeichen erfolgen.</li>
+</ul>
+<p>richtig:</p>
+<pre><code>weiterer code
+weiterer code
+flow control-Anweisung u. Bedingung:
+    code
+    code
+    code
+    code
+weiterer code
+weiterer code
+</code></pre>
+<p>falsch:</p>
+<pre><code>weiterer code
+weiterer code
+flow control-Anweisung u. Bedingung:
+      code
+      code
+     code
+      code
+weiterer code
+weiterer code
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=47a2f560">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="if-Anweisung">if-Anweisung<a class="anchor-link" href="#if-Anweisung">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6431976b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Die <code>if</code>-Anweisung wird verwendet, um Code nur dann auszuführen, wenn eine bestimmte Bedingung erfüllt ist. Ist die Bedingung wahr (<code>True</code>), wird der eingerückte Codeblock ausgeführt. Ist sie falsch (<code>False</code>), wird der Codeblock übersprungen.</p>
+<p>Die Syntax lautet:</p>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">[</span><span class="n">boolscher</span> <span class="n">Ausdruck</span><span class="p">]:</span>
+    <span class="o">...</span>
+    <span class="o">...</span>
 </pre></div>
+<p>Beispiel:</p>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"a ist kleiner als b"</span><span class="p">)</span>
+</pre></div>
+<p>In diesem Beispiel wird die Ausgabe nur angezeigt, wenn <code>a</code> tatsächlich kleiner als <code>b</code> ist.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>&lt;class 'int'&gt;
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5f2e4a8d">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Der Variablentyp kann sich ändern, wenn die Variable mit einem neuen Wert belegt wird:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1f77eb8d">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1b8a6c42">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8099,11 +7898,13 @@ zuschneiden bitte
 <div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">alter</span> <span class="o">=</span> <span class="mf">2.5</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">alter</span><span class="p">))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"a ist kleiner als b"</span><span class="p">)</span>
 
-<span class="n">alter</span> <span class="o">=</span> <span class="s2">"fünfzehn"</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">alter</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="n">a</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"b ist gleich a"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8116,66 +7917,44 @@ zuschneiden bitte
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>&lt;class 'float'&gt;
-&lt;class 'str'&gt;
+<pre>a ist kleiner als b
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=60e14a21">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=70985ba2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Für Variablennamen gelten folgende Regeln:</p>
-<ul>
-<li>Dürfen nur Buchstaben, Zahlen und Unterstriche (_) enthalten</li>
-<li>Dürfen nicht mit einer Zahl beginnen</li>
-<li>Dürfen nur aus einem Wort bestehen (keine Leerzeichen)</li>
-</ul>
-<p>erlaubt z.B.: <code>mein_name</code>, <code>alter2</code>, <code>_preis</code></p>
-<p>nicht erlaubt z.B.: <code>2alter</code>, <code>mein name</code>, <code>mein-name</code></p>
+<p>Die <code>else</code>-Anweisung wird verwendet, um einen Codeblock auszuführen, wenn die Bedingung der vorherigen <code>if</code>-Anweisung <strong>nicht</strong> erfüllt ist. Sie ergänzt die <code>if</code>-Anweisung und sorgt dafür, dass genau einer der beiden Blöcke ausgeführt wird.</p>
+<p>Beispiel:</p>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"a ist kleiner als b"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"a ist nicht kleiner als b"</span><span class="p">)</span>
+</pre></div>
+<p>In diesem Beispiel wird die Ausgabe im <code>else</code>-Block nur angezeigt, wenn die Bedingung <code>a &lt; b</code> <strong>falsch</strong> ist.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c7c08db2">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Input-Befehl">Input-Befehl<a class="anchor-link" href="#Input-Befehl">¶</a></h1>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ea0634c5">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Der Befehl <code>input("...")</code> gibt den angegebenen String aus und wartet anschließend auf eine Eingabe des Benutzers. Die Eingabe wird als String-Wert dem Programm zurückgegeben und kann z.B. in einer Variable abgelegt werden.</p>
-<p>Hier wird die Eingabe des Benutzers in der Variable <code>name</code> abgelegt:</p>
-<pre><code>name = input("Wie heißt du?")
-</code></pre>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=49c3da84">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f3516f0b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Wie heißt du? "</span><span class="p">)</span> <span class="c1"># Eingabe: Dornröschen</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Hallo "</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">"!"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"a ist kleiner als b"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"a ist nicht kleiner als b"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8188,33 +7967,48 @@ zuschneiden bitte
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Hallo Dornröschen!
+<pre>a ist nicht kleiner als b
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9945a95a">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ef05652e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Achtung: <code>input()</code> gibt immer einen String zurück.</p>
+<p>Die <code>elif</code>-Anweisung steht für "else if" und wird verwendet, um mehrere Bedingungen in einer if-else-Struktur zu überprüfen. Sie folgt auf eine <code>if</code>-Anweisung und vor einer optionalen <code>else</code>-Anweisung. Sobald eine Bedingung wahr ist, wird der zugehörige Codeblock ausgeführt und die restlichen Bedingungen werden übersprungen.</p>
+<p>Beispiel:</p>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"a ist kleiner als b"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"a ist gleich b"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"a ist größer als b"</span><span class="p">)</span>
+</pre></div>
+<p>Mit <code>elif</code> können also mehrere Alternativen übersichtlich hintereinander geprüft werden.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0ccdd380">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=96b5088a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">eingabe</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Gib eine Zahl ein: "</span><span class="p">)</span> <span class="c1"># Eingabe: 42</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">eingabe</span><span class="p">))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"a ist kleiner als b"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"a ist gleich b"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"a ist größer als b"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8227,24 +8021,173 @@ zuschneiden bitte
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>&lt;class 'str'&gt;
+<pre>a ist größer als b
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=27fe4fab">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=094fb3ce">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Der eine Zahl enthaltende String kann aber in einen Zahltyp (<code>int</code> oder <code>float</code>) umgewandelt werden mit <code>int(...)</code> oder <code>float(...)</code>.</p>
+<p>Achtung: Sobald eine elif-Bedingung richtig ist, wird der Rest nicht mehr geprüft:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=72725955">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0da58b3b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"a ist größer als b"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="o">+</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"a ist viel größer als b"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"a ist nicht größer als b"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>a ist größer als b
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4562322a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Ändert man die Reihenfolge, funktioniert es:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d1b8a7a0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="o">+</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"a ist viel größer als b"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"a ist größer als b"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"a ist nicht größer als b"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>a ist viel größer als b
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e8b3bf8e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="While-Schleifen">While-Schleifen<a class="anchor-link" href="#While-Schleifen">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=802abb51">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Die <code>while</code>-Schleife wird verwendet, um einen Codeblock so lange zu wiederholen, wie eine bestimmte Bedingung wahr (<code>True</code>) ist. Die Bedingung wird vor jedem Durchlauf überprüft. Sobald sie falsch (<code>False</code>) wird, endet die Schleife. Die Syntax ist:</p>
+<div class="highlight"><pre><span></span><span class="k">while</span> <span class="p">[</span><span class="n">boolscher</span> <span class="n">Ausdruck</span><span class="p">]:</span>
+    <span class="o">...</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=26f241d1">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">eingabe</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Was ist 5 + 3? "</span><span class="p">))</span>
+<span class="k">while</span> <span class="n">eingabe</span> <span class="o">!=</span> <span class="mi">8</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Falsch! Versuch es noch einmal."</span><span class="p">)</span>
+    <span class="n">eingabe</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Was ist 5 + 3? "</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Richtig!"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Falsch! Versuch es noch einmal.
+Falsch! Versuch es noch einmal.
+Richtig!
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=968fff38">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Wir suchen durch Ausprobieren die kleinste Zahl, die durch 18 und 12 teilbar ist:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=84ba72ee">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8252,10 +8195,10 @@ zuschneiden bitte
 <div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">eingabe</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Gib eine Zahl ein: "</span><span class="p">)</span> <span class="c1"># Eingabe: 42</span>
-<span class="n">zahl</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">eingabe</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">zahl</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">zahl</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span> 
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">zahl</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">zahl</span> <span class="o">%</span> <span class="mi">18</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">zahl</span> <span class="o">%</span> <span class="mi">12</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+    <span class="n">zahl</span> <span class="o">=</span> <span class="n">zahl</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Die kleinste Zahl, die durch 18 und 12 teilbar ist, ist </span><span class="si">{</span><span class="n">zahl</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8268,25 +8211,26 @@ zuschneiden bitte
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>&lt;class 'int'&gt;
-47
+<pre>Die kleinste Zahl, die durch 18 und 12 teilbar ist, ist 36.
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f44ddb94">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9e76e3b9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Analog kann man auch in <code>float</code> oder <code>String</code> umwandeln:</p>
+<p>Die <code>break</code>-Anweisung wird verwendet, um eine Schleife vorzeitig zu beenden. Sobald <code>break</code> im Schleifen-Block ausgeführt wird, wird die Schleife sofort verlassen und das Programm läuft mit dem Code nach der Schleife weiter.</p>
+<p>Typischerweise wird <code>break</code> eingesetzt, wenn eine bestimmte Bedingung innerhalb der Schleife erfüllt ist und keine weiteren Durchläufe mehr nötig sind.</p>
+<p>Beispiel von oben in abgeänderter Form:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4a145287">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4c20bfd9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8294,10 +8238,12 @@ zuschneiden bitte
 <div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">"42.5"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">var</span><span class="p">))</span>
-<span class="n">zahl</span> <span class="o">=</span> <span class="mi">17</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">zahl</span><span class="p">)))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">zahl</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">zahl</span> <span class="o">%</span> <span class="mi">18</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">zahl</span> <span class="o">%</span> <span class="mi">12</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Die kleinste Zahl, die durch 18 und 12 teilbar ist, ist </span><span class="si">{</span><span class="n">zahl</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="n">zahl</span> <span class="o">=</span> <span class="n">zahl</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </div>
@@ -8310,14 +8256,61 @@ zuschneiden bitte
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>&lt;class 'float'&gt;
-&lt;class 'str'&gt;
+<pre>Die kleinste Zahl, die durch 18 und 12 teilbar ist, ist 36.
 </pre>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=15412afd">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f8f7083a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Die <code>continue</code>-Anweisung springt wieder zum Beginn der Schleife, der Rest der Anweisung wird für diesen Durchgang ausgelassen.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4b7a1fc0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Wer bist du? "</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="o">!=</span> <span class="s2">"Doctor"</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Hallo Doctor! Was ist das Passwort?"</span><span class="p">)</span>
+    <span class="n">passwort</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Passwort: "</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">passwort</span> <span class="o">==</span> <span class="s2">"Tardis"</span><span class="p">:</span>
+        <span class="k">break</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Zutritt gewährt."</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Hallo Doctor! Was ist das Passwort?
+Zutritt gewährt.
+Zutritt gewährt.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=259a0f2d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
