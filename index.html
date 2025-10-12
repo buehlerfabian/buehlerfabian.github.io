@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Files in pk-programmieren</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        body { font-family: system-ui, Arial, sans-serif; margin: 2rem; color: #222; }
+        h1 { font-size: 1.5rem; margin-bottom: .5rem; }
+        p.note { color: #666; font-size: .9rem; }
+        ul { list-style: none; padding-left: 0; }
+        li { margin: .25rem 0; }
+        a { text-decoration: none; color: #0b57d0; }
+        a:hover { text-decoration: underline; }
+        .empty { color: #888; }
+    </style>
+</head>
+<body>
+    <h1>Files in pk-programmieren</h1>
+    <p class="note">This list is generated at build time by Jekyll on GitHub Pages.</p>
+
+    {% assign subdir = 'pk-programmieren' %}
+    {% assign prefix_root = '/' | append: subdir | append: '/' %}
+    {% assign has_items = false %}
+
+    <ul>
+        {%- comment -%} Static files (images, PDFs, data, etc.) {%- endcomment -%}
+        {% assign statics = site.static_files | sort: 'path' %}
+        {% for f in statics %}
+            {% if f.path contains prefix_root %}
+                {% assign has_items = true %}
+                {% assign display = f.path | remove_first: prefix_root %}
+                <li><a href="{{ f.path | relative_url }}">{{ display }}</a></li>
+            {% endif %}
+        {% endfor %}
+
+        {%- comment -%} Pages (Markdown/HTML converted by Jekyll) {%- endcomment -%}
+        {% assign pages = site.pages | sort: 'path' %}
+        {% assign submatch = subdir | append: '/' %}
+        {% for p in pages %}
+            {% if p.path contains submatch %}
+                {% assign has_items = true %}
+                {% assign display = p.path | remove_first: submatch %}
+                <li><a href="{{ p.url | relative_url }}">{{ display }}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+    {% unless has_items %}
+        <p class="empty">No files found in the pk-programmieren folder.</p>
+    {% endunless %}
+</body>
+</html>
