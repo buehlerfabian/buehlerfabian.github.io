@@ -2,6 +2,4 @@
 title: "Fabian Bühler"
 ---
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Hier finden sich Materialien zu meinem Unterricht im Schuljahr 2025/26 am Störck-Gymnasium in Bad Saulgau.

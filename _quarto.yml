@@ -3,12 +3,14 @@ project:
 
 website:
   title: "Fabian Bühler"
-  navbar:
-    left:
+  sidebar:
+    style: "docked"
+    search: false
+    contents:
       - href: index.qmd
         text: Home
-      - about.qmd
-
+      - pk-prog.qmd
+  
 format:
   html:
     theme:
