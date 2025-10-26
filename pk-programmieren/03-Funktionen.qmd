@@ -1,0 +1,140 @@
+---
+title: Funktionen
+format: 
+  html:
+    embed-resources: true
+  pdf: default
+jupyter: python3
+---
+
+
+
+`print(...)` oder `input(...)` oder `len(...)` sind Beispiele für (bereits vorhandene) Funktionen in Python. Man benutzt Funktionen immer auf die gleiche Weise: Man schreibt den Funktionsnamen und in runden Klammern die sog. Argumente, die der Funktion mitgegeben werden. 
+
+- `print(...)`: Funktion schreibt den Python-Ausdruck, der als Argument mitgegeben wird, in die Konsole.
+- `input(...)`: Funktion schreibt den Python-Ausdruck, der als Argument mitgegeben wird, in die Konsole; wartet auf eine Eingabe des Benutzers und liefert die Eingabe zurück.
+- `len(...)`: liefert die Länge des als Arguments übergebenen Strings zurück.
+
+Was bedeutet die Formulierung "liefert ... zurück" genau?
+Liefert eine Funktion ein Ergebnis zurück, so wird im Python-Ausdruck an der Stelle, an der die Funktion aufgerufen wird, das zurückgelieferte Ergebnis eingesetzt. Beispiel:
+
+Die Funktion `len("Hallo")+3` liefert den Wert 5 zurück. Damit wird aus dem Ausdruck `len("Hallo")+3` wird `5+3` und schließlich `8`.
+
+Die Anzahl der übergebenen Argumente (auch Parameter genannt) ist unterschiedlich: es gibt Funktionen ohne Argument, mit einem Argument oder mit mehreren Argumenten. Beim Aufruf einer Funktion ohne Argument müssen trotzdem runde Klammern geschrieben werden, z.B.:
+```Python
+eingabe = input()
+```
+
+## Definition einer Funktion
+
+Man kann in Python eigene Funktionen definieren. Beispiel:
+
+```{python}
+def schreibeHallo():
+    print("Hallo!")
+    print("Heute ist ein schöner Tag, oder nicht?")
+```
+
+Bei der Definition wird ein eingerückter Codeblock verwendet, analog zu den Codeblöcken, die in der Ablaufsteuerung bei `if` oder `while` verwendet werden.
+
+Nun kann die so definierte Funktion `schreibeHallo()` wie alle anderen Python-Funktionen benutzt werden:
+
+```{python}
+print("irgendein anderer Text")
+schreibeHallo()
+print("noch mehr Text")
+```
+
+Die Funktion `schreibeHallo()` wurde ohne Argumente definiert. In diesem Fall darf man auch keines verwenden.
+
+```{python}
+#| error: true
+schreibeHallo("Peter")
+```
+
+## Funktionsdefinition mit Argumenten
+
+Argumente kann man bei der Definition der Funktion in den runden Klammern angeben. Dabei darf man beliebige Variablennamen verwenden.
+
+```{python}
+def schreibeHallo(name):
+    print(f"Hallo, {name}!")
+    laenge = len(name)
+    print(f"Dein Name ist {laenge} Buchstaben lang.")
+```
+
+Jetzt hat `schreibeHallo` einen Parameter. Der muss beim Aufruf auch angegeben werden.
+
+```{python}
+#| error: true
+schreibeHallo("Egon")
+schreibeHallo("Walburga")
+schreibeHallo()
+```
+
+Die Bezeichnung `name` für das Argument ist eine interne Bezeichnung, die nur in der Funktionsdefinition Bedeutung hat. Außerhalb der Definition spielt diese Bezeichnung keine Rolle.
+
+```{python}
+meinVorname = "Ignatius"
+schreibeHallo(meinVorname)
+```
+
+Man kann auch Funktionen mit mehreren Argumenten definieren:
+
+```{python}
+def schreibeHallo(name, alter):
+    if alter < 18:
+        print(f"Hi {name}!")
+    elif alter < 65:
+        print(f"Hallo, {name}!")
+    else:
+        print(f"Guten Tag, {name}!")
+```
+
+```{python}
+schreibeHallo("Max", 14)
+schreibeHallo("Anna", 30)
+schreibeHallo("Opa", 70)
+```
+
+## Rückgabewerte
+
+Selbst definierte Funktionen können ebenso wie z.B. `len(...)` Rückgabewerte haben. Dazu verwendet man in der Funktionsdefinition die Anweisung `return`. Dahinter wird der Rückgabewert angegeben.
+
+```{python}
+def rechteckFlaeche(breite, hoehe):
+    flaeche = breite * hoehe
+    return flaeche
+```
+
+Die Verwendung funktioniert wie bei anderen Funktionen mit Rückgabewert auch:
+
+```{python}
+b = 5
+h = 10
+A = rechteckFlaeche(b, h)
+print(f"Die Fläche des Rechtecks mit Breite {b} und Höhe {h} ist {A}.")
+```
+
+Man kann in der Definition mehrere `return`-Anweisungen verwenden. Die Ausführung der Funktion endet mit der ersten `return`-Anweisung, die ausgeführt wird.
+
+```{python}
+def rechteckFlaeche(breite, hoehe):
+    if breite < 0 or hoehe < 0:
+        return "Ungültige Eingabe: Breite und Höhe müssen positiv sein."
+    flaeche = breite * hoehe
+    return flaeche
+```
+
+```{python}
+print(rechteckFlaeche(5, 10))
+print(rechteckFlaeche(-5, 10))
+```
+
+## keyword-Argumente
+
+## optionale Argumente und default-Argumente
+
+## lokaler und globaler Scope (Sichtbarkeit)
+
+
