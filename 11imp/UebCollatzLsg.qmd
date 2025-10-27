@@ -1,0 +1,41 @@
+---
+title: "Übung: Programmieren einer Folge in Python -- Lösung"
+format:
+    html:
+        embed-resources: true
+---
+
+## 1. Aufgabe
+Die Prüfung, ob `a_n` gerade oder ungerade ist, wird am besten mit dem Modulo-Operator `%` durchgeführt. Der Ausdruck `a_n % 2` liefert den Rest der Division von `a_n` durch 2. Wenn dieser Rest 0 ist, ist die Zahl gerade, andernfalls ungerade.
+```{python}
+def collatz_next(a_n):
+    if a_n % 2 == 0:
+        return a_n // 2
+    else:
+        return 3 * a_n + 1
+```
+
+## 2. Aufgabe
+```{python}
+def collatz_sequence(start_value):
+    a_n = start_value
+    while a_n != 1:
+        print(a_n)
+        a_n = collatz_next(a_n)
+    print(a_n)
+```
+
+Es wäre auch möglich, anstelle der lokalen Variable `a_n` direkt mit `start_value` zu arbeiten. Die abschließende `print(a_n)`-Anweisung ist notwendig, um die 1 am Ende der Folge auch noch auszugeben.
+
+## 3. Aufgabe
+```{python}
+def collatz_length(start_value):
+    a_n = start_value
+    length = 1  # Startwert zählt als erstes Glied
+    while a_n != 1:
+        a_n = collatz_next(a_n)
+        length += 1
+    return length
+```
+
+Der Ansatz entspricht dem der vorherigen Aufgabe, nur wird hier keine Ausgabe erzeugt, sondern statt dessen eine Zählvariable `length` verwendet, die bei jedem Schritt um 1 erhöht wird. Am Ende wird die Länge der Folge zurückgegeben.

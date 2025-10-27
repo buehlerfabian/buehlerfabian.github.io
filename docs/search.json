@@ -63,8 +63,36 @@
     "text": "lokaler und globaler Scope"
   },
   {
-    "objectID": "pk-prog_einfPython.html",
-    "href": "pk-prog_einfPython.html",
+    "objectID": "11imp/UebCollatzLsg.html",
+    "href": "11imp/UebCollatzLsg.html",
+    "title": "Übung: Programmieren einer Folge in Python – Lösung",
+    "section": "",
+    "text": "Die Prüfung, ob a_n gerade oder ungerade ist, wird am besten mit dem Modulo-Operator % durchgeführt. Der Ausdruck a_n % 2 liefert den Rest der Division von a_n durch 2. Wenn dieser Rest 0 ist, ist die Zahl gerade, andernfalls ungerade.\n\ndef collatz_next(a_n):\n    if a_n % 2 == 0:\n        return a_n // 2\n    else:\n        return 3 * a_n + 1"
+  },
+  {
+    "objectID": "11imp/UebCollatzLsg.html#aufgabe",
+    "href": "11imp/UebCollatzLsg.html#aufgabe",
+    "title": "Übung: Programmieren einer Folge in Python – Lösung",
+    "section": "",
+    "text": "Die Prüfung, ob a_n gerade oder ungerade ist, wird am besten mit dem Modulo-Operator % durchgeführt. Der Ausdruck a_n % 2 liefert den Rest der Division von a_n durch 2. Wenn dieser Rest 0 ist, ist die Zahl gerade, andernfalls ungerade.\n\ndef collatz_next(a_n):\n    if a_n % 2 == 0:\n        return a_n // 2\n    else:\n        return 3 * a_n + 1"
+  },
+  {
+    "objectID": "11imp/UebCollatzLsg.html#aufgabe-1",
+    "href": "11imp/UebCollatzLsg.html#aufgabe-1",
+    "title": "Übung: Programmieren einer Folge in Python – Lösung",
+    "section": "2. Aufgabe",
+    "text": "2. Aufgabe\n\ndef collatz_sequence(start_value):\n    a_n = start_value\n    while a_n != 1:\n        print(a_n)\n        a_n = collatz_next(a_n)\n    print(a_n)\n\nEs wäre auch möglich, anstelle der lokalen Variable a_n direkt mit start_value zu arbeiten. Die abschließende print(a_n)-Anweisung ist notwendig, um die 1 am Ende der Folge auch noch auszugeben."
+  },
+  {
+    "objectID": "11imp/UebCollatzLsg.html#aufgabe-2",
+    "href": "11imp/UebCollatzLsg.html#aufgabe-2",
+    "title": "Übung: Programmieren einer Folge in Python – Lösung",
+    "section": "3. Aufgabe",
+    "text": "3. Aufgabe\n\ndef collatz_length(start_value):\n    a_n = start_value\n    length = 1  # Startwert zählt als erstes Glied\n    while a_n != 1:\n        a_n = collatz_next(a_n)\n        length += 1\n    return length\n\nDer Ansatz entspricht dem der vorherigen Aufgabe, nur wird hier keine Ausgabe erzeugt, sondern statt dessen eine Zählvariable length verwendet, die bei jedem Schritt um 1 erhöht wird. Am Ende wird die Länge der Folge zurückgegeben."
+  },
+  {
+    "objectID": "pk-programmieren/pk-prog_einfPython.html",
+    "href": "pk-programmieren/pk-prog_einfPython.html",
     "title": "Einführung in Python",
     "section": "",
     "text": "1. Grundlagen\n2. Flow control\n3. Funktionen",
@@ -95,8 +123,8 @@
     "text": "While-Schleifen\nDie while-Schleife wird verwendet, um einen Codeblock so lange zu wiederholen, wie eine bestimmte Bedingung wahr (True) ist. Die Bedingung wird vor jedem Durchlauf überprüft. Sobald sie falsch (False) wird, endet die Schleife. Die Syntax ist:\nwhile [boolscher Ausdruck]:\n    ...\n    ...\n\neingabe = int(input(\"Was ist 5 + 3? \")) # Eingabe: 7\nwhile eingabe != 8:\n    print(\"Falsch! Versuch es noch einmal.\")\n    eingabe = int(input(\"Was ist 5 + 3? \")) # Einfabe: 8\nprint(\"Richtig!\")\n\n\n\nWas ist 5 + 3? 7\nFalsch! Versuch es noch einmal.\nWas ist 5 + 3? 8\nRichtig!\n\n\nWir suchen durch Ausprobieren die kleinste Zahl, die durch 18 und 12 teilbar ist:\n\nzahl = 1\nwhile (zahl % 18 != 0) or (zahl % 12 != 0):\n    zahl = zahl + 1\nprint(f\"Die kleinste Zahl, die durch 18 und 12 teilbar ist, ist {zahl}.\")\n\nDie kleinste Zahl, die durch 18 und 12 teilbar ist, ist 36.\n\n\nDie break-Anweisung wird verwendet, um eine Schleife vorzeitig zu beenden. Sobald break im Schleifen-Block ausgeführt wird, wird die Schleife sofort verlassen und das Programm läuft mit dem Code nach der Schleife weiter.\nTypischerweise wird break eingesetzt, wenn eine bestimmte Bedingung innerhalb der Schleife erfüllt ist und keine weiteren Durchläufe mehr nötig sind.\nBeispiel von oben in abgeänderter Form:\n\nzahl = 1\nwhile True:\n    if (zahl % 18 == 0) and (zahl % 12 == 0):\n        print(f\"Die kleinste Zahl, die durch 18 und 12 teilbar ist, ist {zahl}.\")\n        break\n    zahl = zahl + 1\n\nDie kleinste Zahl, die durch 18 und 12 teilbar ist, ist 36.\n\n\nDie continue-Anweisung springt wieder zum Beginn der Schleife, der Rest der Anweisung wird für diesen Durchgang ausgelassen.\n\nwhile True:\n    name = input(\"Wer bist du? \") # Eingabe: Master, danach: Doctor\n    if name != \"Doctor\":\n        continue\n    print(\"Hallo Doctor! Was ist das Passwort?\")\n    passwort = input(\"Passwort: \") # Eingabe: Tardis\n    if passwort == \"Tardis\":\n        break\nprint(\"Zutritt gewährt.\")\n\n\n\nWer bist du? Master\nWer bist du? Doctor\nHallo Doctor! Was ist das Passwort? Tardis\nZutritt gewährt."
   },
   {
-    "objectID": "pk-prog.html",
-    "href": "pk-prog.html",
+    "objectID": "pk-programmieren/pk-prog.html",
+    "href": "pk-programmieren/pk-prog.html",
     "title": "P-Kurs Programmieren",
     "section": "",
     "text": "Hier finden sich die Materialien zum P-Kurs Programmieren.",

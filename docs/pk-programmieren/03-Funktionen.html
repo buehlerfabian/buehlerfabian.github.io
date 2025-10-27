@@ -3891,7 +3891,7 @@ vertical-align: -.125em;
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../pk-prog.html"> 
+    <a class="nav-link" href="../pk-programmieren/pk-prog.html"> 
 <span class="menu-text">PK Programmieren</span></a>
   </li>  
 </ul>
@@ -3954,14 +3954,14 @@ vertical-align: -.125em;
 <section id="definition-einer-funktion" class="level2">
 <h2 class="anchored" data-anchor-id="definition-einer-funktion">Definition einer Funktion</h2>
 <p>Man kann in Python eigene Funktionen definieren. Beispiel:</p>
-<div id="0aba2fd7" class="cell" data-execution_count="1">
+<div id="1a8e5912" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> schreibeHallo():</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Hallo!&quot;</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Heute ist ein schöner Tag, oder nicht?&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Bei der Definition wird ein eingerückter Codeblock verwendet, analog zu den Codeblöcken, die in der Ablaufsteuerung bei <code>if</code> oder <code>while</code> verwendet werden.</p>
 <p>Nun kann die so definierte Funktion <code>schreibeHallo()</code> wie alle anderen Python-Funktionen benutzt werden:</p>
-<div id="68a153a2" class="cell" data-execution_count="2">
+<div id="42418a14" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;irgendein anderer Text&quot;</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>schreibeHallo()</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;noch mehr Text&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -3973,7 +3973,7 @@ noch mehr Text</code></pre>
 </div>
 </div>
 <p>Die Funktion <code>schreibeHallo()</code> wurde ohne Argumente definiert. In diesem Fall darf man auch keines verwenden.</p>
-<div id="d25f04c4" class="cell" data-execution_count="3">
+<div id="12c1faa4" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>schreibeHallo(<span class="st">&quot;Peter&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -3990,14 +3990,14 @@ Cell <span class="ansi-green-fg">In[3], line 1</span>
 <section id="funktionsdefinition-mit-argumenten" class="level2">
 <h2 class="anchored" data-anchor-id="funktionsdefinition-mit-argumenten">Funktionsdefinition mit Argumenten</h2>
 <p>Argumente kann man bei der Definition der Funktion in den runden Klammern angeben. Dabei darf man beliebige Variablennamen verwenden.</p>
-<div id="2f635918" class="cell" data-execution_count="4">
+<div id="9e875ccf" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> schreibeHallo(name):</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Hallo, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!&quot;</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    laenge <span class="op">=</span> <span class="bu">len</span>(name)</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Dein Name ist </span><span class="sc">{</span>laenge<span class="sc">}</span><span class="ss"> Buchstaben lang.&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Jetzt hat <code>schreibeHallo</code> einen Parameter. Der muss beim Aufruf auch angegeben werden.</p>
-<div id="775d919f" class="cell" data-execution_count="5">
+<div id="24d34005" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>schreibeHallo(<span class="st">&quot;Egon&quot;</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>schreibeHallo(<span class="st">&quot;Walburga&quot;</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>schreibeHallo()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -4021,7 +4021,7 @@ Cell <span class="ansi-green-fg">In[5], line 3</span>
 </div>
 </div>
 <p>Die Bezeichnung <code>name</code> für das Argument ist eine interne Bezeichnung, die nur in der Funktionsdefinition Bedeutung hat. Außerhalb der Definition spielt diese Bezeichnung keine Rolle.</p>
-<div id="af5807d3" class="cell" data-execution_count="6">
+<div id="4e7f3e79" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>meinVorname <span class="op">=</span> <span class="st">&quot;Ignatius&quot;</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>schreibeHallo(meinVorname)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -4030,7 +4030,7 @@ Dein Name ist 8 Buchstaben lang.</code></pre>
 </div>
 </div>
 <p>Man kann auch Funktionen mit mehreren Argumenten definieren:</p>
-<div id="fb7e8b5a" class="cell" data-execution_count="7">
+<div id="dd17b4d4" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> schreibeHallo(name, alter):</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> alter <span class="op">&lt;</span> <span class="dv">18</span>:</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;Hi </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!&quot;</span>)</span>
@@ -4039,7 +4039,7 @@ Dein Name ist 8 Buchstaben lang.</code></pre>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;Guten Tag, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="139a94de" class="cell" data-execution_count="8">
+<div id="746c7d38" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>schreibeHallo(<span class="st">&quot;Max&quot;</span>, <span class="dv">14</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>schreibeHallo(<span class="st">&quot;Anna&quot;</span>, <span class="dv">30</span>)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>schreibeHallo(<span class="st">&quot;Opa&quot;</span>, <span class="dv">70</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -4053,13 +4053,13 @@ Guten Tag, Opa!</code></pre>
 <section id="rückgabewerte" class="level2">
 <h2 class="anchored" data-anchor-id="rückgabewerte">Rückgabewerte</h2>
 <p>Selbst definierte Funktionen können ebenso wie z.B. <code>len(...)</code> Rückgabewerte haben. Dazu verwendet man in der Funktionsdefinition die Anweisung <code>return</code>. Dahinter wird der Rückgabewert angegeben.</p>
-<div id="702d1e2c" class="cell" data-execution_count="9">
+<div id="412264c5" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> rechteckFlaeche(breite, hoehe):</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    flaeche <span class="op">=</span> breite <span class="op">*</span> hoehe</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> flaeche</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Die Verwendung funktioniert wie bei anderen Funktionen mit Rückgabewert auch:</p>
-<div id="ddf3a4bf" class="cell" data-execution_count="10">
+<div id="50c02ad7" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> rechteckFlaeche(b, h)</span>
@@ -4069,14 +4069,14 @@ Guten Tag, Opa!</code></pre>
 </div>
 </div>
 <p>Man kann in der Definition mehrere <code>return</code>-Anweisungen verwenden. Die Ausführung der Funktion endet mit der ersten <code>return</code>-Anweisung, die ausgeführt wird.</p>
-<div id="c726d42f" class="cell" data-execution_count="11">
+<div id="21358ae7" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> rechteckFlaeche(breite, hoehe):</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> breite <span class="op">&lt;</span> <span class="dv">0</span> <span class="kw">or</span> hoehe <span class="op">&lt;</span> <span class="dv">0</span>:</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;Ungültige Eingabe: Breite und Höhe müssen positiv sein.&quot;</span></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    flaeche <span class="op">=</span> breite <span class="op">*</span> hoehe</span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> flaeche</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="225e8de7" class="cell" data-execution_count="12">
+<div id="77ee0d30" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rechteckFlaeche(<span class="dv">5</span>, <span class="dv">10</span>))</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rechteckFlaeche(<span class="op">-</span><span class="dv">5</span>, <span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -4092,7 +4092,7 @@ Ungültige Eingabe: Breite und Höhe müssen positiv sein.</code></pre>
 <p>ist der erste Parameter <code>name</code>, der zweite <code>alter</code>. Die Reihenfolge, in der die Argumente beim Aufruf angegeben werden, muss dieser Reihenfolge entsprechen.</p>
 <p>Davon unterscheiden sich die sogenannten <em>keyword-Argumente</em>. Dabei bekommen die einzelnen Argumente Namen, die beim Aufruf der Funktion mit angegeben werden mussen. Dadurch kann die Reihenfolge der Argumente beim Aufruf geändert werden.</p>
 <p>Die obige Beispielfunktion <code>schreibeHallo</code> kann auch so aufgerufen werden:</p>
-<div id="1e6152c3" class="cell" data-execution_count="13">
+<div id="51c6c9ce" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>schreibeHallo(alter<span class="op">=</span><span class="dv">14</span>, name<span class="op">=</span><span class="st">&quot;Max&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hi Max!</code></pre>
@@ -4100,14 +4100,14 @@ Ungültige Eingabe: Breite und Höhe müssen positiv sein.</code></pre>
 </div>
 <p>Hier werden die Argumente <code>name</code> und <code>alter</code> explizit benannt. Dadurch ist die Reihenfolge der Argumente beim Aufruf egal.</p>
 <p>Man darf keyword-Argumente und normale Argumente auch mischen. Dabei müssen die normalen Argumente zuerst angegeben werden, danach die keyword-Argumente.</p>
-<div id="23ff4d39" class="cell" data-execution_count="14">
+<div id="cdba8dc2" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>schreibeHallo(<span class="st">&quot;Max&quot;</span>, alter<span class="op">=</span><span class="dv">14</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hi Max!</code></pre>
 </div>
 </div>
 <p>Verwendet man nach einem keyword-Argument ein nicht-keyword-Argument, so führt das zu einem Fehler:</p>
-<div id="5656a72b" class="cell" data-execution_count="15">
+<div id="a975bc6d" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>schreibeHallo(name<span class="op">=</span><span class="st">&quot;Max&quot;</span>, alter)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -4123,7 +4123,7 @@ Ungültige Eingabe: Breite und Höhe müssen positiv sein.</code></pre>
 <section id="optionale-argumente-und-default-werte" class="level2">
 <h2 class="anchored" data-anchor-id="optionale-argumente-und-default-werte">optionale Argumente und default-Werte</h2>
 <p>Es ist möglich, in der Funktionsdefinition für Argumente default-Werte anzugeben. Diese Werte werden verwendet, wenn beim Aufruf der Funktion kein entsprechendes Argument angegeben wird.</p>
-<div id="63523af5" class="cell" data-execution_count="16">
+<div id="cda7947d" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> schreibeHallo(name, alter<span class="op">=</span><span class="dv">30</span>):</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> alter <span class="op">&lt;</span> <span class="dv">18</span>:</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;Hi </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!&quot;</span>)</span>
@@ -4132,7 +4132,7 @@ Ungültige Eingabe: Breite und Höhe müssen positiv sein.</code></pre>
 <span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
 <span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;Guten Tag, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="e9bd5825" class="cell" data-execution_count="17">
+<div id="b36c2f51" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>schreibeHallo(<span class="st">&quot;Max&quot;</span>, <span class="dv">14</span>)   <span class="co"># alter wird mit 14 belegt</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>schreibeHallo(<span class="st">&quot;Anna&quot;</span>)      <span class="co"># alter wird mit default-Wert 30 belegt</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -4143,7 +4143,7 @@ Hallo, Anna!</code></pre>
 <p>Man kann auch mehr als ein Argument mit einem default-Wert versehen.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> schreibeHallo(name<span class="op">=</span><span class="st">&quot;John&quot;</span>, alter<span class="op">=</span><span class="dv">30</span>):</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="3bba6983" class="cell" data-execution_count="19">
+<div id="49c71db6" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>schreibeHallo(<span class="st">&quot;Max&quot;</span>)</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>schreibeHallo()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -4154,7 +4154,7 @@ Hallo, John!</code></pre>
 <p>Gibt es Argumente ohne default-Wert, müssen diese bei der Definition vor den Argumenten mit default-Wert angegeben werden. Folgendes führt zu einem Fehler:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> schreibeHallo(name<span class="op">=</span><span class="st">&quot;John&quot;</span>, alter):</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="b987ed0f" class="cell" data-execution_count="20">
+<div id="f6356702" class="cell" data-execution_count="20">
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-cyan-fg">  Cell </span><span class="ansi-green-fg">In[20], line 1</span>
