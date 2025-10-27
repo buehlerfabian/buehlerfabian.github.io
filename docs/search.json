@@ -67,11 +67,67 @@
     "href": "11imp/11imp-Loesungen.html",
     "title": "Lösungen",
     "section": "",
-    "text": "Übung: Programmieren einer Folge in Python",
+    "text": "Übung: Programmieren einer Folge in Python\nÜbungen zu diskretem Wachstum",
     "crumbs": [
       "IMP Klasse 11",
       "Lösungen"
     ]
+  },
+  {
+    "objectID": "11imp/UebWachstumLsg.html",
+    "href": "11imp/UebWachstumLsg.html",
+    "title": "Übungen zu diskretem Wachstum – Lösungen",
+    "section": "",
+    "text": "Umformen ergibt: \\[\na_{n+1} = 0.75\\cdot a_n + 100 = a_n - 0.25\\cdot a_n + 100 = a_n + 0.25\\cdot\\left(400 - a_n\\right)\n\\]\nDie Schranke ist damit \\(S = 400\\) und der Wachstumsfaktor \\(k = 0.25\\).\n\n\n\nUmformen: \\[\na_{n+1} = 0.75\\cdot a_n + 100 \\; \\Rightarrow \\; a_n = \\frac{a_{n+1} - 100}{0.75}\n\\]\n\ndef berechneVorgaenger(an):\n    return (an - 100) / 0.75\n\nn = 10\nan = 381.1\nprint(f\"a_{n} = {an}\")\nwhile n &gt; 0:\n    an = berechneVorgaenger(an)\n    n -= 1\n    print(f\"a_{n} = {an:.2f}\")\n\na_10 = 381.1\na_9 = 374.80\na_8 = 366.40\na_7 = 355.20\na_6 = 340.27\na_5 = 320.36\na_4 = 293.81\na_3 = 258.41\na_2 = 211.21\na_1 = 148.28\na_0 = 64.38\n\n\nDer Startwert ist also \\(a_0 \\approx 64.38\\)."
+  },
+  {
+    "objectID": "11imp/UebWachstumLsg.html#aufgabe",
+    "href": "11imp/UebWachstumLsg.html#aufgabe",
+    "title": "Übungen zu diskretem Wachstum – Lösungen",
+    "section": "",
+    "text": "Umformen ergibt: \\[\na_{n+1} = 0.75\\cdot a_n + 100 = a_n - 0.25\\cdot a_n + 100 = a_n + 0.25\\cdot\\left(400 - a_n\\right)\n\\]\nDie Schranke ist damit \\(S = 400\\) und der Wachstumsfaktor \\(k = 0.25\\).\n\n\n\nUmformen: \\[\na_{n+1} = 0.75\\cdot a_n + 100 \\; \\Rightarrow \\; a_n = \\frac{a_{n+1} - 100}{0.75}\n\\]\n\ndef berechneVorgaenger(an):\n    return (an - 100) / 0.75\n\nn = 10\nan = 381.1\nprint(f\"a_{n} = {an}\")\nwhile n &gt; 0:\n    an = berechneVorgaenger(an)\n    n -= 1\n    print(f\"a_{n} = {an:.2f}\")\n\na_10 = 381.1\na_9 = 374.80\na_8 = 366.40\na_7 = 355.20\na_6 = 340.27\na_5 = 320.36\na_4 = 293.81\na_3 = 258.41\na_2 = 211.21\na_1 = 148.28\na_0 = 64.38\n\n\nDer Startwert ist also \\(a_0 \\approx 64.38\\)."
+  },
+  {
+    "objectID": "11imp/UebWachstumLsg.html#aufgabe-1",
+    "href": "11imp/UebWachstumLsg.html#aufgabe-1",
+    "title": "Übungen zu diskretem Wachstum – Lösungen",
+    "section": "2. Aufgabe",
+    "text": "2. Aufgabe\n\na)\nRekursionsvorschrift: \\(a_{n+1} = .998\\cdot a_n + 1000\\) mit \\(a_0 = 0\\).\n\n\n\n\n\n\nHinweis\n\n\n\nIn der Aufgabenstellung ist nicht ganz eindeutig formuliert, ob zuerst die 0,2% verdunsten und dann die 1000 m3 hinzukommen oder umgekehrt. Je nachdem, wie man die Aufgabe interpretiert, ist auch die folgende Rekursionsvorschrift möglich: \\[a_{n+1} = .998\\cdot (a_n + 1000)\\]\nDiese Problematik ist eine Folge der Modellierung als diskretes Wachstum, obwohl es sich eigentlich um einen kontinuierlichen Prozess handelt.\n\n\n\n\nb)\nUmformen ergibt: \\[\na_{n+1} = .998\\cdot a_n + 1000 = a_n - 0.002\\cdot a_n + 1000 = a_n + 0.002\\cdot\\left(500000 - a_n\\right)\n\\]\nDie Schranke ist damit \\(S = 500000\\) und der Wachstumsfaktor \\(k = 0.002\\).\n\n\nc)\n\ndef berechneNachfolger(an):\n    return 0.998 * an + 1000\n\nn = 0\nan = 0\nwhile an &lt; 0.25 * 500000:\n    an = berechneNachfolger(an)\n    n += 1\nprint(f\"Nach {n} Stunden sind {an:.0f} m³ im See, d.h. er ist zu {an/500000*100:.0f}% gefüllt.\")\n\nNach 144 Stunden sind 125227 m³ im See, d.h. er ist zu 25% gefüllt."
+  },
+  {
+    "objectID": "11imp/UebWachstumLsg.html#aufgabe-2",
+    "href": "11imp/UebWachstumLsg.html#aufgabe-2",
+    "title": "Übungen zu diskretem Wachstum – Lösungen",
+    "section": "3. Aufgabe",
+    "text": "3. Aufgabe\n\na)\nDer Ansatz ist ein logistisches Wachstum, d.h. \\[\na_{n+1} = a_n + k\\cdot a_n\\cdot\\left(S - a_n\\right)\n\\]\nAus der Aufgabenstellung ergibt sich \\(S=9.00\\) und \\(a_0 = 0.2\\). Nach einer Woche ist \\(a_1 = 0.4\\). Damit gilt:\n\\[\n0.4 = 0.2 + k\\cdot 0.2\\cdot(9.00 - 0.2) \\;\\Rightarrow\\; k = \\frac{0.2}{0.2\\cdot 8.8} = \\frac{1}{8.8} \\approx 0.1136\n\\]\n\n\nb)\n\ndef berechneNachfolger(an):\n    return an + 0.1136 * an * (9.00 - an)\n\nn = 0\nan = 0.2\nwhile n &lt; 8:\n    an = berechneNachfolger(an)\n    n += 1\nprint(f\"Nach {n} Wochen ist die Pflanzenhöhe {an:.2f} m.\")\n\nNach 8 Wochen ist die Pflanzenhöhe 8.99 m.\n\n\n\n\nc)\n\ndef berechneNachfolger(an):\n    return an + 0.1136 * an * (9.00 - an)\n\nn = 0\nan = 0.2\nwhile an &lt; 8:\n    an = berechneNachfolger(an)\n    n += 1\nprint(f\"Nach {n} Wochen ist die Pflanzenhöhe {an:.2f} m und damit erstmalig über 8 m.\")\n\nNach 7 Wochen ist die Pflanzenhöhe 8.63 m und damit erstmalig über 8 m."
+  },
+  {
+    "objectID": "11imp/UebWachstumLsg.html#aufgabe-3",
+    "href": "11imp/UebWachstumLsg.html#aufgabe-3",
+    "title": "Übungen zu diskretem Wachstum – Lösungen",
+    "section": "4. Aufgabe",
+    "text": "4. Aufgabe\n\na)\nAnsatz mit beschränktem Wachstum: \\[\na_{n+1} = a_n + k\\cdot\\left(S - a_n\\right)\n\\]\nAus der Aufgabenstellung ergibt sich \\(S=30\\) und \\(a_0 = 6\\). Nach 1 Minute ist \\(a_1 = 7.2\\). Damit gilt:\n\\[\n7.2 = 6 + k\\cdot(30 - 6) \\;\\Rightarrow\\; k = \\frac{1.2}{24} = 0.05\n\\]\n\n\nb)\n\ndef berechneNachfolger(an):\n    return an + 0.05 * (30 - an)\n\nn = 0\nan = 6\nwhile an &lt; 20:\n    an = berechneNachfolger(an)\n    n += 1\nprint(f\"Nach {n} Minuten ist die Temperatur {an:.2f} °C.\")\n\nNach 18 Minuten ist die Temperatur 20.47 °C."
+  },
+  {
+    "objectID": "11imp/UebWachstumLsg.html#aufgabe-4",
+    "href": "11imp/UebWachstumLsg.html#aufgabe-4",
+    "title": "Übungen zu diskretem Wachstum – Lösungen",
+    "section": "5. Aufgabe",
+    "text": "5. Aufgabe\n\na) und b)\nEs handelt sich um ein exponentielles Wachstum mit der Rekursionsvorschrift \\(a_{n+1} = q\\cdot a_n\\). Aus der Aufgabenstellung ergibt sich \\(q = (0.5)^{0.2} \\approx 0.87055\\).\n\n\n\n\n\n\nHinweis\n\n\n\nBegründung:\nNach 5 Tagen ist die Hälfte zerfallen, d.h. \\(a_5 = \\frac 12 \\cdot a_0\\). Andererseits gilt \\(a_5 = q^5 \\cdot a_0\\). Also ist \\(q^5 = \\frac 12\\) und damit \\(q = \\left(\\frac 12\\right)^{\\frac 15}\\).\n\n\n\ndef berechneNachfolger(an):\n    return 0.87055 * an\n\nn = 0\nan = 100\nprint(f\"Tag {n}: {an} mg\")\nwhile n &lt; 10:\n    an = berechneNachfolger(an)\n    n += 1\n    print(f\"Tag {n}: {an:.2f} mg\")\n\nTag 0: 100 mg\nTag 1: 87.06 mg\nTag 2: 75.79 mg\nTag 3: 65.98 mg\nTag 4: 57.43 mg\nTag 5: 50.00 mg\nTag 6: 43.53 mg\nTag 7: 37.89 mg\nTag 8: 32.99 mg\nTag 9: 28.72 mg\nTag 10: 25.00 mg\n\n\n\n\nc)\n\ndef berechneNachfolger(an):\n    return 0.87055 * an\n\nn = 0\nan = 100\nwhile an &gt;= .01:\n    an = berechneNachfolger(an)\n    n += 1\nprint(f\"Nach {n} Tagen sind noch {an:.3f} mg übrig.\")\n\nNach 67 Tagen sind noch 0.009 mg übrig."
+  },
+  {
+    "objectID": "11imp/UebWachstumLsg.html#aufgabe-5",
+    "href": "11imp/UebWachstumLsg.html#aufgabe-5",
+    "title": "Übungen zu diskretem Wachstum – Lösungen",
+    "section": "6. Aufgabe",
+    "text": "6. Aufgabe\n\na)\n\nguthaben_bank1 = 1000\nguthaben_bank2 = 1000\nguthaben_bank3 = 1000\nguthaben_bank4 = 1000\n\nmonat = 0\nwhile monat &lt; 6*12:\n    monat += 1\n    guthaben_bank3 = guthaben_bank3*1.002\n    if monat % 12 == 0:\n        guthaben_bank1 += 1000*0.024\n        guthaben_bank2 = guthaben_bank2*1.023\n        if monat &lt;= 2*12:\n            guthaben_bank4 = guthaben_bank4*1.006\n        elif monat &lt;= 4*12:\n            guthaben_bank4 = guthaben_bank4*1.012\n        else:\n            guthaben_bank4 = guthaben_bank4*1.07\n        print(f\"Ende Monat {monat}: {guthaben_bank1:.2f} €, {guthaben_bank2:.2f} €, {guthaben_bank3:.2f} €, {guthaben_bank4:.2f} €\")\n\nEnde Monat 12: 1024.00 €, 1023.00 €, 1024.27 €, 1006.00 €\nEnde Monat 24: 1048.00 €, 1046.53 €, 1049.12 €, 1012.04 €\nEnde Monat 36: 1072.00 €, 1070.60 €, 1074.58 €, 1024.18 €\nEnde Monat 48: 1096.00 €, 1095.22 €, 1100.65 €, 1036.47 €\nEnde Monat 60: 1120.00 €, 1120.41 €, 1127.36 €, 1109.02 €\nEnde Monat 72: 1144.00 €, 1146.18 €, 1154.72 €, 1186.66 €\n\n\n\n\nb)\n\nBank 1: lineares Wachstum\nBank 2: exponentielles Wachstum\nBank 3: exponentielles Wachstum\nBank 4: sonstige Wachstumsform (stückweise exponentielles Wachstum)"
+  },
+  {
+    "objectID": "11imp/UebWachstumLsg.html#aufgabe-7",
+    "href": "11imp/UebWachstumLsg.html#aufgabe-7",
+    "title": "Übungen zu diskretem Wachstum – Lösungen",
+    "section": "Aufgabe 7",
+    "text": "Aufgabe 7\n\na)\n\ndarlehen = 300000\nmonat = 0\nbezahlt = 0\nwhile darlehen &gt; 0:\n    monat += 1\n    if monat % 12 == 0:\n        darlehen = darlehen * 1.03\n    if monat %12 == 1:\n        if darlehen &gt;= 18000:\n            darlehen -= 18000\n            bezahlt += 18000\n        else:\n            bezahlt += darlehen\n            darlehen = 0\n\nprint(f\"Nach {monat} Monaten ist das Darlehen getilt.\")\nprint(f\"Insgesamt wurde {bezahlt:.2f} € bezahlt.\")\n\nNach 265 Monaten ist das Darlehen getilt.\nInsgesamt wurde 404679.12 € bezahlt.\n\n\n\n\nb)\n\ndarlehen = 300000\nmonat = 0\nbezahlt = 0\nwhile darlehen &gt; 0:\n    monat += 1\n    darlehen *= 1.0025\n    if darlehen &gt; 1500:\n        darlehen -= 1500\n        bezahlt += 1500\n    else:\n        bezahlt += darlehen\n        darlehen = 0\n\nprint(f\"Nach {monat} Monaten ist das Darlehen getilt.\")\nprint(f\"Insgesamt wurde {bezahlt:.2f} € bezahlt.\")\n\nNach 278 Monaten ist das Darlehen getilt.\nInsgesamt wurde 416408.40 € bezahlt.\n\n\n\n\nc)\nFall a):\n\ndarlehen = 300000\nmonat = 0\nbezahlt = 0\nwhile darlehen &gt; 0:\n    monat += 1\n    if monat % 12 == 0:\n        darlehen = darlehen * 1.03\n    if monat %12 == 1:\n        if darlehen &gt;= 18000:\n            darlehen -= 18000\n            bezahlt += 18000\n        else:\n            bezahlt += darlehen\n            darlehen = 0\n    if monat%24 == 1:\n        if darlehen &gt;= 6000:\n            darlehen -= 6000\n            bezahlt += 6000\n        else:\n            bezahlt += darlehen\n            darlehen = 0\n\nprint(f\"Nach {monat} Monaten ist das Darlehen getilt.\")\nprint(f\"Insgesamt wurde {bezahlt:.2f} € bezahlt.\")\n\nNach 217 Monaten ist das Darlehen getilt.\nInsgesamt wurde 381206.46 € bezahlt.\n\n\nFall b):\n\ndarlehen = 300000\nmonat = 0\nbezahlt = 0\nwhile darlehen &gt; 0:\n    monat += 1\n    darlehen *= 1.0025\n    if darlehen &gt; 1500:\n        darlehen -= 1500\n        bezahlt += 1500\n    else:\n        bezahlt += darlehen\n        darlehen = 0\n    if monat%24 == 1:\n        if darlehen &gt;= 6000:\n            darlehen -= 6000\n            bezahlt += 6000\n        else:\n            bezahlt += darlehen\n            darlehen = 0\n\nprint(f\"Nach {monat} Monaten ist das Darlehen getilt.\")\nprint(f\"Insgesamt wurde {bezahlt:.2f} € bezahlt.\")\n\nNach 221 Monaten ist das Darlehen getilt.\nInsgesamt wurde 390041.04 € bezahlt."
   },
   {
     "objectID": "11imp/11imp.html",

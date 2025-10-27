@@ -1,0 +1,296 @@
+---
+title: "Übungen zu diskretem Wachstum -- Lösungen"
+format:
+    html:
+        embed-resources: true
+lang: de
+---
+
+## 1. Aufgabe
+### a)
+Umformen ergibt:
+$$
+a_{n+1} = 0.75\cdot a_n + 100 = a_n - 0.25\cdot a_n + 100 = a_n + 0.25\cdot\left(400 - a_n\right)
+$$
+
+Die Schranke ist damit $S = 400$ und der Wachstumsfaktor $k = 0.25$.
+
+### b)
+Umformen:
+$$
+a_{n+1} = 0.75\cdot a_n + 100 \; \Rightarrow \; a_n = \frac{a_{n+1} - 100}{0.75}
+$$
+```{python}
+def berechneVorgaenger(an):
+    return (an - 100) / 0.75
+
+n = 10
+an = 381.1
+print(f"a_{n} = {an}")
+while n > 0:
+    an = berechneVorgaenger(an)
+    n -= 1
+    print(f"a_{n} = {an:.2f}")
+```
+
+Der Startwert ist also $a_0 \approx 64.38$.
+
+## 2. Aufgabe
+### a)
+Rekursionsvorschrift: $a_{n+1} = .998\cdot a_n + 1000$ mit $a_0 = 0$.
+
+:::{.callout-note}
+In der Aufgabenstellung ist nicht ganz eindeutig formuliert, ob *zuerst* die 0,2% verdunsten und dann die 1000 m^3^ hinzukommen oder umgekehrt. Je nachdem, wie man die Aufgabe interpretiert, ist auch die folgende Rekursionsvorschrift möglich: 
+$$a_{n+1} = .998\cdot (a_n + 1000)$$
+
+Diese Problematik ist eine Folge der Modellierung als diskretes Wachstum, obwohl es sich eigentlich um einen kontinuierlichen Prozess handelt.
+:::
+
+### b)
+Umformen ergibt:
+$$
+a_{n+1} = .998\cdot a_n + 1000 = a_n - 0.002\cdot a_n + 1000 = a_n + 0.002\cdot\left(500000 - a_n\right)
+$$
+
+Die Schranke ist damit $S = 500000$ und der Wachstumsfaktor $k = 0.002$.
+
+### c)
+```{python}
+def berechneNachfolger(an):
+    return 0.998 * an + 1000
+
+n = 0
+an = 0
+while an < 0.25 * 500000:
+    an = berechneNachfolger(an)
+    n += 1
+print(f"Nach {n} Stunden sind {an:.0f} m³ im See, d.h. er ist zu {an/500000*100:.0f}% gefüllt.")
+```
+
+## 3. Aufgabe
+### a)
+Der Ansatz ist ein logistisches Wachstum, d.h. 
+$$
+a_{n+1} = a_n + k\cdot a_n\cdot\left(S - a_n\right)
+$$
+
+Aus der Aufgabenstellung ergibt sich $S=9.00$ und $a_0 = 0.2$. Nach einer Woche ist $a_1 = 0.4$. Damit gilt:
+
+$$
+0.4 = 0.2 + k\cdot 0.2\cdot(9.00 - 0.2) \;\Rightarrow\; k = \frac{0.2}{0.2\cdot 8.8} = \frac{1}{8.8} \approx 0.1136
+$$
+
+### b)
+```{python}
+def berechneNachfolger(an):
+    return an + 0.1136 * an * (9.00 - an)
+
+n = 0
+an = 0.2
+while n < 8:
+    an = berechneNachfolger(an)
+    n += 1
+print(f"Nach {n} Wochen ist die Pflanzenhöhe {an:.2f} m.")
+```
+
+### c)
+```{python}
+def berechneNachfolger(an):
+    return an + 0.1136 * an * (9.00 - an)
+
+n = 0
+an = 0.2
+while an < 8:
+    an = berechneNachfolger(an)
+    n += 1
+print(f"Nach {n} Wochen ist die Pflanzenhöhe {an:.2f} m und damit erstmalig über 8 m.")
+```
+
+## 4. Aufgabe
+### a)
+Ansatz mit beschränktem Wachstum:
+$$
+a_{n+1} = a_n + k\cdot\left(S - a_n\right)
+$$
+
+Aus der Aufgabenstellung ergibt sich $S=30$ und $a_0 = 6$. Nach 1 Minute ist $a_1 = 7.2$. Damit gilt:
+
+$$
+7.2 = 6 + k\cdot(30 - 6) \;\Rightarrow\; k = \frac{1.2}{24} = 0.05
+$$
+
+### b)
+```{python}
+def berechneNachfolger(an):
+    return an + 0.05 * (30 - an)
+
+n = 0
+an = 6
+while an < 20:
+    an = berechneNachfolger(an)
+    n += 1
+print(f"Nach {n} Minuten ist die Temperatur {an:.2f} °C.")
+```
+
+## 5. Aufgabe
+### a) und b)
+Es handelt sich um ein exponentielles Wachstum mit der Rekursionsvorschrift $a_{n+1} = q\cdot a_n$. Aus der Aufgabenstellung ergibt sich $q = (0.5)^{0.2} \approx 0.87055$. 
+
+:::{.callout-note}
+Begründung:
+
+Nach 5 Tagen ist die Hälfte zerfallen, d.h. $a_5 = \frac 12 \cdot a_0$. Andererseits gilt $a_5 = q^5 \cdot a_0$. Also ist $q^5 = \frac 12$ und damit $q = \left(\frac 12\right)^{\frac 15}$.
+::: 
+
+```{python}
+def berechneNachfolger(an):
+    return 0.87055 * an
+
+n = 0
+an = 100
+print(f"Tag {n}: {an} mg")
+while n < 10:
+    an = berechneNachfolger(an)
+    n += 1
+    print(f"Tag {n}: {an:.2f} mg")
+```
+
+### c)
+```{python}
+def berechneNachfolger(an):
+    return 0.87055 * an
+
+n = 0
+an = 100
+while an >= .01:
+    an = berechneNachfolger(an)
+    n += 1
+print(f"Nach {n} Tagen sind noch {an:.3f} mg übrig.")
+```
+
+## 6. Aufgabe
+### a)
+```{python}
+guthaben_bank1 = 1000
+guthaben_bank2 = 1000
+guthaben_bank3 = 1000
+guthaben_bank4 = 1000
+
+monat = 0
+while monat < 6*12:
+    monat += 1
+    guthaben_bank3 = guthaben_bank3*1.002
+    if monat % 12 == 0:
+        guthaben_bank1 += 1000*0.024
+        guthaben_bank2 = guthaben_bank2*1.023
+        if monat <= 2*12:
+            guthaben_bank4 = guthaben_bank4*1.006
+        elif monat <= 4*12:
+            guthaben_bank4 = guthaben_bank4*1.012
+        else:
+            guthaben_bank4 = guthaben_bank4*1.07
+        print(f"Ende Monat {monat}: {guthaben_bank1:.2f} €, {guthaben_bank2:.2f} €, {guthaben_bank3:.2f} €, {guthaben_bank4:.2f} €")
+
+```
+
+### b)
+- Bank 1: lineares Wachstum
+- Bank 2: exponentielles Wachstum
+- Bank 3: exponentielles Wachstum
+- Bank 4: sonstige Wachstumsform (stückweise exponentielles Wachstum)
+
+## Aufgabe 7
+### a)
+```{python}
+darlehen = 300000
+monat = 0
+bezahlt = 0
+while darlehen > 0:
+    monat += 1
+    if monat % 12 == 0:
+        darlehen = darlehen * 1.03
+    if monat %12 == 1:
+        if darlehen >= 18000:
+            darlehen -= 18000
+            bezahlt += 18000
+        else:
+            bezahlt += darlehen
+            darlehen = 0
+
+print(f"Nach {monat} Monaten ist das Darlehen getilt.")
+print(f"Insgesamt wurde {bezahlt:.2f} € bezahlt.")
+```
+
+### b)
+```{python}
+darlehen = 300000
+monat = 0
+bezahlt = 0
+while darlehen > 0:
+    monat += 1
+    darlehen *= 1.0025
+    if darlehen > 1500:
+        darlehen -= 1500
+        bezahlt += 1500
+    else:
+        bezahlt += darlehen
+        darlehen = 0
+
+print(f"Nach {monat} Monaten ist das Darlehen getilt.")
+print(f"Insgesamt wurde {bezahlt:.2f} € bezahlt.")
+```
+
+### c)
+Fall a):
+```{python}
+darlehen = 300000
+monat = 0
+bezahlt = 0
+while darlehen > 0:
+    monat += 1
+    if monat % 12 == 0:
+        darlehen = darlehen * 1.03
+    if monat %12 == 1:
+        if darlehen >= 18000:
+            darlehen -= 18000
+            bezahlt += 18000
+        else:
+            bezahlt += darlehen
+            darlehen = 0
+    if monat%24 == 1:
+        if darlehen >= 6000:
+            darlehen -= 6000
+            bezahlt += 6000
+        else:
+            bezahlt += darlehen
+            darlehen = 0
+
+print(f"Nach {monat} Monaten ist das Darlehen getilt.")
+print(f"Insgesamt wurde {bezahlt:.2f} € bezahlt.")
+```
+
+Fall b):
+```{python}
+darlehen = 300000
+monat = 0
+bezahlt = 0
+while darlehen > 0:
+    monat += 1
+    darlehen *= 1.0025
+    if darlehen > 1500:
+        darlehen -= 1500
+        bezahlt += 1500
+    else:
+        bezahlt += darlehen
+        darlehen = 0
+    if monat%24 == 1:
+        if darlehen >= 6000:
+            darlehen -= 6000
+            bezahlt += 6000
+        else:
+            bezahlt += darlehen
+            darlehen = 0
+
+print(f"Nach {monat} Monaten ist das Darlehen getilt.")
+print(f"Insgesamt wurde {bezahlt:.2f} € bezahlt.")
+```

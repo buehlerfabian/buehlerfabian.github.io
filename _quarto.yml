@@ -26,6 +26,7 @@ website:
       contents:
         - 11imp/11imp.qmd
         - 11imp/11imp-Loesungen.qmd
+        - pk-programmieren/pk-prog_einfPython.qmd
   
 format:
   html:
