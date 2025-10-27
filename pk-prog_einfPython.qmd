@@ -1,0 +1,7 @@
+---
+title: "Einführung in Python"
+---
+
+- [1. Grundlagen](pk-programmieren/01-grundlagen.qmd)
+- [2. Flow control](pk-programmieren/02-flow-control.qmd)
+- [3. Funktionen](pk-programmieren/03-Funktionen.qmd)

@@ -2,5 +2,4 @@
 title: "P-Kurs Programmieren"
 ---
 
-- [1. Grundlagen](pk-programmieren/01-grundlagen.qmd)
-- [2. Flow control](pk-programmieren/02-flow-control.qmd)
+Hier finden sich die Materialien zum P-Kurs Programmieren.

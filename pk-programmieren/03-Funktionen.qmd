@@ -7,7 +7,7 @@ format:
 jupyter: python3
 ---
 
-
+\newcommand{\textasciicaret}{\texttt{\^{}}}
 
 `print(...)` oder `input(...)` oder `len(...)` sind Beispiele für (bereits vorhandene) Funktionen in Python. Man benutzt Funktionen immer auf die gleiche Weise: Man schreibt den Funktionsnamen und in runden Klammern die sog. Argumente, die der Funktion mitgegeben werden. 
 
@@ -146,7 +146,9 @@ Die obige Beispielfunktion `schreibeHallo` kann auch so aufgerufen werden:
 ```{python}
 schreibeHallo(alter=14, name="Max")
 ```
+
 Hier werden die Argumente `name` und `alter` explizit benannt. Dadurch ist die Reihenfolge der Argumente beim Aufruf egal.
+
 
 Man darf keyword-Argumente und normale Argumente auch mischen. Dabei müssen die normalen Argumente zuerst angegeben werden, danach die keyword-Argumente.
 ```{python}
@@ -156,10 +158,12 @@ schreibeHallo("Max", alter=14)
 Verwendet man nach einem keyword-Argument ein nicht-keyword-Argument, so führt das zu einem Fehler:
 ```{python}
 #| error: true
-schreibeHallo(name="Max", 14)
+schreibeHallo(name="Max", alter)
 ```
 
 ## optionale Argumente und default-Werte
+
+
 Es ist möglich, in der Funktionsdefinition für Argumente default-Werte anzugeben. Diese Werte werden verwendet, wenn beim Aufruf der Funktion kein entsprechendes Argument angegeben wird.
 ```{python}
 def schreibeHallo(name, alter=30):
@@ -181,6 +185,8 @@ def schreibeHallo(name="John", alter=30):
     ...
 ```
 
+
+
 ```{python}
 #| echo: false
 def schreibeHallo(name="John", alter=30):
@@ -196,6 +202,9 @@ def schreibeHallo(name="John", alter=30):
 schreibeHallo("Max")
 schreibeHallo()
 ```
+
+
+
 
 Gibt es Argumente ohne default-Wert, müssen diese bei der Definition vor den Argumenten mit default-Wert angegeben werden. Folgendes führt zu einem Fehler:
 ```python

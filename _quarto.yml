@@ -4,13 +4,21 @@ project:
 
 website:
   title: "Fabian Bühler"
+  navbar:
+    background: primary
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "PK Programmieren"
+        href: pk-prog.qmd
+
   sidebar:
+    title: "PK Programmieren"
     style: "docked"
     search: false
     contents:
-      - href: index.qmd
-        text: Home
       - pk-prog.qmd
+      - pk-prog_einfPython.qmd
   
 format:
   html:
