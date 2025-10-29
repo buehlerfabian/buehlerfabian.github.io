@@ -1,6 +1,0 @@
----
-title: "Lösungen"
----
-
-- [Übung: Programmieren einer Folge in Python](UebCollatzLsg.qmd)
-- [Übungen zu diskretem Wachstum](UebWachstumLsg.qmd)

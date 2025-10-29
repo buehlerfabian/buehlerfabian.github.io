@@ -2,4 +2,7 @@
 title: "P-Kurs Programmieren"
 ---
 
-Hier finden sich die Materialien zum P-Kurs Programmieren.
+### Einführung in Python
+[Skript](pk-prog_einfPython.qmd)
+
+### Lösungen zu den Aufgaben

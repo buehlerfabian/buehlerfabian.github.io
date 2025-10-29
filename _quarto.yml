@@ -13,20 +13,6 @@ website:
         href: 11imp/11imp.qmd
       - text: "PK Programmieren"
         href: pk-programmieren/pk-prog.qmd
-
-  sidebar:
-    - title: "PK Programmieren"
-      style: "docked"
-      search: false
-      contents:
-        - pk-programmieren/pk-prog.qmd
-        - pk-programmieren/pk-prog_einfPython.qmd
-      
-    - title: "IMP Klasse 11"
-      contents:
-        - 11imp/11imp.qmd
-        - 11imp/11imp-Loesungen.qmd
-        - pk-programmieren/pk-prog_einfPython.qmd
   
 format:
   html:

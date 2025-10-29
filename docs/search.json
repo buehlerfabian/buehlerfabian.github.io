@@ -63,15 +63,39 @@
     "text": "lokaler und globaler Scope"
   },
   {
-    "objectID": "11imp/11imp-Loesungen.html",
-    "href": "11imp/11imp-Loesungen.html",
-    "title": "Lösungen",
+    "objectID": "11imp/UebCollatzLsg.html",
+    "href": "11imp/UebCollatzLsg.html",
+    "title": "Übung: Programmieren einer Folge in Python – Lösung",
     "section": "",
-    "text": "Übung: Programmieren einer Folge in Python\nÜbungen zu diskretem Wachstum",
-    "crumbs": [
-      "IMP Klasse 11",
-      "Lösungen"
-    ]
+    "text": "Die Prüfung, ob a_n gerade oder ungerade ist, wird am besten mit dem Modulo-Operator % durchgeführt. Der Ausdruck a_n % 2 liefert den Rest der Division von a_n durch 2. Wenn dieser Rest 0 ist, ist die Zahl gerade, andernfalls ungerade.\n\ndef collatz_next(a_n):\n    if a_n % 2 == 0:\n        return a_n // 2\n    else:\n        return 3 * a_n + 1"
+  },
+  {
+    "objectID": "11imp/UebCollatzLsg.html#aufgabe",
+    "href": "11imp/UebCollatzLsg.html#aufgabe",
+    "title": "Übung: Programmieren einer Folge in Python – Lösung",
+    "section": "",
+    "text": "Die Prüfung, ob a_n gerade oder ungerade ist, wird am besten mit dem Modulo-Operator % durchgeführt. Der Ausdruck a_n % 2 liefert den Rest der Division von a_n durch 2. Wenn dieser Rest 0 ist, ist die Zahl gerade, andernfalls ungerade.\n\ndef collatz_next(a_n):\n    if a_n % 2 == 0:\n        return a_n // 2\n    else:\n        return 3 * a_n + 1"
+  },
+  {
+    "objectID": "11imp/UebCollatzLsg.html#aufgabe-1",
+    "href": "11imp/UebCollatzLsg.html#aufgabe-1",
+    "title": "Übung: Programmieren einer Folge in Python – Lösung",
+    "section": "2. Aufgabe",
+    "text": "2. Aufgabe\n\ndef collatz_sequence(start_value):\n    a_n = start_value\n    while a_n != 1:\n        print(a_n)\n        a_n = collatz_next(a_n)\n    print(a_n)\n\nEs wäre auch möglich, anstelle der lokalen Variable a_n direkt mit start_value zu arbeiten. Die abschließende print(a_n)-Anweisung ist notwendig, um die 1 am Ende der Folge auch noch auszugeben."
+  },
+  {
+    "objectID": "11imp/UebCollatzLsg.html#aufgabe-2",
+    "href": "11imp/UebCollatzLsg.html#aufgabe-2",
+    "title": "Übung: Programmieren einer Folge in Python – Lösung",
+    "section": "3. Aufgabe",
+    "text": "3. Aufgabe\n\ndef collatz_length(start_value):\n    a_n = start_value\n    length = 1  # Startwert zählt als erstes Glied\n    while a_n != 1:\n        a_n = collatz_next(a_n)\n        length += 1\n    return length\n\nDer Ansatz entspricht dem der vorherigen Aufgabe, nur wird hier keine Ausgabe erzeugt, sondern statt dessen eine Zählvariable length verwendet, die bei jedem Schritt um 1 erhöht wird. Am Ende wird die Länge der Folge zurückgegeben."
+  },
+  {
+    "objectID": "11imp/11imp.html",
+    "href": "11imp/11imp.html",
+    "title": "IMP Klasse 11",
+    "section": "",
+    "text": "Lösungen\n\nÜbung: Programmieren einer Folge in Python\nÜbungen zu diskretem Wachstum\n\n\n\nPython\n\nEinführung in Python"
   },
   {
     "objectID": "11imp/UebWachstumLsg.html",
@@ -130,53 +154,11 @@
     "text": "Aufgabe 7\n\na)\n\ndarlehen = 300000\nmonat = 0\nbezahlt = 0\nwhile darlehen &gt; 0:\n    monat += 1\n    if monat % 12 == 0:\n        darlehen = darlehen * 1.03\n    if monat %12 == 1:\n        if darlehen &gt;= 18000:\n            darlehen -= 18000\n            bezahlt += 18000\n        else:\n            bezahlt += darlehen\n            darlehen = 0\n\nprint(f\"Nach {monat} Monaten ist das Darlehen getilt.\")\nprint(f\"Insgesamt wurde {bezahlt:.2f} € bezahlt.\")\n\nNach 265 Monaten ist das Darlehen getilt.\nInsgesamt wurde 404679.12 € bezahlt.\n\n\n\n\nb)\n\ndarlehen = 300000\nmonat = 0\nbezahlt = 0\nwhile darlehen &gt; 0:\n    monat += 1\n    darlehen *= 1.0025\n    if darlehen &gt; 1500:\n        darlehen -= 1500\n        bezahlt += 1500\n    else:\n        bezahlt += darlehen\n        darlehen = 0\n\nprint(f\"Nach {monat} Monaten ist das Darlehen getilt.\")\nprint(f\"Insgesamt wurde {bezahlt:.2f} € bezahlt.\")\n\nNach 278 Monaten ist das Darlehen getilt.\nInsgesamt wurde 416408.40 € bezahlt.\n\n\n\n\nc)\nFall a):\n\ndarlehen = 300000\nmonat = 0\nbezahlt = 0\nwhile darlehen &gt; 0:\n    monat += 1\n    if monat % 12 == 0:\n        darlehen = darlehen * 1.03\n    if monat %12 == 1:\n        if darlehen &gt;= 18000:\n            darlehen -= 18000\n            bezahlt += 18000\n        else:\n            bezahlt += darlehen\n            darlehen = 0\n    if monat%24 == 1:\n        if darlehen &gt;= 6000:\n            darlehen -= 6000\n            bezahlt += 6000\n        else:\n            bezahlt += darlehen\n            darlehen = 0\n\nprint(f\"Nach {monat} Monaten ist das Darlehen getilt.\")\nprint(f\"Insgesamt wurde {bezahlt:.2f} € bezahlt.\")\n\nNach 217 Monaten ist das Darlehen getilt.\nInsgesamt wurde 381206.46 € bezahlt.\n\n\nFall b):\n\ndarlehen = 300000\nmonat = 0\nbezahlt = 0\nwhile darlehen &gt; 0:\n    monat += 1\n    darlehen *= 1.0025\n    if darlehen &gt; 1500:\n        darlehen -= 1500\n        bezahlt += 1500\n    else:\n        bezahlt += darlehen\n        darlehen = 0\n    if monat%24 == 1:\n        if darlehen &gt;= 6000:\n            darlehen -= 6000\n            bezahlt += 6000\n        else:\n            bezahlt += darlehen\n            darlehen = 0\n\nprint(f\"Nach {monat} Monaten ist das Darlehen getilt.\")\nprint(f\"Insgesamt wurde {bezahlt:.2f} € bezahlt.\")\n\nNach 221 Monaten ist das Darlehen getilt.\nInsgesamt wurde 390041.04 € bezahlt."
   },
   {
-    "objectID": "11imp/11imp.html",
-    "href": "11imp/11imp.html",
-    "title": "IMP Klasse 11",
-    "section": "",
-    "text": "Hier finden sich die Materialien zum IMP-Unterricht in Klasse 11.",
-    "crumbs": [
-      "IMP Klasse 11"
-    ]
-  },
-  {
-    "objectID": "11imp/UebCollatzLsg.html",
-    "href": "11imp/UebCollatzLsg.html",
-    "title": "Übung: Programmieren einer Folge in Python – Lösung",
-    "section": "",
-    "text": "Die Prüfung, ob a_n gerade oder ungerade ist, wird am besten mit dem Modulo-Operator % durchgeführt. Der Ausdruck a_n % 2 liefert den Rest der Division von a_n durch 2. Wenn dieser Rest 0 ist, ist die Zahl gerade, andernfalls ungerade.\n\ndef collatz_next(a_n):\n    if a_n % 2 == 0:\n        return a_n // 2\n    else:\n        return 3 * a_n + 1"
-  },
-  {
-    "objectID": "11imp/UebCollatzLsg.html#aufgabe",
-    "href": "11imp/UebCollatzLsg.html#aufgabe",
-    "title": "Übung: Programmieren einer Folge in Python – Lösung",
-    "section": "",
-    "text": "Die Prüfung, ob a_n gerade oder ungerade ist, wird am besten mit dem Modulo-Operator % durchgeführt. Der Ausdruck a_n % 2 liefert den Rest der Division von a_n durch 2. Wenn dieser Rest 0 ist, ist die Zahl gerade, andernfalls ungerade.\n\ndef collatz_next(a_n):\n    if a_n % 2 == 0:\n        return a_n // 2\n    else:\n        return 3 * a_n + 1"
-  },
-  {
-    "objectID": "11imp/UebCollatzLsg.html#aufgabe-1",
-    "href": "11imp/UebCollatzLsg.html#aufgabe-1",
-    "title": "Übung: Programmieren einer Folge in Python – Lösung",
-    "section": "2. Aufgabe",
-    "text": "2. Aufgabe\n\ndef collatz_sequence(start_value):\n    a_n = start_value\n    while a_n != 1:\n        print(a_n)\n        a_n = collatz_next(a_n)\n    print(a_n)\n\nEs wäre auch möglich, anstelle der lokalen Variable a_n direkt mit start_value zu arbeiten. Die abschließende print(a_n)-Anweisung ist notwendig, um die 1 am Ende der Folge auch noch auszugeben."
-  },
-  {
-    "objectID": "11imp/UebCollatzLsg.html#aufgabe-2",
-    "href": "11imp/UebCollatzLsg.html#aufgabe-2",
-    "title": "Übung: Programmieren einer Folge in Python – Lösung",
-    "section": "3. Aufgabe",
-    "text": "3. Aufgabe\n\ndef collatz_length(start_value):\n    a_n = start_value\n    length = 1  # Startwert zählt als erstes Glied\n    while a_n != 1:\n        a_n = collatz_next(a_n)\n        length += 1\n    return length\n\nDer Ansatz entspricht dem der vorherigen Aufgabe, nur wird hier keine Ausgabe erzeugt, sondern statt dessen eine Zählvariable length verwendet, die bei jedem Schritt um 1 erhöht wird. Am Ende wird die Länge der Folge zurückgegeben."
-  },
-  {
     "objectID": "pk-programmieren/pk-prog_einfPython.html",
     "href": "pk-programmieren/pk-prog_einfPython.html",
     "title": "Einführung in Python",
     "section": "",
-    "text": "1. Grundlagen\n2. Flow control\n3. Funktionen",
-    "crumbs": [
-      "PK Programmieren",
-      "Einführung in Python"
-    ]
+    "text": "1. Grundlagen\n2. Flow control\n3. Funktionen"
   },
   {
     "objectID": "pk-programmieren/02-flow-control.html",
@@ -204,10 +186,6 @@
     "href": "pk-programmieren/pk-prog.html",
     "title": "P-Kurs Programmieren",
     "section": "",
-    "text": "Hier finden sich die Materialien zum P-Kurs Programmieren.",
-    "crumbs": [
-      "PK Programmieren",
-      "P-Kurs Programmieren"
-    ]
+    "text": "Einführung in Python\nSkript\n\n\nLösungen zu den Aufgaben"
   }
 ]

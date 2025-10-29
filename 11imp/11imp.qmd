@@ -2,4 +2,11 @@
 title: "IMP Klasse 11"
 ---
 
-Hier finden sich die Materialien zum IMP-Unterricht in Klasse 11.
+### Lösungen
+
+- [Übung: Programmieren einer Folge in Python](UebCollatzLsg.qmd)
+- [Übungen zu diskretem Wachstum](UebWachstumLsg.qmd)
+
+### Python
+
+- [Einführung in Python](../pk-programmieren/pk-prog_einfPython.qmd)
