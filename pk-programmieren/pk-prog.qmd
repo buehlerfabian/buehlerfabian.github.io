@@ -6,3 +6,5 @@ title: "P-Kurs Programmieren"
 [Skript](pk-prog_einfPython.qmd)
 
 ### Lösungen zu den Aufgaben
+- [Übungen/Kontrollfragen zu 01 - Grundlagen](UebGrundlagenLsg.qmd)
+- [Übungen/Kontrollfragen zu 02 - Flow control](UebFlowControlLsg.qmd)

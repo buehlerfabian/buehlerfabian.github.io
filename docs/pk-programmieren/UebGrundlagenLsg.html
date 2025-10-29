@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Grundlagen – Fabian Bühler</title>
+<title>Übungen/Kontrollfragen zu 01 - Grundlagen – Lösungen – Fabian Bühler</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3914,20 +3914,24 @@ vertical-align: -.125em;
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#datentypen" id="toc-datentypen" class="nav-link active" data-scroll-target="#datentypen">Datentypen</a></li>
-  <li><a href="#umgang-mit-strings" id="toc-umgang-mit-strings" class="nav-link" data-scroll-target="#umgang-mit-strings">Umgang mit Strings</a></li>
-  <li><a href="#variablen-verwenden" id="toc-variablen-verwenden" class="nav-link" data-scroll-target="#variablen-verwenden">Variablen verwenden</a></li>
-  <li><a href="#input-befehl" id="toc-input-befehl" class="nav-link" data-scroll-target="#input-befehl">Input-Befehl</a></li>
-  <li><a href="#formatierte-ausgabe-mit-f-strings" id="toc-formatierte-ausgabe-mit-f-strings" class="nav-link" data-scroll-target="#formatierte-ausgabe-mit-f-strings">Formatierte Ausgabe mit f-Strings</a></li>
+  <li><a href="#aufgabe" id="toc-aufgabe" class="nav-link active" data-scroll-target="#aufgabe">1. Aufgabe</a></li>
+  <li><a href="#aufgabe-1" id="toc-aufgabe-1" class="nav-link" data-scroll-target="#aufgabe-1">3. Aufgabe</a></li>
+  <li><a href="#aufgaben" id="toc-aufgaben" class="nav-link" data-scroll-target="#aufgaben">4. Aufgaben</a></li>
+  <li><a href="#aufgabe-2" id="toc-aufgabe-2" class="nav-link" data-scroll-target="#aufgabe-2">5. Aufgabe</a></li>
+  <li><a href="#aufgabe-3" id="toc-aufgabe-3" class="nav-link" data-scroll-target="#aufgabe-3">6. Aufgabe</a></li>
+  <li><a href="#aufgabe-4" id="toc-aufgabe-4" class="nav-link" data-scroll-target="#aufgabe-4">7. Aufgabe</a></li>
+  <li><a href="#aufgabe-5" id="toc-aufgabe-5" class="nav-link" data-scroll-target="#aufgabe-5">8. Aufgabe</a></li>
+  <li><a href="#aufgabe-6" id="toc-aufgabe-6" class="nav-link" data-scroll-target="#aufgabe-6">9. Aufgabe</a></li>
+  <li><a href="#aufgabe-7" id="toc-aufgabe-7" class="nav-link" data-scroll-target="#aufgabe-7">10. Aufgabe</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="01-grundlagen.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Grundlagen</h1>
+<h1 class="title">Übungen/Kontrollfragen zu 01 - Grundlagen – Lösungen</h1>
 </div>
 
 
@@ -3944,343 +3948,85 @@ vertical-align: -.125em;
 </header>
 
 
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Operator</th>
-<th>Bedeutung</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>+</td>
-<td>Addition</td>
-</tr>
-<tr class="even">
-<td>-</td>
-<td>Subtraktion</td>
-</tr>
-<tr class="odd">
-<td>*</td>
-<td>Multiplikation</td>
-</tr>
-<tr class="even">
-<td>/</td>
-<td>Division</td>
-</tr>
-<tr class="odd">
-<td>//</td>
-<td>ganzzahlige Division</td>
-</tr>
-<tr class="even">
-<td>%</td>
-<td>Modulo (Rest der Division)</td>
-</tr>
-<tr class="odd">
-<td>**</td>
-<td>Potenzierung</td>
-</tr>
-</tbody>
-</table>
-<div id="821ae63e" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">+</span> <span class="dv">2</span>)  </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">-</span> <span class="dv">2</span>)  </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">*</span> <span class="dv">2</span>)  </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">/</span> <span class="dv">2</span>)  </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">//</span> <span class="dv">2</span>)  </span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">%</span> <span class="dv">2</span>)  </span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">3</span><span class="op">**</span><span class="dv">2</span>)  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>5
-1
-6
-1.5
-1
-1
-9</code></pre>
-</div>
-</div>
-<p>Erzeugung von Leerzeilen: Die Zeichenkette <code>\n</code> in einem String erzeugt eine neue Zeile.</p>
-<div id="7771a3c1" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Text</span><span class="ch">\n</span><span class="st">Text&quot;</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Text&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Text
-Text
-
-
-Text</code></pre>
-</div>
-</div>
-<p>Reihenfolge der Operatoren: - Klammern haben Vorrang - Multiplikation vor Addition - Potenzierung vor Multiplikation vor Addition</p>
-<div id="744fff11" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">+</span> <span class="dv">2</span> <span class="op">*</span> <span class="dv">5</span>)  <span class="co"># Multiplikation vor Addition</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>((<span class="dv">3</span> <span class="op">+</span> <span class="dv">2</span>) <span class="op">*</span> <span class="dv">5</span>)  <span class="co"># Klammern haben Vorrang</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">+</span> <span class="dv">2</span> <span class="op">*</span> <span class="dv">5</span><span class="op">**</span><span class="dv">2</span>)  <span class="co"># Potenzierung vor Multiplikation vor Addition</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>13
-25
-53</code></pre>
-</div>
-</div>
-<section id="datentypen" class="level1">
-<h1>Datentypen</h1>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Typname</th>
-<th>Art der Daten</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>integer</td>
-<td>ganze Zahlen</td>
-</tr>
-<tr class="even">
-<td>float</td>
-<td>Gleitkommazahlen</td>
-</tr>
-<tr class="odd">
-<td>String</td>
-<td>Zeichenketten</td>
-</tr>
-<tr class="even">
-<td>Boolean</td>
-<td>Wahrheitswert (<code>True</code> oder <code>False</code>)</td>
-</tr>
-<tr class="odd">
-<td>NoneType</td>
-<td>Wert <code>None</code></td>
-</tr>
-</tbody>
-</table>
-<div id="3f3a0ea3" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="dv">42</span>))  <span class="co"># Integer (Ganzzahl)</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="fl">3.14</span>))  <span class="co"># Float (Gleitkommazahl)</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="st">&quot;Hallo&quot;</span>))  <span class="co"># String (Text)</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="va">True</span>), <span class="bu">type</span>(<span class="va">False</span>))  <span class="co"># Boolean (Wahrheitswert)</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="va">None</span>))  <span class="co"># NoneType (kein Wert)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;class &#39;int&#39;&gt;
-&lt;class &#39;float&#39;&gt;
-&lt;class &#39;str&#39;&gt;
-&lt;class &#39;bool&#39;&gt; &lt;class &#39;bool&#39;&gt;
-&lt;class &#39;NoneType&#39;&gt;</code></pre>
-</div>
-</div>
+<section id="aufgabe" class="level1">
+<h1>1. Aufgabe</h1>
+<p>Bei <code>print(alter)</code> wird der Wert der Variablen <code>alter</code> ausgegeben, bei <code>print(&#39;alter&#39;)</code> wird der Text ‘alter’ ausgegeben.</p>
 </section>
-<section id="umgang-mit-strings" class="level1">
-<h1>Umgang mit Strings</h1>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Operation</th>
-<th>Code</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Konkatenation (Verkettung)</td>
-<td><code>&quot;Alice&quot; + &quot;Bob&quot;</code></td>
-</tr>
-<tr class="even">
-<td>Wiederholung</td>
-<td><code>&quot;Alice&quot; * 3</code></td>
-</tr>
-<tr class="odd">
-<td>Neue Zeile</td>
-<td><code>&quot;\n&quot;</code></td>
-</tr>
-<tr class="even">
-<td>Umwandeln in Großbuchstaben</td>
-<td><code>&quot;...&quot;.upper()</code></td>
-</tr>
-<tr class="odd">
-<td>Umwandeln in Kleinbuchstaben</td>
-<td><code>&quot;...&quot;.lower()</code></td>
-</tr>
-<tr class="even">
-<td>Leerzeichen entfernen am Rand</td>
-<td><code>&quot;...&quot;.strip()</code></td>
-</tr>
-</tbody>
-</table>
-<div id="7667cb0e" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Alice&quot;</span> <span class="op">+</span> <span class="st">&quot;Bob&quot;</span>) </span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Alice &quot;</span> <span class="op">*</span> <span class="dv">3</span>)  </span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Hallo</span><span class="ch">\n</span><span class="st">Welt&quot;</span>) </span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;mach mich groß&quot;</span>.upper())</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;MACH MICH KLEIN&quot;</span>.lower())</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;  zuschneiden bitte  &quot;</span>.strip())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>AliceBob
-Alice Alice Alice 
-Hallo
-Welt
-MACH MICH GROSS
-mach mich klein
-zuschneiden bitte</code></pre>
-</div>
-</div>
-<p>Mit f-Strings kann man Python-Ausdrücke in Strings einbetten. Alle Teile, die zwischen <code>{...}</code> eingeschlossen sind, werden als Python-Ausdrücke ausgewertet und das Ergebnis der Auswertung an dieser Stelle in den String eingefügt.</p>
-<div id="d1c397b7" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;2 + 2 = </span><span class="sc">{</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span><span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>2 + 2 = 4</code></pre>
-</div>
-</div>
-<p>Mit <code>len(...)</code> kann man die Länge eines Strings ermitteln.</p>
-<div id="6373f425" class="cell" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">&quot;Guten Morgen!&quot;</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(s))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>13</code></pre>
-</div>
-</div>
+<section id="aufgabe-1" class="level1">
+<h1>3. Aufgabe</h1>
+<p>Es wird <code>20</code> ausgegeben, da in der Zeile <code>alter + 1</code> die Variable <code>alter</code> nicht verändert wird.</p>
 </section>
-<section id="variablen-verwenden" class="level1">
-<h1>Variablen verwenden</h1>
-<p>Eine Variable ist wie eine “Schachtel” im Computerspeicher, wo man Daten ablegen kann. Weißt man einem Variablennamen mit <code>=</code> erstmals einen Wert zu, wird die entsprechende Variable im Computerspeicher angelegt.</p>
-<p>Eine Variable mit Namen <code>alter</code> wird angelegt und mit dem Wert <code>15</code> belegt:</p>
-<div id="1988deee" class="cell" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>alter <span class="op">=</span> <span class="dv">15</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Verwendet man im Folgenden den Namen <code>alter</code>, wird auf den gespeicherten Wert zugegriffen:</p>
-<div id="0ba064cd" class="cell" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(alter)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(alter <span class="op">+</span> <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>15
-20</code></pre>
-</div>
-</div>
-<p>Variablen haben einen Typ, der ihrem Inhalt entspricht:</p>
-<div id="ea67f0c8" class="cell" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(alter))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;class &#39;int&#39;&gt;</code></pre>
-</div>
-</div>
-<p>Der Variablentyp kann sich ändern, wenn die Variable mit einem neuen Wert belegt wird:</p>
-<div id="4dec7bf7" class="cell" data-execution_count="11">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>alter <span class="op">=</span> <span class="fl">2.5</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(alter))</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>alter <span class="op">=</span> <span class="st">&quot;fünfzehn&quot;</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(alter))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;class &#39;float&#39;&gt;
-&lt;class &#39;str&#39;&gt;</code></pre>
-</div>
-</div>
-<p>Für Variablennamen gelten folgende Regeln: - Dürfen nur Buchstaben, Zahlen und Unterstriche (_) enthalten - Dürfen nicht mit einer Zahl beginnen - Dürfen nur aus einem Wort bestehen (keine Leerzeichen)</p>
-<p>erlaubt z.B.: <code>mein_name</code>, <code>alter2</code>, <code>_preis</code></p>
-<p>nicht erlaubt z.B.: <code>2alter</code>, <code>mein name</code>, <code>mein-name</code></p>
+<section id="aufgaben" class="level1">
+<h1>4. Aufgaben</h1>
+<p>nicht gültig sind: <code>2alter</code>, <code>mein name</code>, <code>mein-name</code></p>
 </section>
-<section id="input-befehl" class="level1">
-<h1>Input-Befehl</h1>
-<p>Der Befehl <code>input(&quot;...&quot;)</code> gibt den angegebenen String aus und wartet anschließend auf eine Eingabe des Benutzers. Die Eingabe wird als String-Wert dem Programm zurückgegeben und kann z.B. in einer Variable abgelegt werden.</p>
-<p>Hier wird die Eingabe des Benutzers in der Variable <code>name</code> abgelegt:</p>
-<pre><code>name = input(&quot;Wie heißt du?&quot;)</code></pre>
-<div id="89d65664" class="cell" data-execution_count="12">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Wie heißt du? &quot;</span>) <span class="co"># Eingabe: Dornröschen</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Hallo &quot;</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">&quot;!&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="403da7f4" class="cell" data-execution_count="13">
-<div class="cell-output cell-output-stdout">
-<pre><code>Hallo Dornröschen!</code></pre>
-</div>
-</div>
-<p>Achtung: <code>input()</code> gibt immer einen String zurück.</p>
-<div id="457226ce" class="cell" data-execution_count="14">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>eingabe <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Gib eine Zahl ein: &quot;</span>) <span class="co"># Eingabe: 42</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(eingabe))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="88b251b9" class="cell" data-execution_count="15">
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;class &#39;str&#39;&gt;</code></pre>
-</div>
-</div>
-<p>Der eine Zahl enthaltende String kann aber in einen Zahltyp (<code>int</code> oder <code>float</code>) umgewandelt werden mit <code>int(...)</code> oder <code>float(...)</code>.</p>
-<div id="ddaa29a2" class="cell" data-execution_count="16">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>eingabe <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Gib eine Zahl ein: &quot;</span>) <span class="co"># Eingabe: 42</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>zahl <span class="op">=</span> <span class="bu">int</span>(eingabe)</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(zahl))</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(zahl <span class="op">+</span> <span class="dv">5</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="982aa730" class="cell" data-execution_count="17">
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;class &#39;int&#39;&gt;
-47</code></pre>
-</div>
-</div>
-<p>Analog kann man auch in <code>float</code> oder <code>String</code> umwandeln:</p>
-<div id="7d882a04" class="cell" data-execution_count="18">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>var <span class="op">=</span> <span class="bu">float</span>(<span class="st">&quot;42.5&quot;</span>)</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(var))</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>zahl <span class="op">=</span> <span class="dv">17</span></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="bu">str</span>(zahl)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;class &#39;float&#39;&gt;
-&lt;class &#39;str&#39;&gt;</code></pre>
-</div>
-</div>
+<section id="aufgabe-2" class="level1">
+<h1>5. Aufgabe</h1>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">&quot;Max&quot;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>alter <span class="op">=</span> <span class="dv">16</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Ich heiße </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss"> und bin </span><span class="sc">{</span>alter<span class="sc">}</span><span class="ss"> Jahre alt.&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="formatierte-ausgabe-mit-f-strings" class="level1">
-<h1>Formatierte Ausgabe mit f-Strings</h1>
-<p>Bei der Ausgabe mit f-Strings kann man Formatierungsvorgaben machen.</p>
-<div id="8744e4a2" class="cell" data-execution_count="19">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>name1 <span class="op">=</span> <span class="st">&quot;Alice&quot;</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>name2 <span class="op">=</span> <span class="st">&quot;Bob&quot;</span></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>name3 <span class="op">=</span> <span class="st">&quot;Charlie&quot;</span></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>alter1 <span class="op">=</span> <span class="dv">15</span></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>alter2 <span class="op">=</span> <span class="dv">16</span></span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>alter3 <span class="op">=</span> <span class="dv">18</span></span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>groesse1 <span class="op">=</span> <span class="fl">1.70</span></span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>groesse2 <span class="op">=</span> <span class="fl">1.85</span></span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>groesse3 <span class="op">=</span> <span class="fl">1.7382</span></span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Name     Alter   Größe&quot;</span>)</span>
-<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span>name1<span class="sc">:8}</span><span class="ss"> </span><span class="sc">{</span>alter1<span class="sc">:5d}</span><span class="ss"> </span><span class="sc">{</span>groesse1<span class="sc">:7.2f}</span><span class="ss">&quot;</span>)</span>
-<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span>name2<span class="sc">:8}</span><span class="ss"> </span><span class="sc">{</span>alter2<span class="sc">:5d}</span><span class="ss"> </span><span class="sc">{</span>groesse2<span class="sc">:7.2f}</span><span class="ss">&quot;</span>)</span>
-<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span>name3<span class="sc">:8}</span><span class="ss"> </span><span class="sc">{</span>alter3<span class="sc">:5d}</span><span class="ss"> </span><span class="sc">{</span>groesse3<span class="sc">:7.2f}</span><span class="ss">&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Name     Alter   Größe
-Alice       15    1.70
-Bob         16    1.85
-Charlie     18    1.74</code></pre>
-</div>
-</div>
-<p>Möglichkeiten der Formatierung:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 42%">
-<col style="width: 57%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Format</th>
-<th>Bedeutung</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>:8</td>
-<td>mindestens 8 Zeichen breit, rechtsbündig (Standard)</td>
-</tr>
-<tr class="even">
-<td>:5d</td>
-<td>mindestens 5 Zeichen breit, rechtsbündig, Integer (d = decimal)</td>
-</tr>
-<tr class="odd">
-<td>:7.2f</td>
-<td>mindestens 7 Zeichen breit, rechtsbündig, Fließkommazahl (f = float) mit 2 Nachkommastellen</td>
-</tr>
-</tbody>
-</table>
-<p>Es gibt viele weitere Formatierungsmöglichkeiten. Eine vollständige Übersicht findet man in der Python-Dokumentation:<a href="https://docs.python.org/3/library/string.html#formatspec">https://docs.python.org/3/library/string.html#formatspec</a></p>
+<section id="aufgabe-3" class="level1">
+<h1>6. Aufgabe</h1>
+<p><code>anz_hamburger</code> ist eine Variable vom Typ <code>int</code>. Strings und <code>int</code>-Variablen lassen sich nicht mit dem <code>+</code>-Operator verknüpfen. Das funktioniert nur, wenn alle beteiligten Variablen vom Typ <code>str</code> sind.</p>
+<p>Korrektur:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>anz_hamburger <span class="op">=</span> <span class="dv">8</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Ich habe &quot;</span> <span class="op">+</span> <span class="bu">str</span>(anz_hamburger) <span class="op">+</span> <span class="st">&quot; Hamburger gegessen.&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>oder mit f-String:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>anz_hamburger <span class="op">=</span> <span class="dv">8</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Ich habe </span><span class="sc">{</span>anz_hamburger<span class="sc">}</span><span class="ss"> Hamburger gegessen.&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="aufgabe-4" class="level1">
+<h1>7. Aufgabe</h1>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>zahl1 <span class="op">=</span> <span class="dv">15</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>zahl2 <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>summe <span class="op">=</span> zahl1 <span class="op">+</span> zahl2</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>differenz <span class="op">=</span> zahl1 <span class="op">-</span> zahl2</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>produkt <span class="op">=</span> zahl1 <span class="op">*</span> zahl2</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>quotient <span class="op">=</span> zahl1 <span class="op">/</span> zahl2</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Summe: </span><span class="sc">{</span>summe<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Differenz: </span><span class="sc">{</span>differenz<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Produkt: </span><span class="sc">{</span>produkt<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Quotient: </span><span class="sc">{</span>quotient<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="aufgabe-5" class="level1">
+<h1>8. Aufgabe</h1>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Wie heißt du? &quot;</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>laenge <span class="op">=</span> <span class="bu">len</span>(name)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Dein Name hat </span><span class="sc">{</span>laenge<span class="sc">}</span><span class="ss"> Zeichen.&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Alternativ ohne zusätzliche Variable:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Wie heißt du? &quot;</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Dein Name hat </span><span class="sc">{</span><span class="bu">len</span>(name)<span class="sc">}</span><span class="ss"> Zeichen.&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="aufgabe-6" class="level1">
+<h1>9. Aufgabe</h1>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>groesse <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">&quot;Wie groß bist du (in m)? &quot;</span>))</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>gewicht <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">&quot;Wie viel wiegst du (in kg)? &quot;</span>))</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>bmi <span class="op">=</span> gewicht <span class="op">/</span> (groesse <span class="op">**</span> <span class="dv">2</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Dein BMI beträgt: </span><span class="sc">{</span>bmi<span class="sc">:.2f}</span><span class="ss">&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="aufgabe-7" class="level1">
+<h1>10. Aufgabe</h1>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>name1 <span class="op">=</span> <span class="st">&quot;Anna&quot;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>alter1 <span class="op">=</span> <span class="dv">23</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>groesse1 <span class="op">=</span> <span class="fl">1.68</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>gewicht1 <span class="op">=</span> <span class="fl">65.0</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>name2 <span class="op">=</span> <span class="st">&quot;Berta&quot;</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>alter2 <span class="op">=</span> <span class="dv">30</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>groesse2 <span class="op">=</span> <span class="fl">1.75</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>gewicht2 <span class="op">=</span> <span class="fl">70.5</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>name3 <span class="op">=</span> <span class="st">&quot;Clara&quot;</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>alter3 <span class="op">=</span> <span class="dv">27</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>groesse3 <span class="op">=</span> <span class="fl">1.62</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>gewicht3 <span class="op">=</span> <span class="fl">55.0</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span>name1<span class="sc">:8}</span><span class="ss"> </span><span class="sc">{</span>alter1<span class="sc">:5}</span><span class="ss"> </span><span class="sc">{</span>groesse1<span class="sc">:7.2f}</span><span class="ss"> </span><span class="sc">{</span>gewicht1<span class="sc">:8.1f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span>name2<span class="sc">:8}</span><span class="ss"> </span><span class="sc">{</span>alter2<span class="sc">:5}</span><span class="ss"> </span><span class="sc">{</span>groesse2<span class="sc">:7.2f}</span><span class="ss"> </span><span class="sc">{</span>gewicht2<span class="sc">:8.1f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span>name3<span class="sc">:8}</span><span class="ss"> </span><span class="sc">{</span>alter3<span class="sc">:5}</span><span class="ss"> </span><span class="sc">{</span>groesse3<span class="sc">:7.2f}</span><span class="ss"> </span><span class="sc">{</span>gewicht3<span class="sc">:8.1f}</span><span class="ss">&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>

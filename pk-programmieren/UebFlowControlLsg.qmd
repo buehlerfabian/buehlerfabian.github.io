@@ -1,0 +1,203 @@
+---
+title: "Übungen/Kontrollfragen zu 02 - Flow control -- Lösungen"
+format: html
+embed-resources: true
+---
+
+# 1. Aufgabe
+```python
+groesse = float(input("Wie groß bist du (in m)? "))
+gewicht = float(input("Wie viel wiegst du (in kg)? "))
+
+bmi = gewicht / (groesse ** 2)
+
+print(f"Dein BMI beträgt: {bmi:.2f}")
+
+# Gewichtsklasse bestimmen
+if bmi < 16.5:
+    print("Gewichtsklasse: starkes Untergewicht")
+elif bmi < 18.5:
+    print("Gewichtsklasse: Untergewicht")
+elif bmi < 25:
+    print("Gewichtsklasse: Normalgewicht")
+elif bmi < 30:
+    print("Gewichtsklasse: Übergewicht")
+else:
+    print("Gewichtsklasse: starkes Übergewicht")
+```
+
+# 2. Aufgabe
+Der boolsche Ausdruck in der Zeile `if zahl = 11` ist falsch, da ein einzelnes Gleichheitszeichen (`=`) in Python für die Zuweisung verwendet wird. Für den Vergleich von Werten muss ein doppeltes Gleichheitszeichen (`==`) verwendet werden. Die korrekte Zeile lautet `if zahl == 11:`.
+
+# 3. Aufgabe
+```python
+from math import sqrt
+
+a = float(input("Gib den Wert für a ein: "))
+b = float(input("Gib den Wert für b ein: "))
+c = float(input("Gib den Wert für c ein: "))
+
+# Diskriminante berechnen
+diskriminante = b**2 - 4*a*c
+
+if diskriminante < 0:
+    print("Keine Lösung.")
+elif diskriminante == 0:
+    x = -b / (2*a)
+    print(f"Eine Lösung: x = {x}")
+else:
+    x1 = (-b + sqrt(diskriminante)) / (2*a)
+    x2 = (-b - sqrt(diskriminante)) / (2*a)
+    print(f"Zwei Lösungen: x1 = {x1}, x2 = {x2}")
+```
+
+# 4. Aufgabe
+```python
+jahr = int(input("Gib eine Jahreszahl ein: "))
+
+if jahr % 400 == 0:
+    print(f"{jahr} ist ein Schaltjahr.")
+elif jahr % 100 == 0:
+    print(f"{jahr} ist kein Schaltjahr.")
+elif jahr % 4 == 0:
+    print(f"{jahr} ist ein Schaltjahr.")
+else:
+    print(f"{jahr} ist kein Schaltjahr.")
+```
+
+Alternative kompakte Lösung:
+```python
+jahr = int(input("Gib eine Jahreszahl ein: "))
+
+if (jahr % 4 == 0 and jahr % 100 != 0) or (jahr % 400 == 0):
+    print(f"{jahr} ist ein Schaltjahr.")
+else:
+    print(f"{jahr} ist kein Schaltjahr.")
+```
+
+# 5. Aufgabe
+```python
+zahl = float(input("Gib eine Zahl ein: "))
+
+if (zahl > 0 or (-30 <= zahl <= -10)) and zahl != 42:
+    print("Eingabe korrekt")
+else:
+    print("Eingabe nicht korrekt")
+```
+
+# 6. Aufgabe
+```python
+korrekte_antwort = 17 * 12  # = 204
+max_versuche = 5
+versuche = 0
+
+while versuche < max_versuche:
+    antwort = int(input("Was ist 17 * 12? "))
+    versuche += 1
+    
+    if antwort == korrekte_antwort:
+        print("Richtig!")
+        break
+    else:
+        if versuche < max_versuche:
+            print(f"Falsch!")
+        else:
+            print(f"Falsch!")
+            print(f"Die richtige Antwort ist {korrekte_antwort}.")
+```
+
+# 7. Aufgabe
+```python
+gesuchte_zahl = 42
+versuche = 0
+
+print("Errate die Zahl!")
+
+while True:
+    eingabe = int(input("Gib eine Zahl ein: "))
+    versuche += 1
+    
+    if eingabe < gesuchte_zahl:
+        print("zu klein")
+    elif eingabe > gesuchte_zahl:
+        print("zu groß")
+    else:
+        print("richtig")
+        print(f"Du hast {versuche} Versuch(e) gebraucht.")
+        break
+```
+
+# 8. Aufgabe
+## a)
+```python
+a = int(input("Gib die erste Zahl ein: "))
+b = int(input("Gib die zweite Zahl ein: "))
+
+while b > 0:
+    h = a % b  
+    a = b
+    b = h
+
+print(f"Der größte gemeinsame Teiler ist: {a}")
+```
+
+## b)
+```python
+zaehler = int(input("Gib den Zähler ein: "))
+nenner = int(input("Gib den Nenner ein: "))
+
+a = zaehler
+b = nenner
+while b > 0:
+    h = a % b
+    a = b
+    b = h
+
+ggt = a  
+
+gekuerzter_zaehler = zaehler // ggt
+gekuerzter_nenner = nenner // ggt
+
+print(f"Gekürzter Bruch: {gekuerzter_zaehler}/{gekuerzter_nenner}")
+```
+
+# 9. Aufgabe
+```python
+anschaffungspreis = float(input("Anschaffungspreis (EUR): "))
+monatliche_rate = float(input("Monatliche Rate (EUR): "))
+zinssatz = float(input("Monatlicher Zinssatz (%): ")) / 100
+
+restbetrag = anschaffungspreis
+monat = 1
+gesamtbetrag = 0
+
+while restbetrag > 0:
+    # Zinsen für aktuellen Monat berechnen
+    zinsen = restbetrag * zinssatz
+    
+    # Prüfen, ob die Rate größer ist als der Restbetrag + Zinsen
+    if monatliche_rate > restbetrag + zinsen:
+        # Letzte Rate: nur Restbetrag + Zinsen
+        aktuelle_rate = restbetrag + zinsen
+        tilgung = restbetrag
+        restbetrag = 0
+    else:
+        # Normale Rate
+        aktuelle_rate = monatliche_rate
+        tilgung = aktuelle_rate - zinsen
+        restbetrag = restbetrag - tilgung
+    
+    # Ausgabe für aktuellen Monat
+    print(f"{monat}. Monat:")
+    print(f"    Zinsen: {zinsen:.2f} EUR")
+    print(f"    Rate: {aktuelle_rate:.2f} EUR")
+    print(f"    Tilgung: {tilgung:.2f} EUR")
+    print(f"    Restbetrag: {restbetrag + tilgung:.2f} EUR - {tilgung:.2f} EUR = {restbetrag:.2f} EUR")
+    
+    gesamtbetrag += aktuelle_rate
+    monat += 1
+
+# Zusammenfassung
+print(f"\nGesamtlaufzeit: {monat - 1} Monate")
+print(f"Insgesamt gezahlter Betrag: {gesamtbetrag:.2f} EUR")
+```

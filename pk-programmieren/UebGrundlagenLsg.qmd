@@ -1,0 +1,95 @@
+---
+title: "Übungen/Kontrollfragen zu 01 - Grundlagen -- Lösungen"
+format: html
+embed-resources: true
+---
+
+# 1. Aufgabe
+Bei `print(alter)` wird der Wert der Variablen `alter` ausgegeben, bei `print('alter')` wird der Text 'alter' ausgegeben.
+
+# 3. Aufgabe
+Es wird `20` ausgegeben, da in der Zeile `alter + 1` die Variable `alter` nicht verändert wird.
+
+# 4. Aufgaben
+nicht gültig sind: `2alter`, `mein name`, `mein-name`
+
+# 5. Aufgabe
+```python
+name = "Max"
+alter = 16
+print(f"Ich heiße {name} und bin {alter} Jahre alt.")
+```
+
+# 6. Aufgabe
+`anz_hamburger` ist eine Variable vom Typ `int`. Strings und `int`-Variablen lassen sich nicht mit dem `+`-Operator verknüpfen. Das funktioniert nur, wenn alle beteiligten Variablen vom Typ `str` sind.
+
+Korrektur:
+```python
+anz_hamburger = 8
+print("Ich habe " + str(anz_hamburger) + " Hamburger gegessen.")
+```
+
+oder mit f-String:
+```python
+anz_hamburger = 8
+print(f"Ich habe {anz_hamburger} Hamburger gegessen.")
+```
+
+# 7. Aufgabe
+```python
+zahl1 = 15
+zahl2 = 4
+
+summe = zahl1 + zahl2
+differenz = zahl1 - zahl2
+produkt = zahl1 * zahl2
+quotient = zahl1 / zahl2
+
+print(f"Summe: {summe}")
+print(f"Differenz: {differenz}")
+print(f"Produkt: {produkt}")
+print(f"Quotient: {quotient}")
+```
+
+# 8. Aufgabe
+```python
+name = input("Wie heißt du? ")
+laenge = len(name)
+print(f"Dein Name hat {laenge} Zeichen.")
+```
+
+Alternativ ohne zusätzliche Variable:
+```python
+name = input("Wie heißt du? ")
+print(f"Dein Name hat {len(name)} Zeichen.")
+```
+
+# 9. Aufgabe
+```python
+groesse = float(input("Wie groß bist du (in m)? "))
+gewicht = float(input("Wie viel wiegst du (in kg)? "))
+
+bmi = gewicht / (groesse ** 2)
+
+print(f"Dein BMI beträgt: {bmi:.2f}")
+```
+
+# 10. Aufgabe
+```python
+name1 = "Anna"
+alter1 = 23
+groesse1 = 1.68
+gewicht1 = 65.0
+name2 = "Berta"
+alter2 = 30
+groesse2 = 1.75
+gewicht2 = 70.5
+name3 = "Clara"
+alter3 = 27
+groesse3 = 1.62
+gewicht3 = 55.0
+
+print(f"{name1:8} {alter1:5} {groesse1:7.2f} {gewicht1:8.1f}")
+print(f"{name2:8} {alter2:5} {groesse2:7.2f} {gewicht2:8.1f}")
+print(f"{name3:8} {alter3:5} {groesse3:7.2f} {gewicht3:8.1f}")
+```
