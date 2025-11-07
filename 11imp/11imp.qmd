@@ -9,4 +9,4 @@ title: "IMP Klasse 11"
 
 ### Python
 
-- [Einführung in Python](../pk-programmieren/pk-prog_einfPython.qmd)
+- [Einführung in Python](./einf-python/11imp_einfPython.qmd)

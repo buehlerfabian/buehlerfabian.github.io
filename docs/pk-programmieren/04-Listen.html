@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Funktionen – Fabian Bühler</title>
+<title>Listen – Fabian Bühler</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3914,21 +3914,16 @@ vertical-align: -.125em;
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#definition-einer-funktion" id="toc-definition-einer-funktion" class="nav-link active" data-scroll-target="#definition-einer-funktion">Definition einer Funktion</a></li>
-  <li><a href="#funktionsdefinition-mit-argumenten" id="toc-funktionsdefinition-mit-argumenten" class="nav-link" data-scroll-target="#funktionsdefinition-mit-argumenten">Funktionsdefinition mit Argumenten</a></li>
-  <li><a href="#rückgabewerte" id="toc-rückgabewerte" class="nav-link" data-scroll-target="#rückgabewerte">Rückgabewerte</a></li>
-  <li><a href="#keyword-argumente" id="toc-keyword-argumente" class="nav-link" data-scroll-target="#keyword-argumente">keyword-Argumente</a></li>
-  <li><a href="#optionale-argumente-und-default-werte" id="toc-optionale-argumente-und-default-werte" class="nav-link" data-scroll-target="#optionale-argumente-und-default-werte">optionale Argumente und default-Werte</a></li>
-  <li><a href="#lokaler-und-globaler-scope" id="toc-lokaler-und-globaler-scope" class="nav-link" data-scroll-target="#lokaler-und-globaler-scope">lokaler und globaler Scope</a></li>
+  <li><a href="#zugriff-auf-listenelemente" id="toc-zugriff-auf-listenelemente" class="nav-link active" data-scroll-target="#zugriff-auf-listenelemente">Zugriff auf Listenelemente</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="03-Funktionen.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Funktionen</h1>
+<h1 class="title">Listen</h1>
 </div>
 
 
@@ -3945,233 +3940,79 @@ vertical-align: -.125em;
 </header>
 
 
-<p><code>print(...)</code> oder <code>input(...)</code> oder <code>len(...)</code> sind Beispiele für (bereits vorhandene) Funktionen in Python. Man benutzt Funktionen immer auf die gleiche Weise: Man schreibt den Funktionsnamen und in runden Klammern die sog. Argumente, die der Funktion mitgegeben werden.</p>
+<p>Listen sind eine Datenstruktur, die “unter dem Dach” einer Variable mehrere Daten speichern kann. Eine Liste wird in Python mit eckigen Klammern <code>[]</code> definiert. Beispiel:</p>
+<div id="b9e9f6e7" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>meine_liste <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>]</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(meine_liste)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[3, 5, 7, 9]</code></pre>
+</div>
+</div>
+<p>Die einzelnen Elemente einer Liste werden <em>items</em> genannt. Die Items in einer Liste können unterschiedliche Datentypen haben:</p>
+<div id="3c4d1b20" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>gemischte_liste <span class="op">=</span> [<span class="dv">42</span>, <span class="st">&quot;Hallo&quot;</span>, <span class="fl">3.14</span>, <span class="va">True</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gemischte_liste)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[42, &#39;Hallo&#39;, 3.14, True]</code></pre>
+</div>
+</div>
+<p>Eine Liste kann auch leer sein:</p>
+<div id="2a769f1d" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>leere_liste <span class="op">=</span> []</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(leere_liste)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[]</code></pre>
+</div>
+</div>
+<section id="zugriff-auf-listenelemente" class="level2">
+<h2 class="anchored" data-anchor-id="zugriff-auf-listenelemente">Zugriff auf Listenelemente</h2>
+<p>Die Elemente einer Liste sind durchnummeriert, beginnend bei 0. In der Liste <code class="sourceCode python">gemischte_liste <span class="op">=</span> [<span class="dv">42</span>, <span class="st">&quot;Hallo&quot;</span>, <span class="fl">3.14</span>, <span class="va">True</span>]</code> aus dem obigen Beispiel hat also die folgenden Indizes:</p>
 <ul>
-<li><code>print(...)</code>: Funktion schreibt den Python-Ausdruck, der als Argument mitgegeben wird, in die Konsole.</li>
-<li><code>input(...)</code>: Funktion schreibt den Python-Ausdruck, der als Argument mitgegeben wird, in die Konsole; wartet auf eine Eingabe des Benutzers und liefert die Eingabe zurück.</li>
-<li><code>len(...)</code>: liefert die Länge des als Arguments übergebenen Strings zurück.</li>
+<li>Index 0: 42</li>
+<li>Index 1: “Hallo”</li>
+<li>Index 2: 3.14</li>
+<li>Index 3: True</li>
 </ul>
-<p>Was bedeutet die Formulierung “liefert … zurück” genau? Liefert eine Funktion ein Ergebnis zurück, so wird im Python-Ausdruck an der Stelle, an der die Funktion aufgerufen wird, das zurückgelieferte Ergebnis eingesetzt. Beispiel:</p>
-<p>Die Funktion <code>len(&quot;Hallo&quot;)+3</code> liefert den Wert 5 zurück. Damit wird aus dem Ausdruck <code>len(&quot;Hallo&quot;)+3</code> wird <code>5+3</code> und schließlich <code>8</code>.</p>
-<p>Die Anzahl der übergebenen Argumente (auch Parameter genannt) ist unterschiedlich: es gibt Funktionen ohne Argument, mit einem Argument oder mit mehreren Argumenten. Beim Aufruf einer Funktion ohne Argument müssen trotzdem runde Klammern geschrieben werden, z.B.:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>eingabe <span class="op">=</span> <span class="bu">input</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<section id="definition-einer-funktion" class="level2">
-<h2 class="anchored" data-anchor-id="definition-einer-funktion">Definition einer Funktion</h2>
-<p>Man kann in Python eigene Funktionen definieren. Beispiel:</p>
-<div id="559e4269" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> schreibeHallo():</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Hallo!&quot;</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Heute ist ein schöner Tag, oder nicht?&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Bei der Definition wird ein eingerückter Codeblock verwendet, analog zu den Codeblöcken, die in der Ablaufsteuerung bei <code>if</code> oder <code>while</code> verwendet werden.</p>
-<p>Nun kann die so definierte Funktion <code>schreibeHallo()</code> wie alle anderen Python-Funktionen benutzt werden:</p>
-<div id="a0c6f4e5" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;irgendein anderer Text&quot;</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>schreibeHallo()</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;noch mehr Text&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Man kann auf die einzelnen Elemente einer Liste über ihren Index zugreifen, indem man den Listennamen gefolgt von eckigen Klammern mit dem Index schreibt:</p>
+<div id="d65a28d6" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gemischte_liste[<span class="dv">1</span>])  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>irgendein anderer Text
-Hallo!
-Heute ist ein schöner Tag, oder nicht?
-noch mehr Text</code></pre>
+<pre><code>Hallo</code></pre>
 </div>
 </div>
-<p>Die Funktion <code>schreibeHallo()</code> wurde ohne Argumente definiert. In diesem Fall darf man auch keines verwenden.</p>
-<div id="0256546a" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>schreibeHallo(<span class="st">&quot;Peter&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[3], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">schreibeHallo</span><span class="ansi-yellow-bg">(</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">&quot;</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">Peter</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">&quot;</span><span class="ansi-yellow-bg">)</span>
-
-<span class="ansi-red-fg">TypeError</span>: schreibeHallo() takes 0 positional arguments but 1 was given</pre>
-</div>
-</div>
-</div>
-</section>
-<section id="funktionsdefinition-mit-argumenten" class="level2">
-<h2 class="anchored" data-anchor-id="funktionsdefinition-mit-argumenten">Funktionsdefinition mit Argumenten</h2>
-<p>Argumente kann man bei der Definition der Funktion in den runden Klammern angeben. Dabei darf man beliebige Variablennamen verwenden.</p>
-<div id="1ce986bb" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> schreibeHallo(name):</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Hallo, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!&quot;</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    laenge <span class="op">=</span> <span class="bu">len</span>(name)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Dein Name ist </span><span class="sc">{</span>laenge<span class="sc">}</span><span class="ss"> Buchstaben lang.&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Jetzt hat <code>schreibeHallo</code> einen Parameter. Der muss beim Aufruf auch angegeben werden.</p>
-<div id="2d0cca5c" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>schreibeHallo(<span class="st">&quot;Egon&quot;</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>schreibeHallo(<span class="st">&quot;Walburga&quot;</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>schreibeHallo()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Mit <code>[Anfangsindex:Endindex]</code> innerhalb der eckigen Klammern kann man auch einen Ausschnitt (Slice) der Liste erhalten, d.h. alle Elemente von Anfangsindex (einschließlich) bis Endindex (ausschließlich).</p>
+<p><code class="sourceCode python">gemischte_liste[<span class="dv">1</span>:<span class="dv">3</span>]</code> liefert die Elemente mit den Indizes 1 und 2, aber nicht das Element mit dem Endindex 3:</p>
+<div id="eb7c7393" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gemischte_liste[<span class="dv">1</span>:<span class="dv">3</span>]) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Hallo, Egon!
-Dein Name ist 4 Buchstaben lang.
-Hallo, Walburga!
-Dein Name ist 8 Buchstaben lang.</code></pre>
-</div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[5], line 3</span>
-<span class="ansi-green-fg ansi-bold">      1</span> schreibeHallo(<span style="color:rgb(175,0,0)">&quot;</span><span style="color:rgb(175,0,0)">Egon</span><span style="color:rgb(175,0,0)">&quot;</span>)
-<span class="ansi-green-fg ansi-bold">      2</span> schreibeHallo(<span style="color:rgb(175,0,0)">&quot;</span><span style="color:rgb(175,0,0)">Walburga</span><span style="color:rgb(175,0,0)">&quot;</span>)
-<span class="ansi-green-fg">----&gt; 3</span> <span class="ansi-yellow-bg">schreibeHallo</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
-
-<span class="ansi-red-fg">TypeError</span>: schreibeHallo() missing 1 required positional argument: &#39;name&#39;</pre>
+<pre><code>[&#39;Hallo&#39;, 3.14]</code></pre>
 </div>
 </div>
-</div>
-<p>Die Bezeichnung <code>name</code> für das Argument ist eine interne Bezeichnung, die nur in der Funktionsdefinition Bedeutung hat. Außerhalb der Definition spielt diese Bezeichnung keine Rolle.</p>
-<div id="7cb3b2a5" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>meinVorname <span class="op">=</span> <span class="st">&quot;Ignatius&quot;</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>schreibeHallo(meinVorname)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Man kann den Anfangs- oder Endindex auch weglassen. Wird der Anfangsindex weggelassen, so wird automatisch 0 verwendet. Wird der Endindex weggelassen, so wird automatisch das Ende der Liste verwendet:</p>
+<div id="92be1be1" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gemischte_liste[:<span class="dv">3</span>])  </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gemischte_liste[<span class="dv">1</span>:])   </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Hallo, Ignatius!
-Dein Name ist 8 Buchstaben lang.</code></pre>
+<pre><code>[42, &#39;Hallo&#39;, 3.14]
+[&#39;Hallo&#39;, 3.14, True]</code></pre>
 </div>
 </div>
-<p>Man kann auch Funktionen mit mehreren Argumenten definieren:</p>
-<div id="d7daba22" class="cell" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> schreibeHallo(name, alter):</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> alter <span class="op">&lt;</span> <span class="dv">18</span>:</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;Hi </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!&quot;</span>)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> alter <span class="op">&lt;</span> <span class="dv">65</span>:</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;Hallo, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!&quot;</span>)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;Guten Tag, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="063874ca" class="cell" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>schreibeHallo(<span class="st">&quot;Max&quot;</span>, <span class="dv">14</span>)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>schreibeHallo(<span class="st">&quot;Anna&quot;</span>, <span class="dv">30</span>)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>schreibeHallo(<span class="st">&quot;Opa&quot;</span>, <span class="dv">70</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Verwendet man einen negativen Index, so wird von hinten gezählt, wobei -1 das letzte Element ist:</p>
+<div id="413bdb5d" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gemischte_liste[<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gemischte_liste[<span class="op">-</span><span class="dv">3</span>:])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Hi Max!
-Hallo, Anna!
-Guten Tag, Opa!</code></pre>
+<pre><code>True
+[&#39;Hallo&#39;, 3.14, True]</code></pre>
 </div>
 </div>
-</section>
-<section id="rückgabewerte" class="level2">
-<h2 class="anchored" data-anchor-id="rückgabewerte">Rückgabewerte</h2>
-<p>Selbst definierte Funktionen können ebenso wie z.B. <code>len(...)</code> Rückgabewerte haben. Dazu verwendet man in der Funktionsdefinition die Anweisung <code>return</code>. Dahinter wird der Rückgabewert angegeben.</p>
-<div id="5e6a1bb8" class="cell" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> rechteckFlaeche(breite, hoehe):</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    flaeche <span class="op">=</span> breite <span class="op">*</span> hoehe</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> flaeche</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Die Verwendung funktioniert wie bei anderen Funktionen mit Rückgabewert auch:</p>
-<div id="19f0e1c6" class="cell" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> rechteckFlaeche(b, h)</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Die Fläche des Rechtecks mit Breite </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss"> und Höhe </span><span class="sc">{</span>h<span class="sc">}</span><span class="ss"> ist </span><span class="sc">{</span>A<span class="sc">}</span><span class="ss">.&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Die Länge einer Liste kann mit der Funktion <code>len(...)</code> (analog zur Länge eines Strings) ermittelt werden:</p>
+<div id="e2200b54" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(gemischte_liste))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Die Fläche des Rechtecks mit Breite 5 und Höhe 10 ist 50.</code></pre>
+<pre><code>4</code></pre>
 </div>
 </div>
-<p>Man kann in der Definition mehrere <code>return</code>-Anweisungen verwenden. Die Ausführung der Funktion endet mit der ersten <code>return</code>-Anweisung, die ausgeführt wird.</p>
-<div id="42da4c2f" class="cell" data-execution_count="11">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> rechteckFlaeche(breite, hoehe):</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> breite <span class="op">&lt;</span> <span class="dv">0</span> <span class="kw">or</span> hoehe <span class="op">&lt;</span> <span class="dv">0</span>:</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;Ungültige Eingabe: Breite und Höhe müssen positiv sein.&quot;</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    flaeche <span class="op">=</span> breite <span class="op">*</span> hoehe</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> flaeche</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="891ba4d2" class="cell" data-execution_count="12">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rechteckFlaeche(<span class="dv">5</span>, <span class="dv">10</span>))</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rechteckFlaeche(<span class="op">-</span><span class="dv">5</span>, <span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>50
-Ungültige Eingabe: Breite und Höhe müssen positiv sein.</code></pre>
-</div>
-</div>
-</section>
-<section id="keyword-argumente" class="level2">
-<h2 class="anchored" data-anchor-id="keyword-argumente">keyword-Argumente</h2>
-<p>Im Normalfall werden die Argumente einer Funktion in der Reihenfolge übergeben, wie sie in der Funktionsdefinition angegeben. In der Funktionsdefinition im Beispiel oben</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> schreibeHallo(name, alter):</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>ist der erste Parameter <code>name</code>, der zweite <code>alter</code>. Die Reihenfolge, in der die Argumente beim Aufruf angegeben werden, muss dieser Reihenfolge entsprechen.</p>
-<p>Davon unterscheiden sich die sogenannten <em>keyword-Argumente</em>. Dabei bekommen die einzelnen Argumente Namen, die beim Aufruf der Funktion mit angegeben werden mussen. Dadurch kann die Reihenfolge der Argumente beim Aufruf geändert werden.</p>
-<p>Die obige Beispielfunktion <code>schreibeHallo</code> kann auch so aufgerufen werden:</p>
-<div id="bd3dfa44" class="cell" data-execution_count="13">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>schreibeHallo(alter<span class="op">=</span><span class="dv">14</span>, name<span class="op">=</span><span class="st">&quot;Max&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Hi Max!</code></pre>
-</div>
-</div>
-<p>Hier werden die Argumente <code>name</code> und <code>alter</code> explizit benannt. Dadurch ist die Reihenfolge der Argumente beim Aufruf egal.</p>
-<p>Man darf keyword-Argumente und normale Argumente auch mischen. Dabei müssen die normalen Argumente zuerst angegeben werden, danach die keyword-Argumente.</p>
-<div id="049f6cd9" class="cell" data-execution_count="14">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>schreibeHallo(<span class="st">&quot;Max&quot;</span>, alter<span class="op">=</span><span class="dv">14</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Hi Max!</code></pre>
-</div>
-</div>
-<p>Verwendet man nach einem keyword-Argument ein nicht-keyword-Argument, so führt das zu einem Fehler:</p>
-<div id="926ee727" class="cell" data-execution_count="15">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>schreibeHallo(name<span class="op">=</span><span class="st">&quot;Max&quot;</span>, alter)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-cyan-fg">  Cell </span><span class="ansi-green-fg">In[15], line 1</span>
-<span class="ansi-red-fg">    schreibeHallo(name=&quot;Max&quot;, alter)</span>
-                                   ^
-<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> positional argument follows keyword argument
-</pre>
-</div>
-</div>
-</div>
-</section>
-<section id="optionale-argumente-und-default-werte" class="level2">
-<h2 class="anchored" data-anchor-id="optionale-argumente-und-default-werte">optionale Argumente und default-Werte</h2>
-<p>Es ist möglich, in der Funktionsdefinition für Argumente default-Werte anzugeben. Diese Werte werden verwendet, wenn beim Aufruf der Funktion kein entsprechendes Argument angegeben wird.</p>
-<div id="1bff5b77" class="cell" data-execution_count="16">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> schreibeHallo(name, alter<span class="op">=</span><span class="dv">30</span>):</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> alter <span class="op">&lt;</span> <span class="dv">18</span>:</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;Hi </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!&quot;</span>)</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> alter <span class="op">&lt;</span> <span class="dv">65</span>:</span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;Hallo, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!&quot;</span>)</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;Guten Tag, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="347416c6" class="cell" data-execution_count="17">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>schreibeHallo(<span class="st">&quot;Max&quot;</span>, <span class="dv">14</span>)   <span class="co"># alter wird mit 14 belegt</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>schreibeHallo(<span class="st">&quot;Anna&quot;</span>)      <span class="co"># alter wird mit default-Wert 30 belegt</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Hi Max!
-Hallo, Anna!</code></pre>
-</div>
-</div>
-<p>Man kann auch mehr als ein Argument mit einem default-Wert versehen.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> schreibeHallo(name<span class="op">=</span><span class="st">&quot;John&quot;</span>, alter<span class="op">=</span><span class="dv">30</span>):</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="91971f69" class="cell" data-execution_count="19">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>schreibeHallo(<span class="st">&quot;Max&quot;</span>)</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>schreibeHallo()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Hallo, Max!
-Hallo, John!</code></pre>
-</div>
-</div>
-<p>Gibt es Argumente ohne default-Wert, müssen diese bei der Definition vor den Argumenten mit default-Wert angegeben werden. Folgendes führt zu einem Fehler:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> schreibeHallo(name<span class="op">=</span><span class="st">&quot;John&quot;</span>, alter):</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="b8ade01e" class="cell" data-execution_count="20">
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-cyan-fg">  Cell </span><span class="ansi-green-fg">In[20], line 1</span>
-<span class="ansi-red-fg">    def schreibeHallo(name=&quot;John&quot;, alter):</span>
-                                   ^
-<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> non-default argument follows default argument
-</pre>
-</div>
-</div>
-</div>
-</section>
-<section id="lokaler-und-globaler-scope" class="level2">
-<h2 class="anchored" data-anchor-id="lokaler-und-globaler-scope">lokaler und globaler Scope</h2>
 
 
 </section>

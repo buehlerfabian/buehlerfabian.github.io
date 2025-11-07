@@ -1,8 +1,9 @@
 ---
-title: "Einführung in Python"
+title: "Einführung in Python (IMP Klasse 11)"
 ---
 
 - [1. Grundlagen](01-grundlagen.qmd)
 - [2. Flow control](02-flow-control.qmd)
 - [3. Funktionen](03-Funktionen.qmd)
 - [4. Listen](04-Listen.qmd)
+- [5. Matplotlib](05-matplotlib.qmd)

@@ -1,0 +1,70 @@
+---
+title: Listen
+format: 
+  html:
+    embed-resources: true
+jupyter: python3
+---
+
+Listen sind eine Datenstruktur, die "unter dem Dach" einer Variable mehrere Daten speichern kann. Eine Liste wird in Python mit eckigen Klammern `[]` definiert. Beispiel:
+
+```{python}
+meine_liste = [3, 5, 7, 9]
+print(meine_liste)
+```
+
+Die einzelnen Elemente einer Liste werden *items* genannt. Die Items in einer Liste können unterschiedliche Datentypen haben:
+
+```{python}
+gemischte_liste = [42, "Hallo", 3.14, True]
+print(gemischte_liste)
+```
+
+Eine Liste kann auch leer sein:
+
+```{python}
+leere_liste = []
+print(leere_liste)
+```
+
+## Zugriff auf Listenelemente
+Die Elemente einer Liste sind durchnummeriert, beginnend bei 0. In der Liste `gemischte_liste = [42, "Hallo", 3.14, True]`{.python} aus dem obigen Beispiel hat also die folgenden Indizes:
+
+- Index 0: 42
+- Index 1: "Hallo"
+- Index 2: 3.14
+- Index 3: True
+
+Man kann auf die einzelnen Elemente einer Liste über ihren Index zugreifen, indem man den Listennamen gefolgt von eckigen Klammern mit dem Index schreibt:  
+
+```{python}
+print(gemischte_liste[1])  
+```
+
+Mit `[Anfangsindex:Endindex]` innerhalb der eckigen Klammern kann man auch einen Ausschnitt (Slice) der Liste erhalten, d.h. alle Elemente von Anfangsindex (einschließlich) bis Endindex (ausschließlich). 
+
+`gemischte_liste[1:3]`{.python} liefert die Elemente mit den Indizes 1 und 2, aber nicht das Element mit dem Endindex 3:
+
+```{python}
+print(gemischte_liste[1:3]) 
+```
+
+Man kann den Anfangs- oder Endindex auch weglassen. Wird der Anfangsindex weggelassen, so wird automatisch 0 verwendet. Wird der Endindex weggelassen, so wird automatisch das Ende der Liste verwendet:
+
+```{python}
+print(gemischte_liste[:3])  
+print(gemischte_liste[1:])   
+```
+
+Verwendet man einen negativen Index, so wird von hinten gezählt, wobei -1 das letzte Element ist:
+
+```{python}
+print(gemischte_liste[-1])
+print(gemischte_liste[-3:])
+```
+
+Die Länge einer Liste kann mit der Funktion `len(...)` (analog zur Länge eines Strings) ermittelt werden:
+```{python}
+print(len(gemischte_liste))
+```
+
