@@ -287,6 +287,20 @@
     "text": "Zugriff auf Listenelemente\nDie Elemente einer Liste sind durchnummeriert, beginnend bei 0. In der Liste gemischte_liste = [42, \"Hallo\", 3.14, True] aus dem obigen Beispiel hat also die folgenden Indizes:\n\nIndex 0: 42\nIndex 1: “Hallo”\nIndex 2: 3.14\nIndex 3: True\n\nMan kann auf die einzelnen Elemente einer Liste über ihren Index zugreifen, indem man den Listennamen gefolgt von eckigen Klammern mit dem Index schreibt:\n\nprint(gemischte_liste[1])  \n\nHallo\n\n\nMit [Anfangsindex:Endindex] innerhalb der eckigen Klammern kann man auch einen Ausschnitt (Slice) der Liste erhalten, d.h. alle Elemente von Anfangsindex (einschließlich) bis Endindex (ausschließlich).\ngemischte_liste[1:3] liefert die Elemente mit den Indizes 1 und 2, aber nicht das Element mit dem Endindex 3:\n\nprint(gemischte_liste[1:3]) \n\n['Hallo', 3.14]\n\n\nMan kann den Anfangs- oder Endindex auch weglassen. Wird der Anfangsindex weggelassen, so wird automatisch 0 verwendet. Wird der Endindex weggelassen, so wird automatisch das Ende der Liste verwendet:\n\nprint(gemischte_liste[:3])  \nprint(gemischte_liste[1:])   \n\n[42, 'Hallo', 3.14]\n['Hallo', 3.14, True]\n\n\nVerwendet man einen negativen Index, so wird von hinten gezählt, wobei -1 das letzte Element ist:\n\nprint(gemischte_liste[-1])\nprint(gemischte_liste[-3:])\n\nTrue\n['Hallo', 3.14, True]\n\n\nDie Länge einer Liste kann mit der Funktion len(...) (analog zur Länge eines Strings) ermittelt werden:\n\nprint(len(gemischte_liste))\n\n4"
   },
   {
+    "objectID": "11imp/einf-python/04-Listen.html#list-comprehensions",
+    "href": "11imp/einf-python/04-Listen.html#list-comprehensions",
+    "title": "Listen",
+    "section": "List comprehensions",
+    "text": "List comprehensions\nEine praktische Möglichkeit, um Listen zu erstellen, sind sogenannte list comprehensions. Damit kann man auf einfache Weise Listen erzeugen, deren Elemente durch eine Regel definiert sind. Zum Beispiel:\n\nquadrate = [x**2 for x in [1,2,3,4,5]]\nprint(quadrate)\n\n[1, 4, 9, 16, 25]"
+  },
+  {
+    "objectID": "11imp/einf-python/04-Listen.html#liste-mit-zahlenwerten-in-festem-abstand",
+    "href": "11imp/einf-python/04-Listen.html#liste-mit-zahlenwerten-in-festem-abstand",
+    "title": "Listen",
+    "section": "Liste mit Zahlenwerten in festem Abstand",
+    "text": "Liste mit Zahlenwerten in festem Abstand\nHäufig benötigt man Listen mit Zahlenwerten in einem bestimmten Bereich und mit festem Abstand (also eine arithmetische Folge). Solche Listen können mit der Funktion arange(...) aus dem Modul numpy erstellt werden. Mit from numpy import arange wird diese Funktion importiert. Dann kann man mit arange(Beginn, Ende, Schrittweite) eine Liste von Zahlenwerten erzeugen, die bei Beginn startet, bei Ende endet (ausschließlich) und die angegebene Schrittweite hat. Beispiel:\n\nimport numpy as np\n\nwerte = np.arange(0, 10, 0.5)\nprint(werte)\n\n[0.  0.5 1.  1.5 2.  2.5 3.  3.5 4.  4.5 5.  5.5 6.  6.5 7.  7.5 8.  8.5\n 9.  9.5]"
+  },
+  {
     "objectID": "pk-programmieren/pk-prog_einfPython.html",
     "href": "pk-programmieren/pk-prog_einfPython.html",
     "title": "Einführung in Python",

@@ -68,3 +68,20 @@ Die Länge einer Liste kann mit der Funktion `len(...)` (analog zur Länge eines
 print(len(gemischte_liste))
 ```
 
+## List comprehensions
+Eine praktische Möglichkeit, um Listen zu erstellen, sind sogenannte *list comprehensions*. Damit kann man auf einfache Weise Listen erzeugen, deren Elemente durch eine Regel definiert sind. Zum Beispiel:
+
+```{python}
+quadrate = [x**2 for x in [1,2,3,4,5]]
+print(quadrate)
+```
+
+## Liste mit Zahlenwerten in festem Abstand
+Häufig benötigt man Listen mit Zahlenwerten in einem bestimmten Bereich und mit festem Abstand (also eine arithmetische Folge). Solche Listen können mit der Funktion `arange(...)` aus dem Modul `numpy` erstellt werden. Mit `from numpy import arange`{.python} wird diese Funktion importiert. Dann kann man mit `arange(Beginn, Ende, Schrittweite)`{.python} eine Liste von Zahlenwerten erzeugen, die bei `Beginn` startet, bei `Ende` endet (ausschließlich) und die angegebene `Schrittweite` hat. Beispiel:
+
+```{python}
+import numpy as np
+
+werte = np.arange(0, 10, 0.5)
+print(werte)
+```
