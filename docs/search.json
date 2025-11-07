@@ -81,14 +81,14 @@
     "href": "11imp/UebWachstumLsg.html",
     "title": "Übungen zu diskretem Wachstum – Lösungen",
     "section": "",
-    "text": "Umformen ergibt: \\[\na_{n+1} = 0.75\\cdot a_n + 100 = a_n - 0.25\\cdot a_n + 100 = a_n + 0.25\\cdot\\left(400 - a_n\\right)\n\\]\nDie Schranke ist damit \\(S = 400\\) und der Wachstumsfaktor \\(k = 0.25\\).\n\n\n\nUmformen: \\[\na_{n+1} = 0.75\\cdot a_n + 100 \\; \\Rightarrow \\; a_n = \\frac{a_{n+1} - 100}{0.75}\n\\]\n\ndef berechneVorgaenger(an):\n    return (an - 100) / 0.75\n\nn = 10\nan = 381.1\nprint(f\"a_{n} = {an}\")\nwhile n &gt; 0:\n    an = berechneVorgaenger(an)\n    n -= 1\n    print(f\"a_{n} = {an:.2f}\")\n\na_10 = 381.1\na_9 = 374.80\na_8 = 366.40\na_7 = 355.20\na_6 = 340.27\na_5 = 320.36\na_4 = 293.81\na_3 = 258.41\na_2 = 211.21\na_1 = 148.28\na_0 = 64.38\n\n\nDer Startwert ist also \\(a_0 \\approx 64.38\\)."
+    "text": "Umformen ergibt: \\[\na_{n+1} = 0.75\\cdot a_n + 100 = a_n - 0.25\\cdot a_n + 100 = a_n + 0.25\\cdot\\left(400 - a_n\\right)\n\\]\nDie Schranke ist damit \\(S = 400\\) und der Wachstumsfaktor \\(k = 0.25\\).\n\n\n\nUmformen: \\[\na_{n+1} = 0.75\\cdot a_n + 100 \\; \\Rightarrow \\; a_n = \\frac{a_{n+1} - 100}{0.75}\n\\]\n\ndef berechneVorgaenger(an):\n    return (an - 100) / 0.75\n\nn = 10\nan = 383.1\nprint(f\"a_{n} = {an}\")\nwhile n &gt; 0:\n    an = berechneVorgaenger(an)\n    n -= 1\n    print(f\"a_{n} = {an:.2f}\")\n\na_10 = 383.1\na_9 = 377.47\na_8 = 369.96\na_7 = 359.94\na_6 = 346.59\na_5 = 328.78\na_4 = 305.04\na_3 = 273.39\na_2 = 231.19\na_1 = 174.92\na_0 = 99.89\n\n\nDer Startwert ist also \\(a_0 \\approx 99.89\\)."
   },
   {
     "objectID": "11imp/UebWachstumLsg.html#aufgabe",
     "href": "11imp/UebWachstumLsg.html#aufgabe",
     "title": "Übungen zu diskretem Wachstum – Lösungen",
     "section": "",
-    "text": "Umformen ergibt: \\[\na_{n+1} = 0.75\\cdot a_n + 100 = a_n - 0.25\\cdot a_n + 100 = a_n + 0.25\\cdot\\left(400 - a_n\\right)\n\\]\nDie Schranke ist damit \\(S = 400\\) und der Wachstumsfaktor \\(k = 0.25\\).\n\n\n\nUmformen: \\[\na_{n+1} = 0.75\\cdot a_n + 100 \\; \\Rightarrow \\; a_n = \\frac{a_{n+1} - 100}{0.75}\n\\]\n\ndef berechneVorgaenger(an):\n    return (an - 100) / 0.75\n\nn = 10\nan = 381.1\nprint(f\"a_{n} = {an}\")\nwhile n &gt; 0:\n    an = berechneVorgaenger(an)\n    n -= 1\n    print(f\"a_{n} = {an:.2f}\")\n\na_10 = 381.1\na_9 = 374.80\na_8 = 366.40\na_7 = 355.20\na_6 = 340.27\na_5 = 320.36\na_4 = 293.81\na_3 = 258.41\na_2 = 211.21\na_1 = 148.28\na_0 = 64.38\n\n\nDer Startwert ist also \\(a_0 \\approx 64.38\\)."
+    "text": "Umformen ergibt: \\[\na_{n+1} = 0.75\\cdot a_n + 100 = a_n - 0.25\\cdot a_n + 100 = a_n + 0.25\\cdot\\left(400 - a_n\\right)\n\\]\nDie Schranke ist damit \\(S = 400\\) und der Wachstumsfaktor \\(k = 0.25\\).\n\n\n\nUmformen: \\[\na_{n+1} = 0.75\\cdot a_n + 100 \\; \\Rightarrow \\; a_n = \\frac{a_{n+1} - 100}{0.75}\n\\]\n\ndef berechneVorgaenger(an):\n    return (an - 100) / 0.75\n\nn = 10\nan = 383.1\nprint(f\"a_{n} = {an}\")\nwhile n &gt; 0:\n    an = berechneVorgaenger(an)\n    n -= 1\n    print(f\"a_{n} = {an:.2f}\")\n\na_10 = 383.1\na_9 = 377.47\na_8 = 369.96\na_7 = 359.94\na_6 = 346.59\na_5 = 328.78\na_4 = 305.04\na_3 = 273.39\na_2 = 231.19\na_1 = 174.92\na_0 = 99.89\n\n\nDer Startwert ist also \\(a_0 \\approx 99.89\\)."
   },
   {
     "objectID": "11imp/UebWachstumLsg.html#aufgabe-1",

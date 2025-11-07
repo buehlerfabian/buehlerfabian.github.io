@@ -25,7 +25,7 @@ def berechneVorgaenger(an):
     return (an - 100) / 0.75
 
 n = 10
-an = 381.1
+an = 383.1
 print(f"a_{n} = {an}")
 while n > 0:
     an = berechneVorgaenger(an)
@@ -33,7 +33,7 @@ while n > 0:
     print(f"a_{n} = {an:.2f}")
 ```
 
-Der Startwert ist also $a_0 \approx 64.38$.
+Der Startwert ist also $a_0 \approx 99.89$.
 
 ## 2. Aufgabe
 ### a)
