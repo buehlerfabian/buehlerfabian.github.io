@@ -68,3 +68,19 @@ Die Länge einer Liste kann mit der Funktion `len(...)` (analog zur Länge eines
 print(len(gemischte_liste))
 ```
 
+## Listen und Schleifen
+Listen werden oft in Verbindung mit Schleifen verwendet, um alle Elemente der Liste zu durchlaufen.Dafür wird die sogenannte `for`-Schleife verwendet. Der Syntax ist:
+
+```python
+for variable in liste:
+    # mache etwas mit variable
+```
+Dabei wird die `variable` nacheinander auf jedes Element der `liste` gesetzt, und der eingerückte Codeblock wird für jedes Element ausgeführt, bis die ganze Liste abgearbeitet ist.
+
+Beispiel:
+
+```{python}
+for item in gemischte_liste:
+    print(item)
+```
+

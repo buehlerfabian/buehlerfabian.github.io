@@ -8,3 +8,4 @@ title: "P-Kurs Programmieren"
 ### Lösungen zu den Aufgaben
 - [Übungen/Kontrollfragen zu 01 - Grundlagen](UebGrundlagenLsg.qmd)
 - [Übungen/Kontrollfragen zu 02 - Flow control](UebFlowControlLsg.qmd)
+- [Übungen/Kontrollfragen zu 04 - Listen](UebListeLsg.qmd)

@@ -1,0 +1,48 @@
+---
+title: "Übungen/Kontrollfragen zu 01 - Grundlagen -- Lösungen"
+format: html
+embed-resources: true
+---
+
+# 1. Aufgabe
+```{python}
+liste = [2, 17, 3, 8, 16, 32, -5, 20, 5, 10, 9]
+
+print(liste[4])
+print(liste[3:5])
+print(liste[:7])
+print(liste[-3])
+print(len(liste))
+```
+
+# 2. Aufgabe
+```{python}
+woerter = ["Haus", "Baum", "Informatik", "Schule", "Programmierung", "PC", "Python"]
+
+for wort in woerter:
+    if len(wort) > 5:
+        print(wort)
+```
+
+# 3. Aufgabe
+```{python}
+liste = [2, 17, 3, 8, 16, 32, -5, 20, 5, 10, 9]
+
+# Größte Zahl finden
+groesste_zahl = liste[0]
+
+for zahl in liste:
+    if zahl > groesste_zahl:
+        groesste_zahl = zahl
+
+# Kleinste Zahl finden
+kleinste_zahl = liste[0]
+
+for zahl in liste:
+    if zahl < kleinste_zahl:
+        kleinste_zahl = zahl
+
+print(f"Die größte Zahl ist {groesste_zahl}")
+print(f"Die kleinste Zahl ist {kleinste_zahl}")
+```
+

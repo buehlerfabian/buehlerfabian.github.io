@@ -3943,7 +3943,7 @@ vertical-align: -.125em;
 
 
 <p>Listen sind eine Datenstruktur, die “unter dem Dach” einer Variable mehrere Daten speichern kann. Eine Liste wird in Python mit eckigen Klammern <code>[]</code> definiert. Beispiel:</p>
-<div id="4e346785" class="cell" data-execution_count="1">
+<div id="39d36ef0" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>meine_liste <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>]</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(meine_liste)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -3951,7 +3951,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <p>Die einzelnen Elemente einer Liste werden <em>items</em> genannt. Die Items in einer Liste können unterschiedliche Datentypen haben:</p>
-<div id="0a7cfdcd" class="cell" data-execution_count="2">
+<div id="76b828d4" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>gemischte_liste <span class="op">=</span> [<span class="dv">42</span>, <span class="st">&quot;Hallo&quot;</span>, <span class="fl">3.14</span>, <span class="va">True</span>]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gemischte_liste)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -3959,7 +3959,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <p>Eine Liste kann auch leer sein:</p>
-<div id="396a8469" class="cell" data-execution_count="3">
+<div id="d19e6152" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>leere_liste <span class="op">=</span> []</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(leere_liste)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -3976,7 +3976,7 @@ vertical-align: -.125em;
 <li>Index 3: True</li>
 </ul>
 <p>Man kann auf die einzelnen Elemente einer Liste über ihren Index zugreifen, indem man den Listennamen gefolgt von eckigen Klammern mit dem Index schreibt:</p>
-<div id="2aad53fb" class="cell" data-execution_count="4">
+<div id="3458aa95" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gemischte_liste[<span class="dv">1</span>])  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hallo</code></pre>
@@ -3984,14 +3984,14 @@ vertical-align: -.125em;
 </div>
 <p>Mit <code>[Anfangsindex:Endindex]</code> innerhalb der eckigen Klammern kann man auch einen Ausschnitt (Slice) der Liste erhalten, d.h. alle Elemente von Anfangsindex (einschließlich) bis Endindex (ausschließlich).</p>
 <p><code class="sourceCode python">gemischte_liste[<span class="dv">1</span>:<span class="dv">3</span>]</code> liefert die Elemente mit den Indizes 1 und 2, aber nicht das Element mit dem Endindex 3:</p>
-<div id="1f6d2c04" class="cell" data-execution_count="5">
+<div id="50d18cbc" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gemischte_liste[<span class="dv">1</span>:<span class="dv">3</span>]) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[&#39;Hallo&#39;, 3.14]</code></pre>
 </div>
 </div>
 <p>Man kann den Anfangs- oder Endindex auch weglassen. Wird der Anfangsindex weggelassen, so wird automatisch 0 verwendet. Wird der Endindex weggelassen, so wird automatisch das Ende der Liste verwendet:</p>
-<div id="48e117c8" class="cell" data-execution_count="6">
+<div id="8e2a04e7" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gemischte_liste[:<span class="dv">3</span>])  </span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gemischte_liste[<span class="dv">1</span>:])   </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -4000,7 +4000,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <p>Verwendet man einen negativen Index, so wird von hinten gezählt, wobei -1 das letzte Element ist:</p>
-<div id="a9fd97c9" class="cell" data-execution_count="7">
+<div id="d16cb095" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gemischte_liste[<span class="op">-</span><span class="dv">1</span>])</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(gemischte_liste[<span class="op">-</span><span class="dv">3</span>:])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -4009,7 +4009,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <p>Die Länge einer Liste kann mit der Funktion <code>len(...)</code> (analog zur Länge eines Strings) ermittelt werden:</p>
-<div id="2cd86746" class="cell" data-execution_count="8">
+<div id="ac3541f7" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(gemischte_liste))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>4</code></pre>
@@ -4019,7 +4019,7 @@ vertical-align: -.125em;
 <section id="list-comprehensions" class="level2">
 <h2 class="anchored" data-anchor-id="list-comprehensions">List comprehensions</h2>
 <p>Eine praktische Möglichkeit, um Listen zu erstellen, sind sogenannte <em>list comprehensions</em>. Damit kann man auf einfache Weise Listen erzeugen, deren Elemente durch eine Regel definiert sind. Zum Beispiel:</p>
-<div id="0e33cd35" class="cell" data-execution_count="9">
+<div id="999e2759" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>quadrate <span class="op">=</span> [x<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>]]</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(quadrate)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -4030,7 +4030,7 @@ vertical-align: -.125em;
 <section id="liste-mit-zahlenwerten-in-festem-abstand" class="level2">
 <h2 class="anchored" data-anchor-id="liste-mit-zahlenwerten-in-festem-abstand">Liste mit Zahlenwerten in festem Abstand</h2>
 <p>Häufig benötigt man Listen mit Zahlenwerten in einem bestimmten Bereich und mit festem Abstand (also eine arithmetische Folge). Solche Listen können mit der Funktion <code>arange(...)</code> aus dem Modul <code>numpy</code> erstellt werden. Mit <code class="sourceCode python"><span class="im">from</span> numpy <span class="im">import</span> arange</code> wird diese Funktion importiert. Dann kann man mit <code class="sourceCode python">arange(Beginn, Ende, Schrittweite)</code> eine Liste von Zahlenwerten erzeugen, die bei <code>Beginn</code> startet, bei <code>Ende</code> endet (ausschließlich) und die angegebene <code>Schrittweite</code> hat. Beispiel:</p>
-<div id="9e5947a8" class="cell" data-execution_count="10">
+<div id="1127884e" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>werte <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">10</span>, <span class="fl">0.5</span>)</span>
