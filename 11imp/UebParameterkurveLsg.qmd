@@ -1,0 +1,91 @@
+---
+title: Übungen zu parametrisierten Kurven -- Lösungen
+format: html
+embed-resources: true
+---
+
+
+## 1. Aufgabe
+### a)
+```{python}
+import matplotlib.pyplot as plt
+from numpy import arange
+tlist = arange(0, 2.1, 0.1)
+x = [2*t for t in tlist]
+y = [t**2 for t in tlist]
+plt.plot(x, y)
+plt.axis('equal')
+plt.show()
+```
+
+### b)
+```{python}
+import matplotlib.pyplot as plt
+from numpy import arange
+tlist = arange(0, 2.1, 0.1)
+x = [t**2 for t in tlist]
+y = [t for t in tlist]
+plt.plot(x, y)
+plt.axis('equal')
+plt.show()
+```
+
+### c)
+```{python}
+import matplotlib.pyplot as plt
+from numpy import arange, cos, sin
+tlist = arange(0, 6.3 + 0.1, 0.1)
+x = [cos(t) for t in tlist]
+y = [2*sin(t) for t in tlist]
+plt.plot(x, y)
+plt.axis('equal')
+plt.show()
+```
+
+### d)
+```{python}
+import matplotlib.pyplot as plt
+from numpy import arange, cos, sin
+tlist = arange(0, 6.3 + 0.1, 0.1)
+x = [cos(t) for t in tlist]
+y = [sin(2*t) for t in tlist]
+plt.plot(x, y)
+plt.axis('equal')
+plt.show()
+```
+
+### e)
+```{python}
+import matplotlib.pyplot as plt
+from numpy import arange
+tlist = arange(-1.5, 1.5 + 0.1, 0.1)
+x = [t**2 for t in tlist]
+y = [t**3 for t in tlist]
+plt.plot(x, y)
+plt.axis('equal')
+plt.show()
+```
+
+### f)
+```{python}
+import matplotlib.pyplot as plt
+from numpy import arange
+tlist = arange(-1.5, 1.5 + 0.1, 0.1)
+x = [t**2 - 1 for t in tlist]
+y = [t*(t**2 - 1) for t in tlist]
+plt.plot(x, y)
+plt.axis('equal')
+plt.show()
+```
+
+### g)
+```{python}
+import matplotlib.pyplot as plt
+from numpy import arange, sin, cos
+tlist = arange(-12, 12 + 0.1, 0.1)
+x = [t - sin(t) for t in tlist]
+y = [1 - cos(t) for t in tlist]
+plt.plot(x, y)
+plt.axis('equal')
+plt.show()
+```

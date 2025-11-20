@@ -147,11 +147,25 @@
     "text": "3. Aufgabe\n\ndef collatz_length(start_value):\n    a_n = start_value\n    length = 1  # Startwert zählt als erstes Glied\n    while a_n != 1:\n        a_n = collatz_next(a_n)\n        length += 1\n    return length\n\nDer Ansatz entspricht dem der vorherigen Aufgabe, nur wird hier keine Ausgabe erzeugt, sondern statt dessen eine Zählvariable length verwendet, die bei jedem Schritt um 1 erhöht wird. Am Ende wird die Länge der Folge zurückgegeben."
   },
   {
+    "objectID": "11imp/UebParameterkurveLsg.html",
+    "href": "11imp/UebParameterkurveLsg.html",
+    "title": "Übungen zu parametrisierten Kurven – Lösungen",
+    "section": "",
+    "text": "import matplotlib.pyplot as plt\nfrom numpy import arange\ntlist = arange(0, 2.1, 0.1)\nx = [2*t for t in tlist]\ny = [t**2 for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange\ntlist = arange(0, 2.1, 0.1)\nx = [t**2 for t in tlist]\ny = [t for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange, cos, sin\ntlist = arange(0, 6.3 + 0.1, 0.1)\nx = [cos(t) for t in tlist]\ny = [2*sin(t) for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange, cos, sin\ntlist = arange(0, 6.3 + 0.1, 0.1)\nx = [cos(t) for t in tlist]\ny = [sin(2*t) for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange\ntlist = arange(-1.5, 1.5 + 0.1, 0.1)\nx = [t**2 for t in tlist]\ny = [t**3 for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange\ntlist = arange(-1.5, 1.5 + 0.1, 0.1)\nx = [t**2 - 1 for t in tlist]\ny = [t*(t**2 - 1) for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange, sin, cos\ntlist = arange(-12, 12 + 0.1, 0.1)\nx = [t - sin(t) for t in tlist]\ny = [1 - cos(t) for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()"
+  },
+  {
+    "objectID": "11imp/UebParameterkurveLsg.html#aufgabe",
+    "href": "11imp/UebParameterkurveLsg.html#aufgabe",
+    "title": "Übungen zu parametrisierten Kurven – Lösungen",
+    "section": "",
+    "text": "import matplotlib.pyplot as plt\nfrom numpy import arange\ntlist = arange(0, 2.1, 0.1)\nx = [2*t for t in tlist]\ny = [t**2 for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange\ntlist = arange(0, 2.1, 0.1)\nx = [t**2 for t in tlist]\ny = [t for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange, cos, sin\ntlist = arange(0, 6.3 + 0.1, 0.1)\nx = [cos(t) for t in tlist]\ny = [2*sin(t) for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange, cos, sin\ntlist = arange(0, 6.3 + 0.1, 0.1)\nx = [cos(t) for t in tlist]\ny = [sin(2*t) for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange\ntlist = arange(-1.5, 1.5 + 0.1, 0.1)\nx = [t**2 for t in tlist]\ny = [t**3 for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange\ntlist = arange(-1.5, 1.5 + 0.1, 0.1)\nx = [t**2 - 1 for t in tlist]\ny = [t*(t**2 - 1) for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange, sin, cos\ntlist = arange(-12, 12 + 0.1, 0.1)\nx = [t - sin(t) for t in tlist]\ny = [1 - cos(t) for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()"
+  },
+  {
     "objectID": "11imp/11imp.html",
     "href": "11imp/11imp.html",
     "title": "IMP Klasse 11",
     "section": "",
-    "text": "Lösungen\n\nÜbung: Programmieren einer Folge in Python\nÜbungen zu diskretem Wachstum\n\n\n\nPython\n\nEinführung in Python"
+    "text": "Lösungen\n\nÜbung: Programmieren einer Folge in Python\nÜbungen zu diskretem Wachstum\nÜbungen zu parametrisierten Kurven\n\n\n\nPython\n\nEinführung in Python"
   },
   {
     "objectID": "11imp/UebWachstumLsg.html",
