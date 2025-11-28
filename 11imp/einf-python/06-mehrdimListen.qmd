@@ -1,0 +1,138 @@
+---
+title: mehrdimensionale Listen (Arrays)
+format: 
+  html:
+    embed-resources: true
+jupyter: python3
+---
+
+## Listen von Listen
+
+In vielen Situationen hat man Daten, die eine mehrdimensionale Struktur besitzen. Zum Beispiel können Messwerte in einer Tabelle organisiert sein, die Zeilen (verschiedene Messzeitpunkte) und Spalten (gemessene Größen) besitzt:
+
+| Zeit | Spannung | Stromstärke |
+|------|------------|------------------|
+| 0 s  | 20 V      | 30 A             |
+| 1 s  | 21 V      | 32 A             |
+| 2 s  | 21.5 V    | 31 A             |
+
+In Python können solche Datenstrukturen mit mehrdimensionalen Listen dargestellt werden. Dabei macht man sich zunutze, dass die Elemente einer Liste einen beliebigen Datentyp haben können, also auch selbst wieder Listen sein können:
+
+```{python}
+messwerte = [
+    [0, 20, 30],
+    [1, 21, 32],
+    [2, 21.5, 31]
+]
+print(messwerte)
+```
+
+Hier ist das erste Element der Liste `messwerte` selbst wieder eine Liste, nämlich die Liste `[0, 20, 30]`, die die Messwerte zur Zeit 0 s enthält:
+
+```{python}
+print(messwerte[0])
+```
+
+Möchte man davon jetzt den Spannungswert, braucht man das Element mit Index 1 der Liste `messwerte[0]`, also `messwerte[0][1]`:
+
+```{python}
+print(messwerte[0][1])
+```
+
+Möchte man eine Liste aller Spannungswerte erhalten, so kann man dafür eine list comprehension verwenden:
+
+```{python}
+spannungen = [reihe[1] for reihe in messwerte]
+print(spannungen)
+```
+
+## NumPy-Arrays
+
+Die Numpy-Bibliothek bietet ergänzende Möglichkeiten, um mit mehrdimensionalen Datenstrukturen zu arbeiten.
+
+Ein Numpy-Array kann aus einer Liste erzeugt werden:
+
+```{python}
+import numpy as np
+messwerte_array = np.array(messwerte)
+print(messwerte_array)
+```
+
+Man sieht, dass die Ausgabe jetzt in Zeilen und Spalten formatiert ist, was die Übersichtlichkeit erhöht.
+
+Auf ein Element eines Numpy-Arrays kann man genauso zugreifen wie bei einer Liste von Listen:
+
+```{python}
+print(messwerte_array[0][1])  
+```
+
+Für Numpy-Arrays gibt es jedoch auch eine alternative, kompaktere Notation mit Kommas:
+```{python}
+print(messwerte_array[0, 1])  
+```
+
+Eine ganze Spalte zu extrahieren geht mit Numpy-Array ebenfalls einfacher:
+
+```{python}
+spannungen_array = messwerte_array[:, 1]
+print(spannungen_array)
+``` 
+
+Hierbei steht der Doppelpunkt `:` für `0:len(messwerte_array)` (d.h. alle Zeilen) und die `1` für die zweite Spalte (Index 1).
+
+## Broadcasting bei Numpy-Arrays
+Bei Python-Listen haben die Rechenoperatoren in der Regel keine arithmetische Bedeutung:
+```{python}
+a = [1, 2, 3]
+b = [4, 5, 6]
+print(a + b)  # Verkettung der Listen
+print(a * 2)  # Wiederholung der Liste
+```
+
+Bei Numpy-Arrays hingegen sind die Rechenoperatoren arithmetisch definiert:
+```{python}
+a_array = np.array(a)
+b_array = np.array(b)
+print(a_array + b_array)  # Elementweise Addition
+print(a_array * 2)        # Elementweise Multiplikation
+```
+Hierbei wird bei der Addition jedes Element von `a_array` mit dem entsprechenden Element von `b_array` addiert, und bei der Multiplikation wird jedes Element von `a_array` mit 2 multipliziert (das nennt man Broadcasting).
+
+## Tricks und Beispiele
+Ein Numpy-Array einer bestimmten Größe mit Nullen erzeugen:
+
+```{python}
+null_tabelle = np.zeros((3, 4))  # 3 Zeilen, 4 Spalten
+print(null_tabelle)
+```
+
+Ebenso kann man mit `python np.ones((3, 4))` ein Array mit Einsen erzeugen.
+
+Mit Hilfe von Broadcasting kann man dann alle Werte oder einzelne Bereiche ersetzen:
+```{python}
+null_tabelle[:, :] = 5  # Alle Werte auf 5 setzen
+print(null_tabelle)
+```
+
+```{python}
+null_tabelle[1, :] = [1, 2, 3, 4]  # Zweite Zeile ersetzen
+print(null_tabelle)
+```
+
+```{python}
+null_tabelle[:, 2] = [10, 20, 30]  # Dritte Spalte ersetzen
+null_tabelle[:, 3] = 42  # Vierte Spalte ersetzen
+print(null_tabelle)
+```
+
+Für komplexere Operationen können auch Schleifen verwendet werden. Das folgende Programm erstellt eine Multiplikationstabelle:
+
+```{python}
+multiplikationstabelle = np.zeros((10, 10))
+
+for i in range(10):
+    for j in range(10):
+        multiplikationstabelle[i, j] = (i+1) * (j+1)
+
+print(multiplikationstabelle)
+```
