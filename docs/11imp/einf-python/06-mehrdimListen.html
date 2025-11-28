@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Flow control – Fabian Bühler</title>
+<title>mehrdimensionale Listen (Arrays) – Fabian Bühler</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3914,20 +3914,19 @@ vertical-align: -.125em;
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#bedingungen-und-blöcke" id="toc-bedingungen-und-blöcke" class="nav-link active" data-scroll-target="#bedingungen-und-blöcke">Bedingungen und Blöcke</a>
-  <ul class="collapse">
-  <li><a href="#if-anweisung" id="toc-if-anweisung" class="nav-link" data-scroll-target="#if-anweisung">if-Anweisung</a></li>
-  <li><a href="#while-schleifen" id="toc-while-schleifen" class="nav-link" data-scroll-target="#while-schleifen">While-Schleifen</a></li>
-  </ul></li>
+  <li><a href="#listen-von-listen" id="toc-listen-von-listen" class="nav-link active" data-scroll-target="#listen-von-listen">Listen von Listen</a></li>
+  <li><a href="#numpy-arrays" id="toc-numpy-arrays" class="nav-link" data-scroll-target="#numpy-arrays">NumPy-Arrays</a></li>
+  <li><a href="#broadcasting-bei-numpy-arrays" id="toc-broadcasting-bei-numpy-arrays" class="nav-link" data-scroll-target="#broadcasting-bei-numpy-arrays">Broadcasting bei Numpy-Arrays</a></li>
+  <li><a href="#tricks-und-beispiele" id="toc-tricks-und-beispiele" class="nav-link" data-scroll-target="#tricks-und-beispiele">Tricks und Beispiele</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="02-flow-control.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Flow control</h1>
+<h1 class="title">mehrdimensionale Listen (Arrays)</h1>
 </div>
 
 
@@ -3944,312 +3943,201 @@ vertical-align: -.125em;
 </header>
 
 
-<p>In Programmen hat man oft “wenn … dann …” Situationen. Im “wenn”-Teil steht eine Bedingung, die entweder wahr (True) oder falsch (False) ist. Diese Bedingungen werden in Python mit boolschen Ausdrücken dargestellt.</p>
-<p>Häufig ergeben sich boolsche Ausdrücke mit Vergleichsoperatoren.</p>
+<section id="listen-von-listen" class="level2">
+<h2 class="anchored" data-anchor-id="listen-von-listen">Listen von Listen</h2>
+<p>In vielen Situationen hat man Daten, die eine mehrdimensionale Struktur besitzen. Zum Beispiel können Messwerte in einer Tabelle organisiert sein, die Zeilen (verschiedene Messzeitpunkte) und Spalten (gemessene Größen) besitzt:</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Symbol</th>
-<th>Bedeutung</th>
+<th>Zeit</th>
+<th>Spannung</th>
+<th>Stromstärke</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>==</code></td>
-<td>Gleichheit</td>
+<td>0 s</td>
+<td>20 V</td>
+<td>30 A</td>
 </tr>
 <tr class="even">
-<td><code>!=</code></td>
-<td>Ungleichheit</td>
+<td>1 s</td>
+<td>21 V</td>
+<td>32 A</td>
 </tr>
 <tr class="odd">
-<td><code>&lt;</code></td>
-<td>kleiner</td>
-</tr>
-<tr class="even">
-<td><code>&gt;</code></td>
-<td>größer</td>
-</tr>
-<tr class="odd">
-<td><code>&lt;=</code></td>
-<td>kleiner oder gleich</td>
-</tr>
-<tr class="even">
-<td><code>&gt;=</code></td>
-<td>größer oder gleich</td>
+<td>2 s</td>
+<td>21.5 V</td>
+<td>31 A</td>
 </tr>
 </tbody>
 </table>
-<div id="05efa5ac" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;5 == 5 ist </span><span class="sc">{</span><span class="dv">5</span> <span class="op">==</span> <span class="dv">5</span><span class="sc">}</span><span class="ss">&quot;</span>) </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;5 == 3 ist </span><span class="sc">{</span><span class="dv">5</span> <span class="op">==</span> <span class="dv">3</span><span class="sc">}</span><span class="ss">&quot;</span>) </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;5 != 3 ist </span><span class="sc">{</span><span class="dv">5</span> <span class="op">!=</span> <span class="dv">3</span><span class="sc">}</span><span class="ss">&quot;</span>) </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;5 != 5 ist </span><span class="sc">{</span><span class="dv">5</span> <span class="op">!=</span> <span class="dv">5</span><span class="sc">}</span><span class="ss">&quot;</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;3 &lt; 5 ist </span><span class="sc">{</span><span class="dv">3</span> <span class="op">&lt;</span> <span class="dv">5</span><span class="sc">}</span><span class="ss">&quot;</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;5 &lt; 5 ist </span><span class="sc">{</span><span class="dv">5</span> <span class="op">&lt;</span> <span class="dv">5</span><span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>In Python können solche Datenstrukturen mit mehrdimensionalen Listen dargestellt werden. Dabei macht man sich zunutze, dass die Elemente einer Liste einen beliebigen Datentyp haben können, also auch selbst wieder Listen sein können:</p>
+<div id="6cf89c4c" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>messwerte <span class="op">=</span> [</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">0</span>, <span class="dv">20</span>, <span class="dv">30</span>],</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">1</span>, <span class="dv">21</span>, <span class="dv">32</span>],</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">2</span>, <span class="fl">21.5</span>, <span class="dv">31</span>]</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(messwerte)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>5 == 5 ist True
-5 == 3 ist False
-5 != 3 ist True
-5 != 5 ist False
-3 &lt; 5 ist True
-5 &lt; 5 ist False</code></pre>
+<pre><code>[[0, 20, 30], [1, 21, 32], [2, 21.5, 31]]</code></pre>
 </div>
 </div>
-<p>Vergleiche funktionieren auch mit Variablen:</p>
-<div id="407206b4" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">20</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Für a = </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss"> und b = </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss"> ist a &lt; b </span><span class="sc">{</span>a <span class="op">&lt;</span> b<span class="sc">}</span><span class="ss">.&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Hier ist das erste Element der Liste <code>messwerte</code> selbst wieder eine Liste, nämlich die Liste <code>[0, 20, 30]</code>, die die Messwerte zur Zeit 0 s enthält:</p>
+<div id="865a6e06" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(messwerte[<span class="dv">0</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Für a = 10 und b = 20 ist a &lt; b True.</code></pre>
+<pre><code>[0, 20, 30]</code></pre>
 </div>
 </div>
-<p>Man kann boolsche Werte in Variablen abspeichern:</p>
-<div id="8178705f" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>vergleich1 <span class="op">=</span> <span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">3</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>vergleich2 <span class="op">=</span> <span class="dv">3</span> <span class="op">&lt;</span> <span class="dv">1</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;vergleich1 ist </span><span class="sc">{</span>vergleich1<span class="sc">}</span><span class="ss">, vergleich2 ist </span><span class="sc">{</span>vergleich2<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Möchte man davon jetzt den Spannungswert, braucht man das Element mit Index 1 der Liste <code>messwerte[0]</code>, also <code>messwerte[0][1]</code>:</p>
+<div id="96fa5767" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(messwerte[<span class="dv">0</span>][<span class="dv">1</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>vergleich1 ist True, vergleich2 ist False</code></pre>
+<pre><code>20</code></pre>
 </div>
 </div>
-<p>Boolsche Ausdrücke können mit logischen Operatoren kombiniert werden.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Python</th>
-<th>Bedeutung</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>and</code></td>
-<td>und-Verknüpfung (beide Bedingungen müssen wahr sein)</td>
-</tr>
-<tr class="even">
-<td><code>or</code></td>
-<td>oder-Verknüpfung (mindestens eine Bedingung muss wahr sein)</td>
-</tr>
-<tr class="odd">
-<td><code>not</code></td>
-<td>Negation (kehrt den Wahrheitswert um)</td>
-</tr>
-</tbody>
-</table>
-<div id="496951fd" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;(5 &gt; 3) and (3 &lt; 1): </span><span class="sc">{</span>(<span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">3</span>) <span class="kw">and</span> (<span class="dv">3</span> <span class="op">&lt;</span> <span class="dv">1</span>)<span class="sc">}</span><span class="ss">&quot;</span>)  </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;(5 &gt; 3) and (3 &gt; 1): </span><span class="sc">{</span>(<span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">3</span>) <span class="kw">and</span> (<span class="dv">3</span> <span class="op">&gt;</span> <span class="dv">1</span>)<span class="sc">}</span><span class="ss">&quot;</span>)  </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;(5 &gt; 3) or (3 &lt; 1): </span><span class="sc">{</span>(<span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">3</span>) <span class="kw">or</span> (<span class="dv">3</span> <span class="op">&lt;</span> <span class="dv">1</span>)<span class="sc">}</span><span class="ss">&quot;</span>)  </span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;(5 &lt; 3) or (3 &lt; 1): </span><span class="sc">{</span>(<span class="dv">5</span> <span class="op">&lt;</span> <span class="dv">3</span>) <span class="kw">or</span> (<span class="dv">3</span> <span class="op">&lt;</span> <span class="dv">1</span>)<span class="sc">}</span><span class="ss">&quot;</span>)  </span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;not (5 &gt; 3): </span><span class="sc">{</span><span class="kw">not</span> (<span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">3</span>)<span class="sc">}</span><span class="ss">&quot;</span>)  </span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;not (5 &lt; 3): </span><span class="sc">{</span><span class="kw">not</span> (<span class="dv">5</span> <span class="op">&lt;</span> <span class="dv">3</span>)<span class="sc">}</span><span class="ss">&quot;</span>)  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Möchte man eine Liste aller Spannungswerte erhalten, so kann man dafür eine list comprehension verwenden:</p>
+<div id="36040678" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>spannungen <span class="op">=</span> [reihe[<span class="dv">1</span>] <span class="cf">for</span> reihe <span class="kw">in</span> messwerte]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(spannungen)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>(5 &gt; 3) and (3 &lt; 1): False
-(5 &gt; 3) and (3 &gt; 1): True
-(5 &gt; 3) or (3 &lt; 1): True
-(5 &lt; 3) or (3 &lt; 1): False
-not (5 &gt; 3): False
-not (5 &lt; 3): True</code></pre>
-</div>
-</div>
-<p>Besonderheiten: <code>int</code>- und <code>float</code>-Typen können untereinander verglichen werden, <code>String</code>-Ausdrücke können nicht mit Zahlentypen verglichen werden. Jedoch können Strings untereinander verglichen werden.</p>
-<div id="f6dc0da1" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;5 == 5.0: </span><span class="sc">{</span><span class="dv">5</span> <span class="op">==</span> <span class="fl">5.0</span><span class="sc">}</span><span class="ss">&quot;</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;5 == &#39;5&#39;: </span><span class="sc">{</span><span class="dv">5</span> <span class="op">==</span> <span class="st">&#39;5&#39;</span><span class="sc">}</span><span class="ss">&quot;</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;&#39;Hallo&#39; == &#39;Hallo&#39;: </span><span class="sc">{</span><span class="st">&#39;Hallo&#39;</span> <span class="op">==</span> <span class="st">&#39;Hallo&#39;</span><span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>5 == 5.0: True
-5 == &#39;5&#39;: False
-&#39;Hallo&#39; == &#39;Hallo&#39;: True</code></pre>
-</div>
-</div>
-<section id="bedingungen-und-blöcke" class="level1">
-<h1>Bedingungen und Blöcke</h1>
-<p>Bei der Ablaufkontrolle (flow control) gibt es immer eine <strong>Bedingung</strong> und einen <strong>Codeabschnitt</strong>, der in Abhängigkeit von der Bedingung einmal, mehrmals oder gar nicht ausgeführt wird. Der Codeabschnitt, auf den sich die Bedingung bezieht, wird als <strong>eingerückter Codeblock</strong> eingegeben.</p>
-<p><strong>Wichtig:</strong> - Die Einrückung muss im ganzen Codeblock die gleiche Tiefe haben. - Die Einrückung sollte mit der Tabulator-Taste und nicht mit Leerzeichen erfolgen.</p>
-<p>richtig:</p>
-<pre><code>weiterer code
-weiterer code
-flow control-Anweisung u. Bedingung:
-    code
-    code
-    code
-    code
-weiterer code
-weiterer code</code></pre>
-<p>falsch:</p>
-<pre><code>weiterer code
-weiterer code
-flow control-Anweisung u. Bedingung:
-      code
-      code
-     code
-      code
-weiterer code
-weiterer code</code></pre>
-<section id="if-anweisung" class="level2">
-<h2 class="anchored" data-anchor-id="if-anweisung">if-Anweisung</h2>
-<p>Die <code>if</code>-Anweisung wird verwendet, um Code nur dann auszuführen, wenn eine bestimmte Bedingung erfüllt ist. Ist die Bedingung wahr (<code>True</code>), wird der eingerückte Codeblock ausgeführt. Ist sie falsch (<code>False</code>), wird der Codeblock übersprungen.</p>
-<p>Die Syntax lautet:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> [boolscher Ausdruck]:</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    ...</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Beispiel:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> a <span class="op">&lt;</span> b:</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;a ist kleiner als b&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>In diesem Beispiel wird die Ausgabe nur angezeigt, wenn <code>a</code> tatsächlich kleiner als <code>b</code> ist.</p>
-<div id="aad39065" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> a <span class="op">&lt;</span> b:</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;a ist kleiner als b&quot;</span>)</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> b <span class="op">==</span> a:</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;b ist gleich a&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>a ist kleiner als b</code></pre>
-</div>
-</div>
-<p>Die <code>else</code>-Anweisung wird verwendet, um einen Codeblock auszuführen, wenn die Bedingung der vorherigen <code>if</code>-Anweisung <strong>nicht</strong> erfüllt ist. Sie ergänzt die <code>if</code>-Anweisung und sorgt dafür, dass genau einer der beiden Blöcke ausgeführt wird.</p>
-<p>Beispiel:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> a <span class="op">&lt;</span> b:</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;a ist kleiner als b&quot;</span>)</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;a ist nicht kleiner als b&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>In diesem Beispiel wird die Ausgabe im <code>else</code>-Block nur angezeigt, wenn die Bedingung <code>a &lt; b</code> <strong>falsch</strong> ist.</p>
-<div id="98b0094c" class="cell" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> a <span class="op">&lt;</span> b:</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;a ist kleiner als b&quot;</span>)</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;a ist nicht kleiner als b&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>a ist nicht kleiner als b</code></pre>
-</div>
-</div>
-<p>Die <code>elif</code>-Anweisung steht für “else if” und wird verwendet, um mehrere Bedingungen in einer if-else-Struktur zu überprüfen. Sie folgt auf eine <code>if</code>-Anweisung und vor einer optionalen <code>else</code>-Anweisung. Sobald eine Bedingung wahr ist, wird der zugehörige Codeblock ausgeführt und die restlichen Bedingungen werden übersprungen.</p>
-<p>Beispiel:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> a <span class="op">&lt;</span> b:</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;a ist kleiner als b&quot;</span>)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> a <span class="op">==</span> b:</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;a ist gleich b&quot;</span>)</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;a ist größer als b&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Mit <code>elif</code> können also mehrere Alternativen übersichtlich hintereinander geprüft werden.</p>
-<div id="f5ad1eac" class="cell" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> a <span class="op">&lt;</span> b:</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;a ist kleiner als b&quot;</span>)</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> a <span class="op">==</span> b:</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;a ist gleich b&quot;</span>)</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;a ist größer als b&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>a ist größer als b</code></pre>
-</div>
-</div>
-<p>Achtung: Sobald eine elif-Bedingung richtig ist, wird der Rest nicht mehr geprüft:</p>
-<div id="bddb6b41" class="cell" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">1000</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> a <span class="op">&gt;</span> b:</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;a ist größer als b&quot;</span>)</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> a <span class="op">&gt;</span> b <span class="op">+</span> <span class="dv">100</span>:</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;a ist viel größer als b&quot;</span>)</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;a ist nicht größer als b&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>a ist größer als b</code></pre>
-</div>
-</div>
-<p>Ändert man die Reihenfolge, funktioniert es:</p>
-<div id="b4a78c37" class="cell" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">1000</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> a <span class="op">&gt;</span> b <span class="op">+</span> <span class="dv">100</span>:</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;a ist viel größer als b&quot;</span>)</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> a <span class="op">&gt;</span> b:</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;a ist größer als b&quot;</span>)</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;a ist nicht größer als b&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>a ist viel größer als b</code></pre>
+<pre><code>[20, 21, 21.5]</code></pre>
 </div>
 </div>
 </section>
-<section id="while-schleifen" class="level2">
-<h2 class="anchored" data-anchor-id="while-schleifen">While-Schleifen</h2>
-<p>Die <code>while</code>-Schleife wird verwendet, um einen Codeblock so lange zu wiederholen, wie eine bestimmte Bedingung wahr (<code>True</code>) ist. Die Bedingung wird vor jedem Durchlauf überprüft. Sobald sie falsch (<code>False</code>) wird, endet die Schleife. Die Syntax ist:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> [boolscher Ausdruck]:</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    ...</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="f59dfb21" class="cell" data-execution_count="11">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>eingabe <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Was ist 5 + 3? &quot;</span>)) <span class="co"># Eingabe: 7</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> eingabe <span class="op">!=</span> <span class="dv">8</span>:</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Falsch! Versuch es noch einmal.&quot;</span>)</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    eingabe <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Was ist 5 + 3? &quot;</span>)) <span class="co"># Einfabe: 8</span></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Richtig!&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="72be1c29" class="cell" data-execution_count="12">
+<section id="numpy-arrays" class="level2">
+<h2 class="anchored" data-anchor-id="numpy-arrays">NumPy-Arrays</h2>
+<p>Die Numpy-Bibliothek bietet ergänzende Möglichkeiten, um mit mehrdimensionalen Datenstrukturen zu arbeiten.</p>
+<p>Ein Numpy-Array kann aus einer Liste erzeugt werden:</p>
+<div id="8c306516" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>messwerte_array <span class="op">=</span> np.array(messwerte)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(messwerte_array)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Was ist 5 + 3? 7
-Falsch! Versuch es noch einmal.
-Was ist 5 + 3? 8
-Richtig!</code></pre>
+<pre><code>[[ 0.  20.  30. ]
+ [ 1.  21.  32. ]
+ [ 2.  21.5 31. ]]</code></pre>
 </div>
 </div>
-<p>Wir suchen durch Ausprobieren die kleinste Zahl, die durch 18 und 12 teilbar ist:</p>
-<div id="484fb158" class="cell" data-execution_count="13">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>zahl <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (zahl <span class="op">%</span> <span class="dv">18</span> <span class="op">!=</span> <span class="dv">0</span>) <span class="kw">or</span> (zahl <span class="op">%</span> <span class="dv">12</span> <span class="op">!=</span> <span class="dv">0</span>):</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    zahl <span class="op">=</span> zahl <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Die kleinste Zahl, die durch 18 und 12 teilbar ist, ist </span><span class="sc">{</span>zahl<span class="sc">}</span><span class="ss">.&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Man sieht, dass die Ausgabe jetzt in Zeilen und Spalten formatiert ist, was die Übersichtlichkeit erhöht.</p>
+<p>Auf ein Element eines Numpy-Arrays kann man genauso zugreifen wie bei einer Liste von Listen:</p>
+<div id="4673165f" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(messwerte_array[<span class="dv">0</span>][<span class="dv">1</span>])  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Die kleinste Zahl, die durch 18 und 12 teilbar ist, ist 36.</code></pre>
+<pre><code>20.0</code></pre>
 </div>
 </div>
-<p>Die <code>break</code>-Anweisung wird verwendet, um eine Schleife vorzeitig zu beenden. Sobald <code>break</code> im Schleifen-Block ausgeführt wird, wird die Schleife sofort verlassen und das Programm läuft mit dem Code nach der Schleife weiter.</p>
-<p>Typischerweise wird <code>break</code> eingesetzt, wenn eine bestimmte Bedingung innerhalb der Schleife erfüllt ist und keine weiteren Durchläufe mehr nötig sind.</p>
-<p>Beispiel von oben in abgeänderter Form:</p>
-<div id="c2c8037c" class="cell" data-execution_count="14">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>zahl <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (zahl <span class="op">%</span> <span class="dv">18</span> <span class="op">==</span> <span class="dv">0</span>) <span class="kw">and</span> (zahl <span class="op">%</span> <span class="dv">12</span> <span class="op">==</span> <span class="dv">0</span>):</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;Die kleinste Zahl, die durch 18 und 12 teilbar ist, ist </span><span class="sc">{</span>zahl<span class="sc">}</span><span class="ss">.&quot;</span>)</span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>    zahl <span class="op">=</span> zahl <span class="op">+</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Für Numpy-Arrays gibt es jedoch auch eine alternative, kompaktere Notation mit Kommas:</p>
+<div id="e24edd88" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(messwerte_array[<span class="dv">0</span>, <span class="dv">1</span>])  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Die kleinste Zahl, die durch 18 und 12 teilbar ist, ist 36.</code></pre>
+<pre><code>20.0</code></pre>
 </div>
 </div>
-<p>Die <code>continue</code>-Anweisung springt wieder zum Beginn der Schleife, der Rest der Anweisung wird für diesen Durchgang ausgelassen.</p>
-<div id="eefd9e6a" class="cell" data-execution_count="15">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Wer bist du? &quot;</span>) <span class="co"># Eingabe: Master, danach: Doctor</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> name <span class="op">!=</span> <span class="st">&quot;Doctor&quot;</span>:</span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Hallo Doctor! Was ist das Passwort?&quot;</span>)</span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>    passwort <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Passwort: &quot;</span>) <span class="co"># Eingabe: Tardis</span></span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> passwort <span class="op">==</span> <span class="st">&quot;Tardis&quot;</span>:</span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
-<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Zutritt gewährt.&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="ab9401c8" class="cell" data-execution_count="16">
+<p>Eine ganze Spalte zu extrahieren geht mit Numpy-Array ebenfalls einfacher:</p>
+<div id="93abefd1" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>spannungen_array <span class="op">=</span> messwerte_array[:, <span class="dv">1</span>]</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(spannungen_array)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Wer bist du? Master
-Wer bist du? Doctor
-Hallo Doctor! Was ist das Passwort? Tardis
-Zutritt gewährt.</code></pre>
+<pre><code>[20.  21.  21.5]</code></pre>
+</div>
+</div>
+<p>Hierbei steht der Doppelpunkt <code>:</code> für <code>0:len(messwerte_array)</code> (d.h. alle Zeilen) und die <code>1</code> für die zweite Spalte (Index 1).</p>
+</section>
+<section id="broadcasting-bei-numpy-arrays" class="level2">
+<h2 class="anchored" data-anchor-id="broadcasting-bei-numpy-arrays">Broadcasting bei Numpy-Arrays</h2>
+<p>Bei Python-Listen haben die Rechenoperatoren in der Regel keine arithmetische Bedeutung:</p>
+<div id="65836b23" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">+</span> b)  <span class="co"># Verkettung der Listen</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">*</span> <span class="dv">2</span>)  <span class="co"># Wiederholung der Liste</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 2, 3, 4, 5, 6]
+[1, 2, 3, 1, 2, 3]</code></pre>
+</div>
+</div>
+<p>Bei Numpy-Arrays hingegen sind die Rechenoperatoren arithmetisch definiert:</p>
+<div id="0caa4ef4" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>a_array <span class="op">=</span> np.array(a)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>b_array <span class="op">=</span> np.array(b)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a_array <span class="op">+</span> b_array)  <span class="co"># Elementweise Addition</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a_array <span class="op">*</span> <span class="dv">2</span>)        <span class="co"># Elementweise Multiplikation</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[5 7 9]
+[2 4 6]</code></pre>
+</div>
+</div>
+<p>Hierbei wird bei der Addition jedes Element von <code>a_array</code> mit dem entsprechenden Element von <code>b_array</code> addiert, und bei der Multiplikation wird jedes Element von <code>a_array</code> mit 2 multipliziert (das nennt man Broadcasting).</p>
+</section>
+<section id="tricks-und-beispiele" class="level2">
+<h2 class="anchored" data-anchor-id="tricks-und-beispiele">Tricks und Beispiele</h2>
+<p>Ein Numpy-Array einer bestimmten Größe mit Nullen erzeugen:</p>
+<div id="e1140322" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>null_tabelle <span class="op">=</span> np.zeros((<span class="dv">3</span>, <span class="dv">4</span>))  <span class="co"># 3 Zeilen, 4 Spalten</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(null_tabelle)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[0. 0. 0. 0.]
+ [0. 0. 0. 0.]
+ [0. 0. 0. 0.]]</code></pre>
+</div>
+</div>
+<p>Ebenso kann man mit <code>python np.ones((3, 4))</code> ein Array mit Einsen erzeugen.</p>
+<p>Mit Hilfe von Broadcasting kann man dann alle Werte oder einzelne Bereiche ersetzen:</p>
+<div id="720e679d" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>null_tabelle[:, :] <span class="op">=</span> <span class="dv">5</span>  <span class="co"># Alle Werte auf 5 setzen</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(null_tabelle)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[5. 5. 5. 5.]
+ [5. 5. 5. 5.]
+ [5. 5. 5. 5.]]</code></pre>
+</div>
+</div>
+<div id="38b8d3c4" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>null_tabelle[<span class="dv">1</span>, :] <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]  <span class="co"># Zweite Zeile ersetzen</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(null_tabelle)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[5. 5. 5. 5.]
+ [1. 2. 3. 4.]
+ [5. 5. 5. 5.]]</code></pre>
+</div>
+</div>
+<div id="788cd3f5" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>null_tabelle[:, <span class="dv">2</span>] <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]  <span class="co"># Dritte Spalte ersetzen</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>null_tabelle[:, <span class="dv">3</span>] <span class="op">=</span> <span class="dv">42</span>  <span class="co"># Vierte Spalte ersetzen</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(null_tabelle)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[ 5.  5. 10. 42.]
+ [ 1.  2. 20. 42.]
+ [ 5.  5. 30. 42.]]</code></pre>
+</div>
+</div>
+<p>Für komplexere Operationen können auch Schleifen verwendet werden. Das folgende Programm erstellt eine Multiplikationstabelle:</p>
+<div id="ed56196c" class="cell" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>multiplikationstabelle <span class="op">=</span> np.zeros((<span class="dv">10</span>, <span class="dv">10</span>))</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>        multiplikationstabelle[i, j] <span class="op">=</span> (i<span class="op">+</span><span class="dv">1</span>) <span class="op">*</span> (j<span class="op">+</span><span class="dv">1</span>)</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(multiplikationstabelle)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[  1.   2.   3.   4.   5.   6.   7.   8.   9.  10.]
+ [  2.   4.   6.   8.  10.  12.  14.  16.  18.  20.]
+ [  3.   6.   9.  12.  15.  18.  21.  24.  27.  30.]
+ [  4.   8.  12.  16.  20.  24.  28.  32.  36.  40.]
+ [  5.  10.  15.  20.  25.  30.  35.  40.  45.  50.]
+ [  6.  12.  18.  24.  30.  36.  42.  48.  54.  60.]
+ [  7.  14.  21.  28.  35.  42.  49.  56.  63.  70.]
+ [  8.  16.  24.  32.  40.  48.  56.  64.  72.  80.]
+ [  9.  18.  27.  36.  45.  54.  63.  72.  81.  90.]
+ [ 10.  20.  30.  40.  50.  60.  70.  80.  90. 100.]]</code></pre>
 </div>
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
