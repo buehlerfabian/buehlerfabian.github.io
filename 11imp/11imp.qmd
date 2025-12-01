@@ -7,6 +7,7 @@ title: "IMP Klasse 11"
 - [Übung: Programmieren einer Folge in Python](UebCollatzLsg.qmd)
 - [Übungen zu diskretem Wachstum](UebWachstumLsg.qmd)
 - [Übungen zu parametrisierten Kurven](UebParameterkurveLsg.qmd)
+- [Beispiel: Waagrechter Wurf](skriptIMP11G9-BspWaagrechterWurfLsg.qmd)
 
 ### Python
 
