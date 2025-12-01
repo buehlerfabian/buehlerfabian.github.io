@@ -59,7 +59,7 @@ print(f"Horizontale Wurfweite: {x(t):.2f} m")
 ### d)
 Bei der gegebenen Anfangsgeschwindigkeit ist die Wurfweite größer als 12 m. Die Idee ist, die Anfangsgeschwindigkeit so lange in kleinen Schrittten zu verringern, bis die Wurfweite gerade noch 12 m beträgt. Um den Code übersichtlich zu halten, empfiehlt es sich, die Berechnung der Wurfweite in eine eigene Funktion auszulagern:
 ```{python}
-def wurfweite(v0):
+def wurfweite():
     t = 0
     dt = 0.01
     while y(t) >= 0:
@@ -73,7 +73,7 @@ v0 = 10  # Haben wir eigentlich schon, nur zur Erinnerung :)
 ziel_wurfweite = 12
 dv = 0.01  # Schrittweite für die Verringerung der Anfangsgesch
 
-while wurfweite(v0) > ziel_wurfweite:
+while wurfweite() > ziel_wurfweite:
     v0 -= dv
 
 print(f"Anfangsgeschwindigkeit für Wurfweite von 12 m: {v0:.2f} m/s")
@@ -112,20 +112,20 @@ while y(t) >= 0:
 print(f"Zeit bis zum Aufprall: {t:.2f} s")
 
 # c)
-def wurfweite(v0):
+def wurfweite():
     t = 0
     dt = 0.01
     while y(t) >= 0:
         t += dt
     return x(t)
 
-print(f"Horizontale Wurfweite: {wurfweite(v0):.2f} m")
+print(f"Horizontale Wurfweite: {wurfweite():.2f} m")
 
 # d)
 ziel_wurfweite = 12
 dv = 0.01  # Schrittweite für die Verringerung der Anfangsgesch
 
-while wurfweite(v0) > ziel_wurfweite:
+while wurfweite() > ziel_wurfweite:
     v0 -= dv
 
 print(f"Anfangsgeschwindigkeit für Wurfweite von 12 m: {v0:.2f} m/s")
