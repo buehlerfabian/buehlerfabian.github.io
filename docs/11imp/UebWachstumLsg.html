@@ -4130,7 +4130,7 @@ a_{n+1} = 0.75\cdot a_n + 100 = a_n - 0.25\cdot a_n + 100 = a_n + 0.25\cdot\left
 <p>Umformen: <span class="math display">\[
 a_{n+1} = 0.75\cdot a_n + 100 \; \Rightarrow \; a_n = \frac{a_{n+1} - 100}{0.75}
 \]</span></p>
-<div id="aaa34968" class="cell" data-execution_count="1">
+<div id="40a157af" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> berechneVorgaenger(an):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (an <span class="op">-</span> <span class="dv">100</span>) <span class="op">/</span> <span class="fl">0.75</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4187,7 +4187,7 @@ a_{n+1} = .998\cdot a_n + 1000 = a_n - 0.002\cdot a_n + 1000 = a_n + 0.002\cdot\
 </section>
 <section id="c" class="level3">
 <h3 class="anchored" data-anchor-id="c">c)</h3>
-<div id="5e9ad038" class="cell" data-execution_count="2">
+<div id="52ed4353" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> berechneNachfolger(an):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fl">0.998</span> <span class="op">*</span> an <span class="op">+</span> <span class="dv">1000</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4217,7 +4217,7 @@ a_{n+1} = a_n + k\cdot a_n\cdot\left(S - a_n\right)
 </section>
 <section id="b-2" class="level3">
 <h3 class="anchored" data-anchor-id="b-2">b)</h3>
-<div id="c2d300e8" class="cell" data-execution_count="3">
+<div id="0dd01b93" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> berechneNachfolger(an):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> an <span class="op">+</span> <span class="fl">0.1136</span> <span class="op">*</span> an <span class="op">*</span> (<span class="fl">9.00</span> <span class="op">-</span> an)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4234,7 +4234,7 @@ a_{n+1} = a_n + k\cdot a_n\cdot\left(S - a_n\right)
 </section>
 <section id="c-1" class="level3">
 <h3 class="anchored" data-anchor-id="c-1">c)</h3>
-<div id="13345f34" class="cell" data-execution_count="4">
+<div id="1da3c786" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> berechneNachfolger(an):</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> an <span class="op">+</span> <span class="fl">0.1136</span> <span class="op">*</span> an <span class="op">*</span> (<span class="fl">9.00</span> <span class="op">-</span> an)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4264,7 +4264,7 @@ a_{n+1} = a_n + k\cdot\left(S - a_n\right)
 </section>
 <section id="b-3" class="level3">
 <h3 class="anchored" data-anchor-id="b-3">b)</h3>
-<div id="c28e22f3" class="cell" data-execution_count="5">
+<div id="3d9ecf23" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> berechneNachfolger(an):</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> an <span class="op">+</span> <span class="fl">0.05</span> <span class="op">*</span> (<span class="dv">30</span> <span class="op">-</span> an)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4299,7 +4299,7 @@ Hinweis
 <p>Nach 5 Tagen ist die Hälfte zerfallen, d.h. <span class="math inline">\(a_5 = \frac 12 \cdot a_0\)</span>. Andererseits gilt <span class="math inline">\(a_5 = q^5 \cdot a_0\)</span>. Also ist <span class="math inline">\(q^5 = \frac 12\)</span> und damit <span class="math inline">\(q = \left(\frac 12\right)^{\frac 15}\)</span>.</p>
 </div>
 </div>
-<div id="ccea3c2c" class="cell" data-execution_count="6">
+<div id="11d320e9" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> berechneNachfolger(an):</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fl">0.87055</span> <span class="op">*</span> an</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4327,7 +4327,7 @@ Tag 10: 25.00 mg</code></pre>
 </section>
 <section id="c-2" class="level3">
 <h3 class="anchored" data-anchor-id="c-2">c)</h3>
-<div id="18543a95" class="cell" data-execution_count="7">
+<div id="05369206" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> berechneNachfolger(an):</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fl">0.87055</span> <span class="op">*</span> an</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4347,7 +4347,7 @@ Tag 10: 25.00 mg</code></pre>
 <h2 class="anchored" data-anchor-id="aufgabe-5">6. Aufgabe</h2>
 <section id="a-4" class="level3">
 <h3 class="anchored" data-anchor-id="a-4">a)</h3>
-<div id="d85f15cc" class="cell" data-execution_count="8">
+<div id="0c000131" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>guthaben_bank1 <span class="op">=</span> <span class="dv">1000</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>guthaben_bank2 <span class="op">=</span> <span class="dv">1000</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>guthaben_bank3 <span class="op">=</span> <span class="dv">1000</span></span>
@@ -4391,7 +4391,7 @@ Ende Monat 72: 1144.00 €, 1146.18 €, 1154.72 €, 1186.66 €</code></pre>
 <h2 class="anchored" data-anchor-id="aufgabe-7">Aufgabe 7</h2>
 <section id="a-5" class="level3">
 <h3 class="anchored" data-anchor-id="a-5">a)</h3>
-<div id="74c1e945" class="cell" data-execution_count="9">
+<div id="adceffdd" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>darlehen <span class="op">=</span> <span class="dv">300000</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>monat <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>bezahlt <span class="op">=</span> <span class="dv">0</span></span>
@@ -4417,7 +4417,7 @@ Insgesamt wurde 404679.12 € bezahlt.</code></pre>
 </section>
 <section id="b-5" class="level3">
 <h3 class="anchored" data-anchor-id="b-5">b)</h3>
-<div id="25d235a5" class="cell" data-execution_count="10">
+<div id="32f1c050" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>darlehen <span class="op">=</span> <span class="dv">300000</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>monat <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>bezahlt <span class="op">=</span> <span class="dv">0</span></span>
@@ -4442,7 +4442,7 @@ Insgesamt wurde 416408.40 € bezahlt.</code></pre>
 <section id="c-3" class="level3">
 <h3 class="anchored" data-anchor-id="c-3">c)</h3>
 <p>Fall a):</p>
-<div id="d025dd13" class="cell" data-execution_count="11">
+<div id="2b5278c8" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>darlehen <span class="op">=</span> <span class="dv">300000</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>monat <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>bezahlt <span class="op">=</span> <span class="dv">0</span></span>
@@ -4473,7 +4473,7 @@ Insgesamt wurde 381206.46 € bezahlt.</code></pre>
 </div>
 </div>
 <p>Fall b):</p>
-<div id="9079115c" class="cell" data-execution_count="12">
+<div id="98ebe6f0" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>darlehen <span class="op">=</span> <span class="dv">300000</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>monat <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>bezahlt <span class="op">=</span> <span class="dv">0</span></span>

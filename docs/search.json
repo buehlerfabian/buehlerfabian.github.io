@@ -182,53 +182,11 @@
     "text": "lokaler und globaler Scope"
   },
   {
-    "objectID": "11imp/UebCollatzLsg.html",
-    "href": "11imp/UebCollatzLsg.html",
-    "title": "Übung: Programmieren einer Folge in Python – Lösung",
+    "objectID": "11imp/skriptIMP11G9-BspWaagrechterWurfLsg.html",
+    "href": "11imp/skriptIMP11G9-BspWaagrechterWurfLsg.html",
+    "title": "Beispiel parametrisierte Kurve in Python mit Matplotlib",
     "section": "",
-    "text": "Die Prüfung, ob a_n gerade oder ungerade ist, wird am besten mit dem Modulo-Operator % durchgeführt. Der Ausdruck a_n % 2 liefert den Rest der Division von a_n durch 2. Wenn dieser Rest 0 ist, ist die Zahl gerade, andernfalls ungerade.\n\ndef collatz_next(a_n):\n    if a_n % 2 == 0:\n        return a_n // 2\n    else:\n        return 3 * a_n + 1"
-  },
-  {
-    "objectID": "11imp/UebCollatzLsg.html#aufgabe",
-    "href": "11imp/UebCollatzLsg.html#aufgabe",
-    "title": "Übung: Programmieren einer Folge in Python – Lösung",
-    "section": "",
-    "text": "Die Prüfung, ob a_n gerade oder ungerade ist, wird am besten mit dem Modulo-Operator % durchgeführt. Der Ausdruck a_n % 2 liefert den Rest der Division von a_n durch 2. Wenn dieser Rest 0 ist, ist die Zahl gerade, andernfalls ungerade.\n\ndef collatz_next(a_n):\n    if a_n % 2 == 0:\n        return a_n // 2\n    else:\n        return 3 * a_n + 1"
-  },
-  {
-    "objectID": "11imp/UebCollatzLsg.html#aufgabe-1",
-    "href": "11imp/UebCollatzLsg.html#aufgabe-1",
-    "title": "Übung: Programmieren einer Folge in Python – Lösung",
-    "section": "2. Aufgabe",
-    "text": "2. Aufgabe\n\ndef collatz_sequence(start_value):\n    a_n = start_value\n    while a_n != 1:\n        print(a_n)\n        a_n = collatz_next(a_n)\n    print(a_n)\n\nEs wäre auch möglich, anstelle der lokalen Variable a_n direkt mit start_value zu arbeiten. Die abschließende print(a_n)-Anweisung ist notwendig, um die 1 am Ende der Folge auch noch auszugeben."
-  },
-  {
-    "objectID": "11imp/UebCollatzLsg.html#aufgabe-2",
-    "href": "11imp/UebCollatzLsg.html#aufgabe-2",
-    "title": "Übung: Programmieren einer Folge in Python – Lösung",
-    "section": "3. Aufgabe",
-    "text": "3. Aufgabe\n\ndef collatz_length(start_value):\n    a_n = start_value\n    length = 1  # Startwert zählt als erstes Glied\n    while a_n != 1:\n        a_n = collatz_next(a_n)\n        length += 1\n    return length\n\nDer Ansatz entspricht dem der vorherigen Aufgabe, nur wird hier keine Ausgabe erzeugt, sondern statt dessen eine Zählvariable length verwendet, die bei jedem Schritt um 1 erhöht wird. Am Ende wird die Länge der Folge zurückgegeben."
-  },
-  {
-    "objectID": "11imp/UebParameterkurveLsg.html",
-    "href": "11imp/UebParameterkurveLsg.html",
-    "title": "Übungen zu parametrisierten Kurven – Lösungen",
-    "section": "",
-    "text": "import matplotlib.pyplot as plt\nfrom numpy import arange\ntlist = arange(0, 2.1, 0.1)\nx = [2*t for t in tlist]\ny = [t**2 for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange\ntlist = arange(0, 2.1, 0.1)\nx = [t**2 for t in tlist]\ny = [t for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange, cos, sin\ntlist = arange(0, 6.3 + 0.1, 0.1)\nx = [cos(t) for t in tlist]\ny = [2*sin(t) for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange, cos, sin\ntlist = arange(0, 6.3 + 0.1, 0.1)\nx = [cos(t) for t in tlist]\ny = [sin(2*t) for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange\ntlist = arange(-1.5, 1.5 + 0.1, 0.1)\nx = [t**2 for t in tlist]\ny = [t**3 for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange\ntlist = arange(-1.5, 1.5 + 0.1, 0.1)\nx = [t**2 - 1 for t in tlist]\ny = [t*(t**2 - 1) for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange, sin, cos\ntlist = arange(-12, 12 + 0.1, 0.1)\nx = [t - sin(t) for t in tlist]\ny = [1 - cos(t) for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()"
-  },
-  {
-    "objectID": "11imp/UebParameterkurveLsg.html#aufgabe",
-    "href": "11imp/UebParameterkurveLsg.html#aufgabe",
-    "title": "Übungen zu parametrisierten Kurven – Lösungen",
-    "section": "",
-    "text": "import matplotlib.pyplot as plt\nfrom numpy import arange\ntlist = arange(0, 2.1, 0.1)\nx = [2*t for t in tlist]\ny = [t**2 for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange\ntlist = arange(0, 2.1, 0.1)\nx = [t**2 for t in tlist]\ny = [t for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange, cos, sin\ntlist = arange(0, 6.3 + 0.1, 0.1)\nx = [cos(t) for t in tlist]\ny = [2*sin(t) for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange, cos, sin\ntlist = arange(0, 6.3 + 0.1, 0.1)\nx = [cos(t) for t in tlist]\ny = [sin(2*t) for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange\ntlist = arange(-1.5, 1.5 + 0.1, 0.1)\nx = [t**2 for t in tlist]\ny = [t**3 for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange\ntlist = arange(-1.5, 1.5 + 0.1, 0.1)\nx = [t**2 - 1 for t in tlist]\ny = [t*(t**2 - 1) for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange, sin, cos\ntlist = arange(-12, 12 + 0.1, 0.1)\nx = [t - sin(t) for t in tlist]\ny = [1 - cos(t) for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()"
-  },
-  {
-    "objectID": "11imp/11imp.html",
-    "href": "11imp/11imp.html",
-    "title": "IMP Klasse 11",
-    "section": "",
-    "text": "Lösungen\n\nÜbung: Programmieren einer Folge in Python\nÜbungen zu diskretem Wachstum\nÜbungen zu parametrisierten Kurven\nBeispiel: Waagrechter Wurf\n\n\n\nPython\n\nEinführung in Python"
+    "text": "Die üblichen Importe, um Schaubilder erstellen zu können:\n\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nEs ist guter Programmierstil, konstante Zahlenwerte am Anfang als Variablen zu definieren:\n\ny0 = 15  # Abwurfhöhe\nv0 = 10  # Abwurfgeschwindigkeit\ng = 9.81  # Erdbeschleunigung\n\nDie Berechnung von \\(x(t)\\) und \\(y(t)\\) ist einfach, wird aber voraussichtlich an mehreren Stellen benötigt. Daher ist es sinnvoll, die Berechnungen in Funktionen auszulagern:\n\ndef x(t):\n    return v0 * t\n\ndef y(t):\n    return y0 - 1/2 * g * t**2\n\n\na)\nGrafische Darstellung der Bahnkurve:\n\nx_werte = [x(t) for t in np.linspace(0,2,100)]\ny_werte = [y(t) for t in np.linspace(0,2,100)]\n\nplt.plot(x_werte, y_werte)\nplt.grid()\nplt.axis(\"equal\")\nplt.show()\n\n\n\n\n\n\n\n\n\n\nb)\nEs wird über eine While-Schleife \\(t\\) in kleinen Schritten erhöht, bis \\(y(t)\\) negativ wird:\n\nt = 0\ndt = 0.01  # Zeitschrittweite\nwhile y(t) &gt;= 0:\n    t += dt\n\nprint(f\"Zeit bis zum Aufprall: {t:.2f} s\")\n\nZeit bis zum Aufprall: 1.75 s\n\n\n\n\nc)\nDie horizontale Wurfweite wird mit der Funktion x(t) bekommt man mit der vorherigen Teilaufgabe praktisch mitgeliefert. Wir haben ja schon den Zeitpunkt, d.h. wir müssen lediglich noch die dazu gehörige \\(x\\)-Koordinate berechnen:\n\nprint(f\"Horizontale Wurfweite: {x(t):.2f} m\")\n\nHorizontale Wurfweite: 17.50 m\n\n\n\n\nd)\nBei der gegebenen Anfangsgeschwindigkeit ist die Wurfweite größer als 12 m. Die Idee ist, die Anfangsgeschwindigkeit so lange in kleinen Schrittten zu verringern, bis die Wurfweite gerade noch 12 m beträgt. Um den Code übersichtlich zu halten, empfiehlt es sich, die Berechnung der Wurfweite in eine eigene Funktion auszulagern:\n\ndef wurfweite():\n    t = 0\n    dt = 0.01\n    while y(t) &gt;= 0:\n        t += dt\n    return x(t)\n\nNun können wir wie beschrieben \\(v_0\\) so lange verringern, bis die gewünschte Wurfweite von 12 m erreicht ist:\n\nv0 = 10  # Haben wir eigentlich schon, nur zur Erinnerung :)\nziel_wurfweite = 12\ndv = 0.01  # Schrittweite für die Verringerung der Anfangsgesch\n\nwhile wurfweite() &gt; ziel_wurfweite:\n    v0 -= dv\n\nprint(f\"Anfangsgeschwindigkeit für Wurfweite von 12 m: {v0:.2f} m/s\")\n\nAnfangsgeschwindigkeit für Wurfweite von 12 m: 6.85 m/s\n\n\n\n\nDas ganze Programm\n\nimport matplotlib.pyplot as plt\nimport numpy as np\n\ny0 = 15  # Abwurfhöhe\nv0 = 10  # Abwurfgeschwindigkeit\ng = 9.81  # Erdbeschleunigung\n\ndef x(t):\n    return v0 * t\n\ndef y(t):\n    return y0 - 1/2 * g * t**2\n\n# a)\nx_werte = [x(t) for t in np.linspace(0,2,100)]\ny_werte = [y(t) for t in np.linspace(0,2,100)]\n\nplt.plot(x_werte, y_werte)\nplt.grid()\nplt.axis(\"equal\")\nplt.show()\n\n# b)\nt = 0\ndt = 0.01  # Zeitschrittweite\nwhile y(t) &gt;= 0:\n    t += dt\n\nprint(f\"Zeit bis zum Aufprall: {t:.2f} s\")\n\n# c)\ndef wurfweite():\n    t = 0\n    dt = 0.01\n    while y(t) &gt;= 0:\n        t += dt\n    return x(t)\n\nprint(f\"Horizontale Wurfweite: {wurfweite():.2f} m\")\n\n# d)\nziel_wurfweite = 12\ndv = 0.01  # Schrittweite für die Verringerung der Anfangsgesch\n\nwhile wurfweite() &gt; ziel_wurfweite:\n    v0 -= dv\n\nprint(f\"Anfangsgeschwindigkeit für Wurfweite von 12 m: {v0:.2f} m/s\")\n\n\n\n\n\n\n\n\nZeit bis zum Aufprall: 1.75 s\nHorizontale Wurfweite: 17.50 m\nAnfangsgeschwindigkeit für Wurfweite von 12 m: 6.85 m/s"
   },
   {
     "objectID": "11imp/UebWachstumLsg.html",
@@ -287,18 +245,102 @@
     "text": "Aufgabe 7\n\na)\n\ndarlehen = 300000\nmonat = 0\nbezahlt = 0\nwhile darlehen &gt; 0:\n    monat += 1\n    if monat % 12 == 0:\n        darlehen = darlehen * 1.03\n    if monat %12 == 1:\n        if darlehen &gt;= 18000:\n            darlehen -= 18000\n            bezahlt += 18000\n        else:\n            bezahlt += darlehen\n            darlehen = 0\n\nprint(f\"Nach {monat} Monaten ist das Darlehen getilt.\")\nprint(f\"Insgesamt wurde {bezahlt:.2f} € bezahlt.\")\n\nNach 265 Monaten ist das Darlehen getilt.\nInsgesamt wurde 404679.12 € bezahlt.\n\n\n\n\nb)\n\ndarlehen = 300000\nmonat = 0\nbezahlt = 0\nwhile darlehen &gt; 0:\n    monat += 1\n    darlehen *= 1.0025\n    if darlehen &gt; 1500:\n        darlehen -= 1500\n        bezahlt += 1500\n    else:\n        bezahlt += darlehen\n        darlehen = 0\n\nprint(f\"Nach {monat} Monaten ist das Darlehen getilt.\")\nprint(f\"Insgesamt wurde {bezahlt:.2f} € bezahlt.\")\n\nNach 278 Monaten ist das Darlehen getilt.\nInsgesamt wurde 416408.40 € bezahlt.\n\n\n\n\nc)\nFall a):\n\ndarlehen = 300000\nmonat = 0\nbezahlt = 0\nwhile darlehen &gt; 0:\n    monat += 1\n    if monat % 12 == 0:\n        darlehen = darlehen * 1.03\n    if monat %12 == 1:\n        if darlehen &gt;= 18000:\n            darlehen -= 18000\n            bezahlt += 18000\n        else:\n            bezahlt += darlehen\n            darlehen = 0\n    if monat%24 == 1:\n        if darlehen &gt;= 6000:\n            darlehen -= 6000\n            bezahlt += 6000\n        else:\n            bezahlt += darlehen\n            darlehen = 0\n\nprint(f\"Nach {monat} Monaten ist das Darlehen getilt.\")\nprint(f\"Insgesamt wurde {bezahlt:.2f} € bezahlt.\")\n\nNach 217 Monaten ist das Darlehen getilt.\nInsgesamt wurde 381206.46 € bezahlt.\n\n\nFall b):\n\ndarlehen = 300000\nmonat = 0\nbezahlt = 0\nwhile darlehen &gt; 0:\n    monat += 1\n    darlehen *= 1.0025\n    if darlehen &gt; 1500:\n        darlehen -= 1500\n        bezahlt += 1500\n    else:\n        bezahlt += darlehen\n        darlehen = 0\n    if monat%24 == 1:\n        if darlehen &gt;= 6000:\n            darlehen -= 6000\n            bezahlt += 6000\n        else:\n            bezahlt += darlehen\n            darlehen = 0\n\nprint(f\"Nach {monat} Monaten ist das Darlehen getilt.\")\nprint(f\"Insgesamt wurde {bezahlt:.2f} € bezahlt.\")\n\nNach 221 Monaten ist das Darlehen getilt.\nInsgesamt wurde 390041.04 € bezahlt."
   },
   {
-    "objectID": "11imp/skriptIMP11G9-BspWaagrechterWurfLsg.html",
-    "href": "11imp/skriptIMP11G9-BspWaagrechterWurfLsg.html",
-    "title": "Beispiel parametrisierte Kurve in Python mit Matplotlib",
+    "objectID": "11imp/11imp.html",
+    "href": "11imp/11imp.html",
+    "title": "IMP Klasse 11",
     "section": "",
-    "text": "Die üblichen Importe, um Schaubilder erstellen zu können:\n\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nEs ist guter Programmierstil, konstante Zahlenwerte am Anfang als Variablen zu definieren:\n\ny0 = 15  # Abwurfhöhe\nv0 = 10  # Abwurfgeschwindigkeit\ng = 9.81  # Erdbeschleunigung\n\nDie Berechnung von \\(x(t)\\) und \\(y(t)\\) ist einfach, wird aber voraussichtlich an mehreren Stellen benötigt. Daher ist es sinnvoll, die Berechnungen in Funktionen auszulagern:\n\ndef x(t):\n    return v0 * t\n\ndef y(t):\n    return y0 - 1/2 * g * t**2\n\n\na)\nGrafische Darstellung der Bahnkurve:\n\nx_werte = [x(t) for t in np.linspace(0,2,100)]\ny_werte = [y(t) for t in np.linspace(0,2,100)]\n\nplt.plot(x_werte, y_werte)\nplt.grid()\nplt.axis(\"equal\")\nplt.show()\n\n\n\n\n\n\n\n\n\n\nb)\nEs wird über eine While-Schleife \\(t\\) in kleinen Schritten erhöht, bis \\(y(t)\\) negativ wird:\n\nt = 0\ndt = 0.01  # Zeitschrittweite\nwhile y(t) &gt;= 0:\n    t += dt\n\nprint(f\"Zeit bis zum Aufprall: {t:.2f} s\")\n\nZeit bis zum Aufprall: 1.75 s\n\n\n\n\nc)\nDie horizontale Wurfweite wird mit der Funktion x(t) bekommt man mit der vorherigen Teilaufgabe praktisch mitgeliefert. Wir haben ja schon den Zeitpunkt, d.h. wir müssen lediglich noch die dazu gehörige \\(x\\)-Koordinate berechnen:\n\nprint(f\"Horizontale Wurfweite: {x(t):.2f} m\")\n\nHorizontale Wurfweite: 17.50 m\n\n\n\n\nd)\nBei der gegebenen Anfangsgeschwindigkeit ist die Wurfweite größer als 12 m. Die Idee ist, die Anfangsgeschwindigkeit so lange in kleinen Schrittten zu verringern, bis die Wurfweite gerade noch 12 m beträgt. Um den Code übersichtlich zu halten, empfiehlt es sich, die Berechnung der Wurfweite in eine eigene Funktion auszulagern:\n\ndef wurfweite():\n    t = 0\n    dt = 0.01\n    while y(t) &gt;= 0:\n        t += dt\n    return x(t)\n\nNun können wir wie beschrieben \\(v_0\\) so lange verringern, bis die gewünschte Wurfweite von 12 m erreicht ist:\n\nv0 = 10  # Haben wir eigentlich schon, nur zur Erinnerung :)\nziel_wurfweite = 12\ndv = 0.01  # Schrittweite für die Verringerung der Anfangsgesch\n\nwhile wurfweite() &gt; ziel_wurfweite:\n    v0 -= dv\n\nprint(f\"Anfangsgeschwindigkeit für Wurfweite von 12 m: {v0:.2f} m/s\")\n\nAnfangsgeschwindigkeit für Wurfweite von 12 m: 6.85 m/s\n\n\n\n\nDas ganze Programm\n\nimport matplotlib.pyplot as plt\nimport numpy as np\n\ny0 = 15  # Abwurfhöhe\nv0 = 10  # Abwurfgeschwindigkeit\ng = 9.81  # Erdbeschleunigung\n\ndef x(t):\n    return v0 * t\n\ndef y(t):\n    return y0 - 1/2 * g * t**2\n\n# a)\nx_werte = [x(t) for t in np.linspace(0,2,100)]\ny_werte = [y(t) for t in np.linspace(0,2,100)]\n\nplt.plot(x_werte, y_werte)\nplt.grid()\nplt.axis(\"equal\")\nplt.show()\n\n# b)\nt = 0\ndt = 0.01  # Zeitschrittweite\nwhile y(t) &gt;= 0:\n    t += dt\n\nprint(f\"Zeit bis zum Aufprall: {t:.2f} s\")\n\n# c)\ndef wurfweite():\n    t = 0\n    dt = 0.01\n    while y(t) &gt;= 0:\n        t += dt\n    return x(t)\n\nprint(f\"Horizontale Wurfweite: {wurfweite():.2f} m\")\n\n# d)\nziel_wurfweite = 12\ndv = 0.01  # Schrittweite für die Verringerung der Anfangsgesch\n\nwhile wurfweite() &gt; ziel_wurfweite:\n    v0 -= dv\n\nprint(f\"Anfangsgeschwindigkeit für Wurfweite von 12 m: {v0:.2f} m/s\")\n\n\n\n\n\n\n\n\nZeit bis zum Aufprall: 1.75 s\nHorizontale Wurfweite: 17.50 m\nAnfangsgeschwindigkeit für Wurfweite von 12 m: 6.85 m/s"
+    "text": "Lösungen\n\nÜbung: Programmieren einer Folge in Python\nÜbungen zu diskretem Wachstum\nÜbungen zu parametrisierten Kurven\nBeispiel: Waagrechter Wurf\n\n\n\nPython\n\nEinführung in Python"
+  },
+  {
+    "objectID": "11imp/UebParameterkurveLsg.html",
+    "href": "11imp/UebParameterkurveLsg.html",
+    "title": "Übungen zu parametrisierten Kurven – Lösungen",
+    "section": "",
+    "text": "import matplotlib.pyplot as plt\nfrom numpy import arange\ntlist = arange(0, 2.1, 0.1)\nx = [2*t for t in tlist]\ny = [t**2 for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange\ntlist = arange(0, 2.1, 0.1)\nx = [t**2 for t in tlist]\ny = [t for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange, cos, sin\ntlist = arange(0, 6.3 + 0.1, 0.1)\nx = [cos(t) for t in tlist]\ny = [2*sin(t) for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange, cos, sin\ntlist = arange(0, 6.3 + 0.1, 0.1)\nx = [cos(t) for t in tlist]\ny = [sin(2*t) for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange\ntlist = arange(-1.5, 1.5 + 0.1, 0.1)\nx = [t**2 for t in tlist]\ny = [t**3 for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange\ntlist = arange(-1.5, 1.5 + 0.1, 0.1)\nx = [t**2 - 1 for t in tlist]\ny = [t*(t**2 - 1) for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange, sin, cos\ntlist = arange(-12, 12 + 0.1, 0.1)\nx = [t - sin(t) for t in tlist]\ny = [1 - cos(t) for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()"
+  },
+  {
+    "objectID": "11imp/UebParameterkurveLsg.html#aufgabe",
+    "href": "11imp/UebParameterkurveLsg.html#aufgabe",
+    "title": "Übungen zu parametrisierten Kurven – Lösungen",
+    "section": "",
+    "text": "import matplotlib.pyplot as plt\nfrom numpy import arange\ntlist = arange(0, 2.1, 0.1)\nx = [2*t for t in tlist]\ny = [t**2 for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange\ntlist = arange(0, 2.1, 0.1)\nx = [t**2 for t in tlist]\ny = [t for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange, cos, sin\ntlist = arange(0, 6.3 + 0.1, 0.1)\nx = [cos(t) for t in tlist]\ny = [2*sin(t) for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange, cos, sin\ntlist = arange(0, 6.3 + 0.1, 0.1)\nx = [cos(t) for t in tlist]\ny = [sin(2*t) for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange\ntlist = arange(-1.5, 1.5 + 0.1, 0.1)\nx = [t**2 for t in tlist]\ny = [t**3 for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange\ntlist = arange(-1.5, 1.5 + 0.1, 0.1)\nx = [t**2 - 1 for t in tlist]\ny = [t*(t**2 - 1) for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nfrom numpy import arange, sin, cos\ntlist = arange(-12, 12 + 0.1, 0.1)\nx = [t - sin(t) for t in tlist]\ny = [1 - cos(t) for t in tlist]\nplt.plot(x, y)\nplt.axis('equal')\nplt.show()"
+  },
+  {
+    "objectID": "11imp/UebCollatzLsg.html",
+    "href": "11imp/UebCollatzLsg.html",
+    "title": "Übung: Programmieren einer Folge in Python – Lösung",
+    "section": "",
+    "text": "Die Prüfung, ob a_n gerade oder ungerade ist, wird am besten mit dem Modulo-Operator % durchgeführt. Der Ausdruck a_n % 2 liefert den Rest der Division von a_n durch 2. Wenn dieser Rest 0 ist, ist die Zahl gerade, andernfalls ungerade.\n\ndef collatz_next(a_n):\n    if a_n % 2 == 0:\n        return a_n // 2\n    else:\n        return 3 * a_n + 1"
+  },
+  {
+    "objectID": "11imp/UebCollatzLsg.html#aufgabe",
+    "href": "11imp/UebCollatzLsg.html#aufgabe",
+    "title": "Übung: Programmieren einer Folge in Python – Lösung",
+    "section": "",
+    "text": "Die Prüfung, ob a_n gerade oder ungerade ist, wird am besten mit dem Modulo-Operator % durchgeführt. Der Ausdruck a_n % 2 liefert den Rest der Division von a_n durch 2. Wenn dieser Rest 0 ist, ist die Zahl gerade, andernfalls ungerade.\n\ndef collatz_next(a_n):\n    if a_n % 2 == 0:\n        return a_n // 2\n    else:\n        return 3 * a_n + 1"
+  },
+  {
+    "objectID": "11imp/UebCollatzLsg.html#aufgabe-1",
+    "href": "11imp/UebCollatzLsg.html#aufgabe-1",
+    "title": "Übung: Programmieren einer Folge in Python – Lösung",
+    "section": "2. Aufgabe",
+    "text": "2. Aufgabe\n\ndef collatz_sequence(start_value):\n    a_n = start_value\n    while a_n != 1:\n        print(a_n)\n        a_n = collatz_next(a_n)\n    print(a_n)\n\nEs wäre auch möglich, anstelle der lokalen Variable a_n direkt mit start_value zu arbeiten. Die abschließende print(a_n)-Anweisung ist notwendig, um die 1 am Ende der Folge auch noch auszugeben."
+  },
+  {
+    "objectID": "11imp/UebCollatzLsg.html#aufgabe-2",
+    "href": "11imp/UebCollatzLsg.html#aufgabe-2",
+    "title": "Übung: Programmieren einer Folge in Python – Lösung",
+    "section": "3. Aufgabe",
+    "text": "3. Aufgabe\n\ndef collatz_length(start_value):\n    a_n = start_value\n    length = 1  # Startwert zählt als erstes Glied\n    while a_n != 1:\n        a_n = collatz_next(a_n)\n        length += 1\n    return length\n\nDer Ansatz entspricht dem der vorherigen Aufgabe, nur wird hier keine Ausgabe erzeugt, sondern statt dessen eine Zählvariable length verwendet, die bei jedem Schritt um 1 erhöht wird. Am Ende wird die Länge der Folge zurückgegeben."
+  },
+  {
+    "objectID": "11imp/einf-python/07-bilder.html",
+    "href": "11imp/einf-python/07-bilder.html",
+    "title": "Bilder in Python",
+    "section": "",
+    "text": "Python bietet viele verschiedene Möglichkeiten, um mit Bildern zu arbeiten. Eine Möglichkeit ist die Verwendung von NumPy-Arrays, um die Pixelwerte eines Bildes zu speichern und zu manipulieren."
+  },
+  {
+    "objectID": "11imp/einf-python/07-bilder.html#laden-einer-bild-datei-in-einen-numpy-array",
+    "href": "11imp/einf-python/07-bilder.html#laden-einer-bild-datei-in-einen-numpy-array",
+    "title": "Bilder in Python",
+    "section": "Laden einer Bild-Datei in einen NumPy-Array",
+    "text": "Laden einer Bild-Datei in einen NumPy-Array\n\nfrom PIL import Image\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Speicherort des Bildes, muss angepasst werden\nimage_file_path = \"kuehe.jpg\"\n\n# Bild laden und in einen Numpy-Array umwandeln\nimage_array = np.array(Image.open(image_file_path))"
+  },
+  {
+    "objectID": "11imp/einf-python/07-bilder.html#ermittlung-der-höhe-und-breite-des-bildes",
+    "href": "11imp/einf-python/07-bilder.html#ermittlung-der-höhe-und-breite-des-bildes",
+    "title": "Bilder in Python",
+    "section": "Ermittlung der Höhe und Breite des Bildes",
+    "text": "Ermittlung der Höhe und Breite des Bildes\nFür jeden Numpy-Array kann man mit .shape die Dimensionen des Arrays abfragen. Das Ergebnis ist wieder ein Array mit der Anzahl der Elemente in jeder Dimension.\n\nprint(image_array.shape)\n\n(333, 500, 3)\n\n\nDas Bild ist also 333 Pixel hoch und 500 Pixel breit. Für jedes Pixel gibt es drei Farbwerte (Rot, Grün, Blau)."
+  },
+  {
+    "objectID": "11imp/einf-python/07-bilder.html#anzeigen-des-bildes",
+    "href": "11imp/einf-python/07-bilder.html#anzeigen-des-bildes",
+    "title": "Bilder in Python",
+    "section": "Anzeigen des Bildes",
+    "text": "Anzeigen des Bildes\n\nplt.imshow(image_array)\nplt.axis('off')  \nplt.show()"
+  },
+  {
+    "objectID": "11imp/einf-python/07-bilder.html#verändern-der-pixelwerte",
+    "href": "11imp/einf-python/07-bilder.html#verändern-der-pixelwerte",
+    "title": "Bilder in Python",
+    "section": "Verändern der Pixelwerte",
+    "text": "Verändern der Pixelwerte\nMan kann die Farbwerte der Pixel beliebig verändern, z.B. alle Pixel auf schwarz (RGB = (0, 0, 0)) setzen:\n\nimage_array[:,:,:] = [0, 0, 0]\nplt.imshow(image_array)\nplt.axis('off')\nplt.show()"
+  },
+  {
+    "objectID": "11imp/einf-python/07-bilder.html#neues-leeres-bild-erzeugen",
+    "href": "11imp/einf-python/07-bilder.html#neues-leeres-bild-erzeugen",
+    "title": "Bilder in Python",
+    "section": "neues, leeres Bild erzeugen",
+    "text": "neues, leeres Bild erzeugen\nStatt ein gegebenes Bild zu verändern, kann man auch ein neues Bild erzeugen, z.B. ein rotes Bild der Größe 200x300 Pixel:\n\nnew_image = np.zeros((200, 300, 3), dtype=np.uint8)\nnew_image[:,:,:] = [255, 0, 0]\nplt.imshow(new_image)\nplt.axis('off')\nplt.show()\n\n\n\n\n\n\n\n\nDer Parameter dtype=np.uint8 sorgt dafür, dass die Farbwerte als ganze Zahlen im Bereich von 0 bis 255 gespeichert werden."
   },
   {
     "objectID": "11imp/einf-python/11imp_einfPython.html",
     "href": "11imp/einf-python/11imp_einfPython.html",
     "title": "Einführung in Python (IMP Klasse 11)",
     "section": "",
-    "text": "1. Grundlagen\n2. Flow control\n3. Funktionen\n4. Listen\n5. Matplotlib\n6. mehrdimensionale Listen"
+    "text": "1. Grundlagen\n2. Flow control\n3. Funktionen\n4. Listen\n5. Matplotlib\n6. mehrdimensionale Listen\n7. Bilder"
   },
   {
     "objectID": "11imp/einf-python/01-grundlagen.html",

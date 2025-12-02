@@ -1,0 +1,61 @@
+---
+title: Bilder in Python
+format: 
+  html:
+    embed-resources: true
+jupyter: python3
+---
+
+Python bietet viele verschiedene Möglichkeiten, um mit Bildern zu arbeiten. Eine Möglichkeit ist die Verwendung von NumPy-Arrays, um die Pixelwerte eines Bildes zu speichern und zu manipulieren.
+
+## Laden einer Bild-Datei in einen NumPy-Array
+```{python}
+from PIL import Image
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Speicherort des Bildes, muss angepasst werden
+image_file_path = "kuehe.jpg"
+
+# Bild laden und in einen Numpy-Array umwandeln
+image_array = np.array(Image.open(image_file_path))
+```
+
+## Ermittlung der Höhe und Breite des Bildes
+Für jeden Numpy-Array kann man mit `.shape` die Dimensionen des Arrays abfragen. Das Ergebnis ist wieder ein Array mit der Anzahl der Elemente in jeder Dimension.
+```{python}
+print(image_array.shape)
+```
+
+Das Bild ist also 333 Pixel hoch und 500 Pixel breit. Für jedes Pixel gibt es drei Farbwerte (Rot, Grün, Blau).
+
+
+## Anzeigen des Bildes
+```{python}
+plt.imshow(image_array)
+plt.axis('off')  
+plt.show()
+```
+
+## Verändern der Pixelwerte
+Man kann die Farbwerte der Pixel beliebig verändern, z.B. alle Pixel auf schwarz (RGB = (0, 0, 0)) setzen:
+```{python}
+image_array[:,:,:] = [0, 0, 0]
+plt.imshow(image_array)
+plt.axis('off')
+plt.show()
+```
+
+## neues, leeres Bild erzeugen
+Statt ein gegebenes Bild zu verändern, kann man auch ein neues Bild erzeugen, z.B. ein rotes Bild der Größe 200x300 Pixel:
+```{python}
+new_image = np.zeros((200, 300, 3), dtype=np.uint8)
+new_image[:,:,:] = [255, 0, 0]
+plt.imshow(new_image)
+plt.axis('off')
+plt.show()
+```
+
+Der Parameter `dtype=np.uint8` sorgt dafür, dass die Farbwerte als ganze Zahlen im Bereich von 0 bis 255 gespeichert werden.
+
+
