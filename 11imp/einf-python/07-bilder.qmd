@@ -40,7 +40,7 @@ plt.show()
 ## Verändern der Pixelwerte
 Man kann die Farbwerte der Pixel beliebig verändern, z.B. alle Pixel auf schwarz (RGB = (0, 0, 0)) setzen:
 ```{python}
-image_array[:,:,:] = [0, 0, 0]
+image_array[:,:] = [0, 0, 0]
 plt.imshow(image_array)
 plt.axis('off')
 plt.show()
@@ -50,7 +50,7 @@ plt.show()
 Statt ein gegebenes Bild zu verändern, kann man auch ein neues Bild erzeugen, z.B. ein rotes Bild der Größe 200x300 Pixel:
 ```{python}
 new_image = np.zeros((200, 300, 3), dtype=np.uint8)
-new_image[:,:,:] = [255, 0, 0]
+new_image[:,:] = [255, 0, 0]
 plt.imshow(new_image)
 plt.axis('off')
 plt.show()
