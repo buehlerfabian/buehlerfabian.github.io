@@ -1,0 +1,114 @@
+---
+title: Übungen zu mehrdimensionalen Listen und Numpy-Array -- Lösungen
+format: html
+embed-resources: true
+jupyter: python3
+---
+
+## 1. Aufgabe
+### a)
+```{python}
+notenliste = [
+    ["Agnes", 2, 3],
+    ["Berta", 1, 2],
+    ["Clara", 3, 2]
+]
+```
+
+Hinweis: Die Aufteilung auf mehrere Zeilen dient nur der besseren Lesbarkeit und ist nicht erforderlich.
+
+### b)
+```{python}
+print(notenliste[1][2])  
+```
+
+### c)
+```{python}
+notenliste[2][1] = 2
+```
+
+### d)
+```{python}
+notenliste.append(["Dora", 1, 1])
+```
+
+### e)
+```{python}
+for schueler in notenliste:
+    summe = 0
+    for note in schueler[1:]:
+        summe += note
+    durchschnitt = summe / (len(schueler) - 1)
+    schueler.append(durchschnitt)
+print(notenliste)
+```
+
+
+## 2. Aufgabe
+Die vereinfachte Schreibweise `liste[:,1]` funktioniert nur bei Numpy-Arrays, nicht bei normalen Python-Listen.
+
+Korrekturmöglichkeit 1: Umwandlung in ein Numpy-Array
+```{python}
+import numpy as np
+liste = [[0,0,0], [0,0,0], [0,0,0], [0,0,0]]
+npliste = np.array(liste)
+npliste[:, 1] = 1
+print(npliste)
+```
+
+Korrekturmöglichkeit 2: Verwendung einer Schleife
+```{python}
+liste = [[0,0,0], [0,0,0], [0,0,0], [0,0,0]]
+for zeile in liste:
+    zeile[1] = 1
+print(liste)
+```
+
+
+## 3. Aufgabe
+### a)
+```{python}
+import numpy as np
+array = np.zeros((250, 320))
+array[:, 99] = 255 
+```
+
+### b)
+```{python}
+import numpy as np
+array = np.zeros((250, 320))
+array[50:, :] = 128  
+```
+
+### c)
+```{python}
+import numpy as np
+array = np.zeros((250, 320))
+array[50:101, 100:151] = 200 
+```
+
+### d)
+```{python}
+import numpy as np
+array = np.zeros((250, 320))
+for i in range(250):
+    for j in range(320):
+        if j < i:
+            array[i, j] = 64
+```
+
+### e)
+```{python}
+import numpy as np
+array = np.zeros((250, 320))
+for i in range(250):
+    array[i, :] = i
+```
+
+### f)
+```{python}
+import numpy as np
+array = np.zeros((250, 320))
+for j in range(320):
+    array[:, j] = j
+```

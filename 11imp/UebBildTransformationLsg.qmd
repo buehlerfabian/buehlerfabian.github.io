@@ -1,0 +1,130 @@
+---
+title: Übungen zur Bildbearbeitung -- Lösungen
+format: html
+embed-resources: true
+jupyter: python3
+---
+
+## 1. Aufgabe
+Die letzte Pixelzeile muss die erste werden, die zweitletzte die zweite u.s.w.
+
+```{python}
+import numpy as np
+
+def spiegle_bild_vertikal(bild):
+    bild_neu = np.zeros((bild.shape[0], bild.shape[1], 3), dtype=np.uint8)
+    for zeile in range(bild.shape[0]):
+        bild_neu[zeile, :, :] = bild[-zeile, :, :]
+    return bild_neu
+```
+
+Test der Funktion:
+```{python}
+import matplotlib.pyplot as plt
+bild = plt.imread("./einf-python/kuehe.jpg")
+bild_gespiegelt = spiegle_bild_vertikal(bild)
+plt.imshow(bild_gespiegelt)
+plt.axis('off')
+plt.show()
+```
+
+
+## 2. Aufgabe
+Die letzte Spalte muss die erste werden, die vorletzte die zweite u.s.w.
+```{python}
+def spiegle_bild_horizontal(bild):
+    bild_neu = np.zeros((bild.shape[0], bild.shape[1],
+                            3), dtype=np.uint8)
+    for spalte in range(bild.shape[1]):
+        bild_neu[:, spalte, :] = bild[:, -spalte-1, :]
+    return bild_neu
+```
+
+Test der Funktion:
+```{python}
+bild_gespiegelt = spiegle_bild_horizontal(bild)
+plt.imshow(bild_gespiegelt)
+plt.axis('off')
+plt.show()
+```
+
+
+## 3. Aufgabe
+### a)
+neue Breite = alte Höhe, neue Höhe = alte Breite
+
+### c)
+alte und neue Koordinaten
+
+| Punkt | alte Koordinaten | neue Koordinaten                  |
+|--------------------------|--------------------------|--------------------------------|
+| A | (0,5) | (1,0) |
+| B | (2,1) | (5,2) |
+| C | (0,0) | (6,0) |
+| D | (2,3) | (3,2) |
+| E | (1,6) | (0,1) |
+
+### d)
+allgemein gilt:
+- neue Spalte = alte Zeile
+- neue Zeile = letzte Zeile - alte Spalte
+
+anders formuliert: Das Pixel an Position (zeile, spalte) im neuen Bild war vorher an Position (spalte, alte_breite - 1 - zeile) im alten Bild.
+
+
+## 4. Aufgabe
+### a)
+```{python}
+def drehe_90_nach_links(bild):
+    neue_breite = bild.shape[0]
+    neue_hoehe = bild.shape[1]
+    bild_neu = np.zeros((neue_hoehe, neue_breite, 3), dtype=np.uint8)
+    for zeile in range(neue_hoehe):
+        for spalte in range(neue_breite):
+            bild_neu[zeile, spalte, :] = bild[spalte, neue_hoehe - 1 - zeile, :]
+    return bild_neu
+```
+
+Test der Funktion:
+```{python}
+bild_gedreht = drehe_90_nach_links(bild)
+plt.imshow(bild_gedreht)
+plt.axis('off')
+plt.show()
+```
+
+### b)
+```{python}
+def drehe_90_nach_rechts(bild):
+    neue_breite = bild.shape[0]
+    neue_hoehe = bild.shape[1]
+    bild_neu = np.zeros((neue_hoehe, neue_breite, 3), dtype=np.uint8)
+    for zeile in range(neue_hoehe):
+        for spalte in range(neue_breite):
+            bild_neu[zeile, spalte, :] = bild[neue_breite - 1 - spalte, zeile, :]
+    return bild_neu
+```
+
+Test der Funktion:
+```{python}
+bild_gedreht = drehe_90_nach_rechts(bild)
+plt.imshow(bild_gedreht)
+plt.axis('off')
+plt.show()
+```
+
+### c)
+```{python}
+def drehe_180(bild):
+    drehung_90 = drehe_90_nach_links(bild)
+    drehung_180 = drehe_90_nach_links(drehung_90)
+    return drehung_180
+``` 
+
+Test der Funktion:
+```{python}
+bild_gedreht = drehe_180(bild)
+plt.imshow(bild_gedreht)
+plt.axis('off')
+plt.show()
+```

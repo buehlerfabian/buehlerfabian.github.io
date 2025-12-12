@@ -4084,18 +4084,18 @@ window.Quarto = {
 
 
 <p>Die üblichen Importe, um Schaubilder erstellen zu können:</p>
-<div id="65d2b148" class="cell" data-execution_count="1">
+<div id="7071acef" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Es ist guter Programmierstil, konstante Zahlenwerte am Anfang als Variablen zu definieren:</p>
-<div id="66758ae7" class="cell" data-execution_count="2">
+<div id="d89649f3" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>y0 <span class="op">=</span> <span class="dv">15</span>  <span class="co"># Abwurfhöhe</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>v0 <span class="op">=</span> <span class="dv">10</span>  <span class="co"># Abwurfgeschwindigkeit</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> <span class="fl">9.81</span>  <span class="co"># Erdbeschleunigung</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Die Berechnung von <span class="math inline">\(x(t)\)</span> und <span class="math inline">\(y(t)\)</span> ist einfach, wird aber voraussichtlich an mehreren Stellen benötigt. Daher ist es sinnvoll, die Berechnungen in Funktionen auszulagern:</p>
-<div id="efd2092a" class="cell" data-execution_count="3">
+<div id="35612ce5" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> x(t):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> v0 <span class="op">*</span> t</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4105,7 +4105,7 @@ window.Quarto = {
 <section id="a" class="level3">
 <h3 class="anchored" data-anchor-id="a">a)</h3>
 <p>Grafische Darstellung der Bahnkurve:</p>
-<div id="b6f8bbc3" class="cell" data-execution_count="4">
+<div id="f14e0a4e" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x_werte <span class="op">=</span> [x(t) <span class="cf">for</span> t <span class="kw">in</span> np.linspace(<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">100</span>)]</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>y_werte <span class="op">=</span> [y(t) <span class="cf">for</span> t <span class="kw">in</span> np.linspace(<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">100</span>)]</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4125,7 +4125,7 @@ window.Quarto = {
 <section id="b" class="level3">
 <h3 class="anchored" data-anchor-id="b">b)</h3>
 <p>Es wird über eine While-Schleife <span class="math inline">\(t\)</span> in kleinen Schritten erhöht, bis <span class="math inline">\(y(t)\)</span> negativ wird:</p>
-<div id="585c5c8c" class="cell" data-execution_count="5">
+<div id="bc3aeb01" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>dt <span class="op">=</span> <span class="fl">0.01</span>  <span class="co"># Zeitschrittweite</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> y(t) <span class="op">&gt;=</span> <span class="dv">0</span>:</span>
@@ -4140,7 +4140,7 @@ window.Quarto = {
 <section id="c" class="level3">
 <h3 class="anchored" data-anchor-id="c">c)</h3>
 <p>Die horizontale Wurfweite wird mit der Funktion <code>x(t)</code> bekommt man mit der vorherigen Teilaufgabe praktisch mitgeliefert. Wir haben ja schon den Zeitpunkt, d.h. wir müssen lediglich noch die dazu gehörige <span class="math inline">\(x\)</span>-Koordinate berechnen:</p>
-<div id="6aed0c52" class="cell" data-execution_count="6">
+<div id="d1d9ea22" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Horizontale Wurfweite: </span><span class="sc">{</span>x(t)<span class="sc">:.2f}</span><span class="ss"> m&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Horizontale Wurfweite: 17.50 m</code></pre>
@@ -4150,7 +4150,7 @@ window.Quarto = {
 <section id="d" class="level3">
 <h3 class="anchored" data-anchor-id="d">d)</h3>
 <p>Bei der gegebenen Anfangsgeschwindigkeit ist die Wurfweite größer als 12 m. Die Idee ist, die Anfangsgeschwindigkeit so lange in kleinen Schrittten zu verringern, bis die Wurfweite gerade noch 12 m beträgt. Um den Code übersichtlich zu halten, empfiehlt es sich, die Berechnung der Wurfweite in eine eigene Funktion auszulagern:</p>
-<div id="76d08721" class="cell" data-execution_count="7">
+<div id="5a5e1a18" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> wurfweite():</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    dt <span class="op">=</span> <span class="fl">0.01</span></span>
@@ -4159,7 +4159,7 @@ window.Quarto = {
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x(t)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Nun können wir wie beschrieben <span class="math inline">\(v_0\)</span> so lange verringern, bis die gewünschte Wurfweite von 12 m erreicht ist:</p>
-<div id="2ac95c0d" class="cell" data-execution_count="8">
+<div id="270b0360" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>v0 <span class="op">=</span> <span class="dv">10</span>  <span class="co"># Haben wir eigentlich schon, nur zur Erinnerung :)</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>ziel_wurfweite <span class="op">=</span> <span class="dv">12</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>dv <span class="op">=</span> <span class="fl">0.01</span>  <span class="co"># Schrittweite für die Verringerung der Anfangsgesch</span></span>
@@ -4175,7 +4175,7 @@ window.Quarto = {
 </section>
 <section id="das-ganze-programm" class="level3">
 <h3 class="anchored" data-anchor-id="das-ganze-programm">Das ganze Programm</h3>
-<div id="3d252105" class="cell" data-execution_count="9">
+<div id="b9e49722" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
