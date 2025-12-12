@@ -1,0 +1,61 @@
+---
+title: Einstieg in Matplotlib
+format: 
+  html:
+    embed-resources: true
+jupyter: python3
+---
+
+Matplotlib ist eine weit verbreitete Bibliothek in Python zur Erstellung von statischen, animierten und interaktiven Visualisierungen. 
+
+Sie wird mit dem folgenden Befehl importiert:
+```{python}
+import matplotlib.pyplot as plt
+```
+
+Mit `plt.plot(x, y)`{.python} kann man ein Diagramm zu einer Wertetabelle erstellen. Dazu muss `x` die x-Werte und `y` die y-Werte jeweils in Form einer Liste enthalten.
+
+Beispiel: Zu folgender Wertetabelle soll ein Diagramm erstellt werden:
+
+| x | y  |
+|---|----|
+| 1 | 2  |
+| 2 | 3  |
+| 3 | 5  |
+| 4 | 7  |
+
+```{python}
+import matplotlib.pyplot as plt
+x = [1, 2, 3, 4]
+y = [2, 3, 5, 7]
+plt.plot(x, y)
+plt.show()
+```
+
+Die Anweisung `plt.show()`{.python} sorgt dafür, dass das Diagramm angezeigt wird. Zwischen `plt.plot(...)`{.python} und `plt.show()`{.python} können weitere Anpassungen am Diagramm vorgenommen werden, z.B. Achsenbeschriftungen oder Einstellungen zur Skalierung.
+
+In der Grundeinstellung werden die einzelnen Punkte mit Strecken verbunden. Will man nur einzelne Punkte, so kann man dies durch ein zusätzliches Argument `'o'`{.python} beim Aufruf von `plt.plot(...)`{.python} erreichen:
+```{python}
+plt.plot(x, y, 'o')
+plt.show()
+``` 
+
+In der [Matplotlib-Dokumentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html) sind weitere Möglichkeiten zur Gestaltung der Linien und Punkte beschrieben (runterscrollen bis zum Abschnitt "Format Strings").
+
+Weitere Anpassungsmöglichkeiten:
+
+- Die Achsen können mit `plt.xlabel("x-Achse")`{.python} und `plt.ylabel("y-Achse")`{.python} beschriftet werden.
+- Mit `plt.title("Diagrammtitel")`{.python} kann ein Titel für das Diagramm gesetzt werden.
+- Mit `plt.xlim(min, max)`{.python} und `plt.ylim(min, max)`{.python} können die Grenzen der x- und y-Achsen festgelegt werden.
+- Mit `plt.grid()`{.python} kann ein Raster im Hintergrund des Diagramms angezeigt werden.
+
+```{python}
+plt.plot(x, y, 'o-')
+plt.xlabel("x-Achse")
+plt.ylabel("y-Achse")
+plt.title("Beispieldiagramm")
+plt.xlim(0, 5)
+plt.ylim(0, 8)
+plt.grid()
+plt.show()
+```
