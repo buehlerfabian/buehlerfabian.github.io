@@ -9,3 +9,4 @@ title: "Einführung in Python (IMP Klasse 11)"
 - [5. Matplotlib](05-matplotlib.qmd)
 - [6. mehrdimensionale Listen](06-mehrdimListen.qmd)
 - [7. Bilder](07-bilder.qmd)
+- [8. Einführung in objektorientierte Programmierung](08-einf-objektorientierte-programmierung.qmd)
