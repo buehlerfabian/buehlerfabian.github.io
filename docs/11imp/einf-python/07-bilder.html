@@ -3947,7 +3947,7 @@ vertical-align: -.125em;
 <p>Python bietet viele verschiedene Möglichkeiten, um mit Bildern zu arbeiten. Eine Möglichkeit ist die Verwendung von NumPy-Arrays, um die Pixelwerte eines Bildes zu speichern und zu manipulieren.</p>
 <section id="laden-einer-bild-datei-in-einen-numpy-array" class="level2">
 <h2 class="anchored" data-anchor-id="laden-einer-bild-datei-in-einen-numpy-array">Laden einer Bild-Datei in einen NumPy-Array</h2>
-<div id="b65557ea" class="cell" data-execution_count="1">
+<div id="d99e70b9" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> PIL <span class="im">import</span> Image</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -3962,7 +3962,7 @@ vertical-align: -.125em;
 <section id="ermittlung-der-höhe-und-breite-des-bildes" class="level2">
 <h2 class="anchored" data-anchor-id="ermittlung-der-höhe-und-breite-des-bildes">Ermittlung der Höhe und Breite des Bildes</h2>
 <p>Für jeden Numpy-Array kann man mit <code>.shape</code> die Dimensionen des Arrays abfragen. Das Ergebnis ist wieder ein Array mit der Anzahl der Elemente in jeder Dimension.</p>
-<div id="919bd641" class="cell" data-execution_count="2">
+<div id="a19f65d9" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(image_array.shape)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>(333, 500, 3)</code></pre>
@@ -3972,7 +3972,7 @@ vertical-align: -.125em;
 </section>
 <section id="anzeigen-des-bildes" class="level2">
 <h2 class="anchored" data-anchor-id="anzeigen-des-bildes">Anzeigen des Bildes</h2>
-<div id="b3896ad9" class="cell" data-execution_count="3">
+<div id="a4d96571" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plt.imshow(image_array)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">&#39;off&#39;</span>)  </span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -3988,7 +3988,7 @@ vertical-align: -.125em;
 <section id="verändern-der-pixelwerte" class="level2">
 <h2 class="anchored" data-anchor-id="verändern-der-pixelwerte">Verändern der Pixelwerte</h2>
 <p>Man kann die Farbwerte der Pixel beliebig verändern, z.B. alle Pixel auf schwarz (RGB = (0, 0, 0)) setzen:</p>
-<div id="2a675347" class="cell" data-execution_count="4">
+<div id="d840957a" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>image_array[:,:] <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plt.imshow(image_array)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">&#39;off&#39;</span>)</span>
@@ -4005,7 +4005,7 @@ vertical-align: -.125em;
 <section id="neues-leeres-bild-erzeugen" class="level2">
 <h2 class="anchored" data-anchor-id="neues-leeres-bild-erzeugen">neues, leeres Bild erzeugen</h2>
 <p>Statt ein gegebenes Bild zu verändern, kann man auch ein neues Bild erzeugen, z.B. ein rotes Bild der Größe 200x300 Pixel:</p>
-<div id="5876432c" class="cell" data-execution_count="5">
+<div id="4da6c9de" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>new_image <span class="op">=</span> np.zeros((<span class="dv">200</span>, <span class="dv">300</span>, <span class="dv">3</span>), dtype<span class="op">=</span>np.uint8)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>new_image[:,:] <span class="op">=</span> [<span class="dv">255</span>, <span class="dv">0</span>, <span class="dv">0</span>]</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plt.imshow(new_image)</span>

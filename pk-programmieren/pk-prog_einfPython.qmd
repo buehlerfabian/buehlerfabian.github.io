@@ -7,3 +7,4 @@ title: "Einführung in Python"
 - [3. Funktionen](03-Funktionen.qmd)
 - [4. Listen](04-Listen.qmd)
 - [5. Einführung in Matplotlib](05-matplotlib.qmd)
+- [6. Einführung in die objektorientierte Programmierung](06-einf-objektorientierte-programmierung.qmd)
