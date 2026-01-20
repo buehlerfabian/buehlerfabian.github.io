@@ -20,7 +20,7 @@ Einige Fachbegriffe der objektorientierten Programmierung:
 - **Attribut**: Ein Attribut ist eine zu einem Objekt gehörende Variable. In diesen Variablen werden die Daten des Objekts gespeichert. Häufig kann man diese Daten im Sinne von "Eigenschaften" des Objekts interpretieren.
 - **Methode**: Eine Methode ist eine zu einem Objekt gehörende Funktion. In diesen Funktionen wird das Verhalten bzw. die "Fähigkeiten" des Objekts definiert.
 
-### Bespiel: Klasse "Fraction"
+### Beispiel: Klasse "Fraction"
 
 Es soll eine Klasse "Fraction" definiert werden, die Brüche repräsentiert. Ein Bruch hat zwei Attribute: den Zähler und den Nenner. Fähigkeiten (Methoden) eines Bruchs können z.B. das Kürzen des Bruchs oder das Addieren mit einem anderen Bruch sein.
 
@@ -180,25 +180,26 @@ class Fraction:
         self.zaehler =  self.zaehler // ggt
         self.nenner = self.nenner // ggt
 
-    def multiplizieren(self, anderer_bruch):
+    def multiplizie_mit(self, anderer_bruch):
         if not isinstance(anderer_bruch, Fraction):
             raise ValueError("Der Parameter muss ein Objekt vom Typ Fraction sein.")
-        self.zaehler = self.zaehler * anderer_bruch.zaehler
-        self.nenner = self.nenner * anderer_bruch.nenner
-        self.kuerzen()
+        erg_zaehler = self.zaehler * anderer_bruch.zaehler
+        erg_nenner = self.nenner * anderer_bruch.nenner
+        erg_bruch = Fraction(erg_zaehler, erg_nenner)
+        erg_bruch.kuerzen()
+        return erg_bruch
 ```
 
-Der Ergebnisbruch soll dabei automatisch gekürzt werden. Dazu rufen wir die Methode `kuerzen` am Ende der Methode `multiplizieren` auf. Man kann also auch innerhalb einer Methode einer Klasse andere Methoden derselben Klasse aufrufen, dabei muss wie bei den Attributen `self.` vorangestellt werden.
 
-Wir testen die Methode `multiplizieren`:
+Wir testen die Methode `multiplizie_mit`:
 
 ```{python}
 #| filename: fractest.py
 bruch1 = Fraction(2, 3)
 bruch2 = Fraction(4, 6)
 print(f"{bruch1.zaehler}/{bruch1.nenner} * {bruch2.zaehler}/{bruch2.nenner} ergibt:")
-bruch1.multiplizieren(bruch2)
-print(f"{bruch1.zaehler}/{bruch1.nenner}")
+bruch3 = bruch1.multiplizie_mit(bruch2)
+print(f"{bruch3.zaehler}/{bruch3.nenner}")
 ```
 
 ### Übungsaufgaben
@@ -209,3 +210,93 @@ print(f"{bruch1.zaehler}/{bruch1.nenner}")
 
 3. Füge der Klasse `Fraction` eine Methode `dividieren` hinzu, die einen anderen Bruch als Parameter entgegennimmt und den aktuellen Bruch durch diesen dividiert. Der Ergebnisbruch soll automatisch gekürzt werden. Bei einer Division durch einen Bruch mit Zähler `0` soll eine entsprechende Fehlermeldung erzeugt werden.
 
+### Spezielle Methoden
+In Python gibt es einige spezielle Methoden, die mit doppelten Unterstrichen beginnen und enden (z.B. `__init__`). Diese Methoden haben besondere Bedeutungen und werden von Python automatisch aufgerufen, wenn bestimmte Operationen auf Objekten durchgeführt werden.
+
+Angenommen, `a` ist ein Objekt. Dann ist z.B. der Ausdruck `a * b` eine Abkürzung für den Aufruf der speziellen Methode `a.__mul__(b)`. Wenn wir daher eine Methode `__mul__` in unserer Klasse definieren, können wir für die `Fraction`-Objekte die Multiplikation mit dem `*`-Operator durchführen.
+
+```{python}
+#| filename: fraction.py
+import math
+class Fraction:
+    def __init__(self, zaehler, nenner):
+        if not isinstance(zaehler, int) or not isinstance(nenner, int):
+            raise ValueError("Zähler und Nenner müssen ganze Zahlen sein.")
+        if nenner == 0:
+            raise ValueError("Der Nenner darf nicht 0 sein.")
+        self.zaehler = zaehler
+        self.nenner = nenner
+
+    def kuerzen(self):
+        ggt = math.gcd(self.zaehler, self.nenner)
+        self.zaehler =  self.zaehler // ggt
+        self.nenner = self.nenner // ggt
+
+    def __mul__(self, anderer_bruch):
+        if not isinstance(anderer_bruch, Fraction):
+            raise ValueError("Der Parameter muss ein Objekt vom Typ Fraction sein.")
+        erg_zaehler = self.zaehler * anderer_bruch.zaehler
+        erg_nenner = self.nenner * anderer_bruch.nenner
+        erg_bruch = Fraction(erg_zaehler, erg_nenner)
+        erg_bruch.kuerzen()
+        return erg_bruch
+```
+
+Wir probieren es aus:
+```{python}
+#| filename: fractest.py
+bruch1 = Fraction(2, 3)
+bruch2 = Fraction(4, 6)
+print(f"{bruch1.zaehler}/{bruch1.nenner} * {bruch2.zaehler}/{bruch2.nenner} ergibt:")
+bruch3 = bruch1 * bruch2
+print(f"{bruch3.zaehler}/{bruch3.nenner}")
+```
+
+Für die übrigen Grundrechenarten lauten die speziellen Methoden:
+
+- Addition: `__add__(self, other)`
+- Subtraktion: `__sub__(self, other)`
+- Multiplikation: `__mul__(self, other)`
+- Division: `__truediv__(self, other)`
+
+Eine vollständige Liste der speziellen Methoden in Python findet man in der [offiziellen Dokumentation](https://docs.python.org/3/reference/datamodel.html#special-method-names).
+
+Eine weitere nützliche spezielle Methode ist `__str__(self)`, die bei der Anwendung von `print` eine Rolle spielt. Ist `a` ein Objekt, dann ist `print(a)` eine Abkürzung für `print(a.__str__())`. Damit können wir die Ausgabe der Brüche vereinfachen:
+
+```{python}
+#| filename: fraction.py
+
+import math
+class Fraction:
+    def __init__(self, zaehler, nenner):
+        if not isinstance(zaehler, int) or not isinstance(nenner, int):
+            raise ValueError("Zähler und Nenner müssen ganze Zahlen sein.")
+        if nenner == 0:
+            raise ValueError("Der Nenner darf nicht 0 sein.")
+        self.zaehler = zaehler
+        self.nenner = nenner
+
+    def kuerzen(self):
+        ggt = math.gcd(self.zaehler, self.nenner)
+        self.zaehler =  self.zaehler // ggt
+        self.nenner = self.nenner // ggt
+
+    def __mul__(self, anderer_bruch):
+        if not isinstance(anderer_bruch, Fraction):
+            raise ValueError("Der Parameter muss ein Objekt vom Typ Fraction sein.")
+        erg_zaehler = self.zaehler * anderer_bruch.zaehler
+        erg_nenner = self.nenner * anderer_bruch.nenner
+        erg_bruch = Fraction(erg_zaehler, erg_nenner)
+        erg_bruch.kuerzen()
+        return erg_bruch
+
+    def __str__(self):
+        return f"{self.zaehler}/{self.nenner}"
+```
+
+Nun funktioniert folgendes:
+```{python}
+#| filename: fractest.py
+bruch1 = Fraction(2, 3)
+print(bruch1)
+```

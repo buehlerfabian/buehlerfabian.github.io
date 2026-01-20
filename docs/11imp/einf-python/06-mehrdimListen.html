@@ -3973,7 +3973,7 @@ vertical-align: -.125em;
 </tbody>
 </table>
 <p>In Python können solche Datenstrukturen mit mehrdimensionalen Listen dargestellt werden. Dabei macht man sich zunutze, dass die Elemente einer Liste einen beliebigen Datentyp haben können, also auch selbst wieder Listen sein können:</p>
-<div id="9b3d6763" class="cell" data-execution_count="1">
+<div id="c0094fe3" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>messwerte <span class="op">=</span> [</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">0</span>, <span class="dv">20</span>, <span class="dv">30</span>],</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">1</span>, <span class="dv">21</span>, <span class="dv">32</span>],</span>
@@ -3985,21 +3985,21 @@ vertical-align: -.125em;
 </div>
 </div>
 <p>Hier ist das erste Element der Liste <code>messwerte</code> selbst wieder eine Liste, nämlich die Liste <code>[0, 20, 30]</code>, die die Messwerte zur Zeit 0 s enthält:</p>
-<div id="69c128e7" class="cell" data-execution_count="2">
+<div id="5d2dfa24" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(messwerte[<span class="dv">0</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[0, 20, 30]</code></pre>
 </div>
 </div>
 <p>Möchte man davon jetzt den Spannungswert, braucht man das Element mit Index 1 der Liste <code>messwerte[0]</code>, also <code>messwerte[0][1]</code>:</p>
-<div id="751f49d5" class="cell" data-execution_count="3">
+<div id="bfe9741a" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(messwerte[<span class="dv">0</span>][<span class="dv">1</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>20</code></pre>
 </div>
 </div>
 <p>Möchte man eine Liste aller Spannungswerte erhalten, so kann man dafür eine list comprehension verwenden:</p>
-<div id="50ebbd4b" class="cell" data-execution_count="4">
+<div id="382a5e2c" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>spannungen <span class="op">=</span> [reihe[<span class="dv">1</span>] <span class="cf">for</span> reihe <span class="kw">in</span> messwerte]</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(spannungen)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -4011,7 +4011,7 @@ vertical-align: -.125em;
 <h2 class="anchored" data-anchor-id="numpy-arrays">NumPy-Arrays</h2>
 <p>Die Numpy-Bibliothek bietet ergänzende Möglichkeiten, um mit mehrdimensionalen Datenstrukturen zu arbeiten.</p>
 <p>Ein Numpy-Array kann aus einer Liste erzeugt werden:</p>
-<div id="d84b3721" class="cell" data-execution_count="5">
+<div id="0734cd66" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>messwerte_array <span class="op">=</span> np.array(messwerte)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(messwerte_array)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -4023,21 +4023,21 @@ vertical-align: -.125em;
 </div>
 <p>Man sieht, dass die Ausgabe jetzt in Zeilen und Spalten formatiert ist, was die Übersichtlichkeit erhöht.</p>
 <p>Auf ein Element eines Numpy-Arrays kann man genauso zugreifen wie bei einer Liste von Listen:</p>
-<div id="91bf69c0" class="cell" data-execution_count="6">
+<div id="2ce76c36" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(messwerte_array[<span class="dv">0</span>][<span class="dv">1</span>])  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>20.0</code></pre>
 </div>
 </div>
 <p>Für Numpy-Arrays gibt es jedoch auch eine alternative, kompaktere Notation mit Kommas:</p>
-<div id="baaff68e" class="cell" data-execution_count="7">
+<div id="931229d6" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(messwerte_array[<span class="dv">0</span>, <span class="dv">1</span>])  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>20.0</code></pre>
 </div>
 </div>
 <p>Eine ganze Spalte zu extrahieren geht mit Numpy-Array ebenfalls einfacher:</p>
-<div id="2d2b9fca" class="cell" data-execution_count="8">
+<div id="0709e029" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>spannungen_array <span class="op">=</span> messwerte_array[:, <span class="dv">1</span>]</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(spannungen_array)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -4049,7 +4049,7 @@ vertical-align: -.125em;
 <section id="broadcasting-bei-numpy-arrays" class="level2">
 <h2 class="anchored" data-anchor-id="broadcasting-bei-numpy-arrays">Broadcasting bei Numpy-Arrays</h2>
 <p>Bei Python-Listen haben die Rechenoperatoren in der Regel keine arithmetische Bedeutung:</p>
-<div id="16cebb27" class="cell" data-execution_count="9">
+<div id="f43e7e50" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">+</span> b)  <span class="co"># Verkettung der Listen</span></span>
@@ -4060,7 +4060,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <p>Bei Numpy-Arrays hingegen sind die Rechenoperatoren arithmetisch definiert:</p>
-<div id="fe48da16" class="cell" data-execution_count="10">
+<div id="cde04e89" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>a_array <span class="op">=</span> np.array(a)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>b_array <span class="op">=</span> np.array(b)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a_array <span class="op">+</span> b_array)  <span class="co"># Elementweise Addition</span></span>
@@ -4075,7 +4075,7 @@ vertical-align: -.125em;
 <section id="tricks-und-beispiele" class="level2">
 <h2 class="anchored" data-anchor-id="tricks-und-beispiele">Tricks und Beispiele</h2>
 <p>Ein Numpy-Array einer bestimmten Größe mit Nullen erzeugen:</p>
-<div id="ed867f80" class="cell" data-execution_count="11">
+<div id="801bf3fe" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>null_tabelle <span class="op">=</span> np.zeros((<span class="dv">3</span>, <span class="dv">4</span>))  <span class="co"># 3 Zeilen, 4 Spalten</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(null_tabelle)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -4086,7 +4086,7 @@ vertical-align: -.125em;
 </div>
 <p>Ebenso kann man mit <code>python np.ones((3, 4))</code> ein Array mit Einsen erzeugen.</p>
 <p>Mit Hilfe von Broadcasting kann man dann alle Werte oder einzelne Bereiche ersetzen:</p>
-<div id="242bcabe" class="cell" data-execution_count="12">
+<div id="3af02617" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>null_tabelle[:, :] <span class="op">=</span> <span class="dv">5</span>  <span class="co"># Alle Werte auf 5 setzen</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(null_tabelle)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -4095,7 +4095,7 @@ vertical-align: -.125em;
  [5. 5. 5. 5.]]</code></pre>
 </div>
 </div>
-<div id="5c1c7e9d" class="cell" data-execution_count="13">
+<div id="0e9d8f22" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>null_tabelle[<span class="dv">1</span>, :] <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]  <span class="co"># Zweite Zeile ersetzen</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(null_tabelle)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -4104,7 +4104,7 @@ vertical-align: -.125em;
  [5. 5. 5. 5.]]</code></pre>
 </div>
 </div>
-<div id="77ab9936" class="cell" data-execution_count="14">
+<div id="f600ee56" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>null_tabelle[:, <span class="dv">2</span>] <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>]  <span class="co"># Dritte Spalte ersetzen</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>null_tabelle[:, <span class="dv">3</span>] <span class="op">=</span> <span class="dv">42</span>  <span class="co"># Vierte Spalte ersetzen</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(null_tabelle)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -4115,7 +4115,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <p>Für komplexere Operationen können auch Schleifen verwendet werden. Das folgende Programm erstellt eine Multiplikationstabelle:</p>
-<div id="02956fba" class="cell" data-execution_count="15">
+<div id="5f5df333" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>multiplikationstabelle <span class="op">=</span> np.zeros((<span class="dv">10</span>, <span class="dv">10</span>))</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>

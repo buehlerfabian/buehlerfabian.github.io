@@ -3915,8 +3915,9 @@ vertical-align: -.125em;
    
   <ul>
   <li><a href="#grundprinzip-der-objektorientierten-programmierung" id="toc-grundprinzip-der-objektorientierten-programmierung" class="nav-link active" data-scroll-target="#grundprinzip-der-objektorientierten-programmierung">Grundprinzip der objektorientierten Programmierung</a></li>
-  <li><a href="#bespiel-klasse-fraction" id="toc-bespiel-klasse-fraction" class="nav-link" data-scroll-target="#bespiel-klasse-fraction">Bespiel: Klasse “Fraction”</a></li>
+  <li><a href="#beispiel-klasse-fraction" id="toc-beispiel-klasse-fraction" class="nav-link" data-scroll-target="#beispiel-klasse-fraction">Beispiel: Klasse “Fraction”</a></li>
   <li><a href="#übungsaufgaben" id="toc-übungsaufgaben" class="nav-link" data-scroll-target="#übungsaufgaben">Übungsaufgaben</a></li>
+  <li><a href="#spezielle-methoden" id="toc-spezielle-methoden" class="nav-link" data-scroll-target="#spezielle-methoden">Spezielle Methoden</a></li>
   </ul>
 </nav>
     </div>
@@ -3955,8 +3956,8 @@ vertical-align: -.125em;
 <li><strong>Methode</strong>: Eine Methode ist eine zu einem Objekt gehörende Funktion. In diesen Funktionen wird das Verhalten bzw. die “Fähigkeiten” des Objekts definiert.</li>
 </ul>
 </section>
-<section id="bespiel-klasse-fraction" class="level3">
-<h3 class="anchored" data-anchor-id="bespiel-klasse-fraction">Bespiel: Klasse “Fraction”</h3>
+<section id="beispiel-klasse-fraction" class="level3">
+<h3 class="anchored" data-anchor-id="beispiel-klasse-fraction">Beispiel: Klasse “Fraction”</h3>
 <p>Es soll eine Klasse “Fraction” definiert werden, die Brüche repräsentiert. Ein Bruch hat zwei Attribute: den Zähler und den Nenner. Fähigkeiten (Methoden) eines Bruchs können z.B. das Kürzen des Bruchs oder das Addieren mit einem anderen Bruch sein.</p>
 <p>Es ist praktisch und übersichtlich, die Definition der Klasse in einer eigenen Datei zu speichern. Notwendig ist das allerdings nicht. Im Folgenden werden zwei Dateien verwendet:</p>
 <ul>
@@ -3964,7 +3965,7 @@ vertical-align: -.125em;
 <li><code>fractest.py</code>: Enthält Beispiele zur Verwendung der Klasse <code>Fraction</code>.</li>
 </ul>
 <p>Wir beginnen damit, die Klasse <code>Fraction</code> in der Datei <code>fraction.py</code> zu definieren:</p>
-<div id="6f46da48" class="cell" data-execution_count="1">
+<div id="dfb3c235" class="cell" data-execution_count="1">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>fraction.py</strong></pre>
@@ -3975,7 +3976,7 @@ vertical-align: -.125em;
 </div>
 <p>Damit haben wir eine Klasse mit der Bezeichnung <code>Fraction</code> definiert. Der <code>pass</code>-Befehl bedeutet, dass die Klasse noch keine Attribute oder Methoden hat.</p>
 <p>Um diese Klasse in einer anderen Datei zu verwenden, muss sie mit dem uns bereits bekannten <code>import</code>-Befehl importiert werden. Ein Objekt der Klasse <code>Fraction</code> wird erzeugt, in dem der Klassenname wie eine Funktion aufgerufen wird und das Ergebnis einer Variablen zugewiesen wird. Dies wird als “Instanziierung” der Klasse bezeichnet.</p>
-<div id="3d9e5c73" class="cell" data-execution_count="2">
+<div id="8d028c8e" class="cell" data-execution_count="2">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>fractest.py</strong></pre>
@@ -3987,7 +3988,7 @@ vertical-align: -.125em;
 </div>
 <p><code>bruch1</code> ist nun ein Objekt (eine Instanz) der Klasse <code>Fraction</code>. Da die Klasse noch keine Attribute oder Methoden hat, können wir mit dem Objekt noch nichts anfangen.</p>
 <p>Im nächsten Schritt fügen wir der Klasse <code>Fraction</code> Attribute für den Zähler und den Nenner hinzu. Dazu definieren wir eine spezielle Methode <code>__init__</code>, die automatisch aufgerufen wird, wenn ein Objekt der Klasse erzeugt wird. In dieser Methode werden die Attribute einer Klasse angelegt.</p>
-<div id="b763da36" class="cell" data-execution_count="4">
+<div id="d76137cd" class="cell" data-execution_count="4">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>fraction.py</strong></pre>
@@ -4001,7 +4002,7 @@ vertical-align: -.125em;
 <p>Die Methode <code>__init__</code> hat drei Parameter: <code>self</code>, <code>zaehler</code> und <code>nenner</code>. Der Parameter <code>self</code> muss immer als erster Parameter einer Methode definiert werden. Er repräsentiert das Objekt selbst und ermöglicht den Zugriff auf die Attribute und Methoden des Objekts. Die anderen beiden Parameter legen wir fest, um beim Erzeugen eines Objekts den Zähler und den Nenner angeben zu können.</p>
 <p>Mit <code>self.zaehler = zaehler</code> und <code>self.nenner = nenner</code> werden die Attribute <code>zaehler</code> und <code>nenner</code> des Objekts angelegt und mit den Werten der Parameter <code>zaehler</code> und <code>nenner</code> belegt.</p>
 <p>Bei der Erzeugung eines Objekts der Klasse <code>Fraction</code> müssen nun die Werte für den Zähler und den Nenner angegeben werden (die <code>import</code>-Zeile wird im Folgenden weggelassen, muss aber natürlich in der Datei <code>fractest.py</code> weiterhin stehen):</p>
-<div id="c6973e8f" class="cell" data-execution_count="5">
+<div id="22f0eb03" class="cell" data-execution_count="5">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>fractest.py</strong></pre>
@@ -4024,7 +4025,7 @@ Note
 </div>
 </div>
 <p>Auf die Attribute eines Objekts kann mit der sogenannten “Punktnotation” zugegriffen werden. Dabei wird der Name des Objekts, gefolgt von einem Punkt und dem Namen des Attributs angegeben:</p>
-<div id="f8f17f4d" class="cell" data-execution_count="6">
+<div id="fd110d00" class="cell" data-execution_count="6">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>fractest.py</strong></pre>
@@ -4039,7 +4040,7 @@ Nenner: 4</code></pre>
 </div>
 </div>
 <p>Im Moment sind <code>zaehler</code> und <code>nenner</code> einfach nur Variablen, die jeden beliebigen Inhalt haben können. Sinnvoll sind jedoch nur ganze Zahlen, und der Nenner darf nicht <code>0</code> sein. Um dies sicherzustellen, fügen wir in der <code>__init__</code>-Methode eine Überprüfung der Eingabewerte hinzu:</p>
-<div id="83e0779c" class="cell" data-execution_count="7">
+<div id="a05488bc" class="cell" data-execution_count="7">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>fraction.py</strong></pre>
@@ -4056,7 +4057,7 @@ Nenner: 4</code></pre>
 </div>
 <p>Dabei verwenden wir die Funktion <code>isinstance</code>, um zu überprüfen, ob die Eingabewerte den gewünschten Typ <code>int</code> haben. Wenn die Überprüfung fehlschlägt, wird mit dem <code>raise</code>-Befehl eine sogenannte Exception erzeugt. Diese führt dazu, dass das Programm an dieser Stelle abgebrochen wird und eine Fehlermeldung ausgegeben wird.</p>
 <p>Probieren wir es aus:</p>
-<div id="0bb921c1" class="cell" data-execution_count="8">
+<div id="444a2d51" class="cell" data-execution_count="8">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>fractest.py</strong></pre>
@@ -4092,7 +4093,7 @@ Cell <span class="ansi-green-fg">In[6], line 6</span>, in <span class="ansi-cyan
 </div>
 </div>
 <p>Nun können wir der Bruch-Klasse noch Methoden hinzufügen, um ihr “Fähigkeiten” zu geben. Brüche können z.B. gekürzt werden. Dazu fügen wir eine Methode <code>kuerzen</code> hinzu, die den Bruch kürzt:</p>
-<div id="6d9231ee" class="cell" data-execution_count="9">
+<div id="3ffc38d0" class="cell" data-execution_count="9">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>fraction.py</strong></pre>
@@ -4115,7 +4116,7 @@ Cell <span class="ansi-green-fg">In[6], line 6</span>, in <span class="ansi-cyan
 </div>
 <p>Methoden werden wie Funktionen definiert, nur dass der erste Parameter immer <code>self</code> ist. In der Methode <code>kuerzen</code> wird der größte gemeinsame Teiler (ggT) von Zähler und Nenner mit der Funktion <code>math.gcd</code> berechnet. Anschließend werden Zähler und Nenner durch den ggT geteilt, um den Bruch zu kürzen.</p>
 <p>Aufgerufen wird eine Methode ebenfalls mit der Punktnotation:</p>
-<div id="b2cf5be2" class="cell" data-execution_count="10">
+<div id="365389aa" class="cell" data-execution_count="10">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>fractest.py</strong></pre>
@@ -4131,7 +4132,7 @@ Nach dem Kürzen: 2 / 3</code></pre>
 </div>
 </div>
 <p>Wenn mehrere Objekte einer Klasse erzeugt werden, sind sie unabhängig voneinander:</p>
-<div id="75960bc0" class="cell" data-execution_count="11">
+<div id="95ec4807" class="cell" data-execution_count="11">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>fractest.py</strong></pre>
@@ -4149,7 +4150,7 @@ Bruch 2: 8 / 12</code></pre>
 </div>
 </div>
 <p>Als weiteres Beispiel fügen wir der Klasse <code>Fraction</code> eine Methode <code>multiplizieren</code> hinzu, die einen anderen Bruch als Parameter entgegennimmt und den aktuellen Bruch mit diesem multipliziert:</p>
-<div id="c881dd94" class="cell" data-execution_count="12">
+<div id="289a93cd" class="cell" data-execution_count="12">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>fraction.py</strong></pre>
@@ -4169,17 +4170,18 @@ Bruch 2: 8 / 12</code></pre>
 <span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.zaehler <span class="op">=</span>  <span class="va">self</span>.zaehler <span class="op">//</span> ggt</span>
 <span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nenner <span class="op">=</span> <span class="va">self</span>.nenner <span class="op">//</span> ggt</span>
 <span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> multiplizieren(<span class="va">self</span>, anderer_bruch):</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> multiplizie_mit(<span class="va">self</span>, anderer_bruch):</span>
 <span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> <span class="bu">isinstance</span>(anderer_bruch, Fraction):</span>
 <span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>            <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">&quot;Der Parameter muss ein Objekt vom Typ Fraction sein.&quot;</span>)</span>
-<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.zaehler <span class="op">=</span> <span class="va">self</span>.zaehler <span class="op">*</span> anderer_bruch.zaehler</span>
-<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nenner <span class="op">=</span> <span class="va">self</span>.nenner <span class="op">*</span> anderer_bruch.nenner</span>
-<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.kuerzen()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>        erg_zaehler <span class="op">=</span> <span class="va">self</span>.zaehler <span class="op">*</span> anderer_bruch.zaehler</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>        erg_nenner <span class="op">=</span> <span class="va">self</span>.nenner <span class="op">*</span> anderer_bruch.nenner</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>        erg_bruch <span class="op">=</span> Fraction(erg_zaehler, erg_nenner)</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>        erg_bruch.kuerzen()</span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> erg_bruch</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
-<p>Der Ergebnisbruch soll dabei automatisch gekürzt werden. Dazu rufen wir die Methode <code>kuerzen</code> am Ende der Methode <code>multiplizieren</code> auf. Man kann also auch innerhalb einer Methode einer Klasse andere Methoden derselben Klasse aufrufen, dabei muss wie bei den Attributen <code>self.</code> vorangestellt werden.</p>
-<p>Wir testen die Methode <code>multiplizieren</code>:</p>
-<div id="3b226cdb" class="cell" data-execution_count="13">
+<p>Wir testen die Methode <code>multiplizie_mit</code>:</p>
+<div id="3e3df554" class="cell" data-execution_count="13">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>fractest.py</strong></pre>
@@ -4187,8 +4189,8 @@ Bruch 2: 8 / 12</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>bruch1 <span class="op">=</span> Fraction(<span class="dv">2</span>, <span class="dv">3</span>)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>bruch2 <span class="op">=</span> Fraction(<span class="dv">4</span>, <span class="dv">6</span>)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span>bruch1<span class="sc">.</span>zaehler<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>bruch1<span class="sc">.</span>nenner<span class="sc">}</span><span class="ss"> * </span><span class="sc">{</span>bruch2<span class="sc">.</span>zaehler<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>bruch2<span class="sc">.</span>nenner<span class="sc">}</span><span class="ss"> ergibt:&quot;</span>)</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>bruch1.multiplizieren(bruch2)</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span>bruch1<span class="sc">.</span>zaehler<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>bruch1<span class="sc">.</span>nenner<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>bruch3 <span class="op">=</span> bruch1.multiplizie_mit(bruch2)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span>bruch3<span class="sc">.</span>zaehler<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>bruch3<span class="sc">.</span>nenner<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>2/3 * 4/6 ergibt:
@@ -4203,6 +4205,113 @@ Bruch 2: 8 / 12</code></pre>
 <li><p>Füge der Klasse <code>Fraction</code> eine Methode <code>addieren</code> hinzu, die einen anderen Bruch als Parameter entgegennimmt und den aktuellen Bruch mit diesem addiert. Der Ergebnisbruch soll automatisch gekürzt werden.</p></li>
 <li><p>Füge der Klasse <code>Fraction</code> eine Methode <code>dividieren</code> hinzu, die einen anderen Bruch als Parameter entgegennimmt und den aktuellen Bruch durch diesen dividiert. Der Ergebnisbruch soll automatisch gekürzt werden. Bei einer Division durch einen Bruch mit Zähler <code>0</code> soll eine entsprechende Fehlermeldung erzeugt werden.</p></li>
 </ol>
+</section>
+<section id="spezielle-methoden" class="level3">
+<h3 class="anchored" data-anchor-id="spezielle-methoden">Spezielle Methoden</h3>
+<p>In Python gibt es einige spezielle Methoden, die mit doppelten Unterstrichen beginnen und enden (z.B. <code>__init__</code>). Diese Methoden haben besondere Bedeutungen und werden von Python automatisch aufgerufen, wenn bestimmte Operationen auf Objekten durchgeführt werden.</p>
+<p>Angenommen, <code>a</code> ist ein Objekt. Dann ist z.B. der Ausdruck <code>a * b</code> eine Abkürzung für den Aufruf der speziellen Methode <code>a.__mul__(b)</code>. Wenn wir daher eine Methode <code>__mul__</code> in unserer Klasse definieren, können wir für die <code>Fraction</code>-Objekte die Multiplikation mit dem <code>*</code>-Operator durchführen.</p>
+<div id="851814b4" class="cell" data-execution_count="14">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>fraction.py</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Fraction:</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, zaehler, nenner):</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> <span class="bu">isinstance</span>(zaehler, <span class="bu">int</span>) <span class="kw">or</span> <span class="kw">not</span> <span class="bu">isinstance</span>(nenner, <span class="bu">int</span>):</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>            <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">&quot;Zähler und Nenner müssen ganze Zahlen sein.&quot;</span>)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> nenner <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>            <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">&quot;Der Nenner darf nicht 0 sein.&quot;</span>)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.zaehler <span class="op">=</span> zaehler</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nenner <span class="op">=</span> nenner</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> kuerzen(<span class="va">self</span>):</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>        ggt <span class="op">=</span> math.gcd(<span class="va">self</span>.zaehler, <span class="va">self</span>.nenner)</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.zaehler <span class="op">=</span>  <span class="va">self</span>.zaehler <span class="op">//</span> ggt</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nenner <span class="op">=</span> <span class="va">self</span>.nenner <span class="op">//</span> ggt</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__mul__</span>(<span class="va">self</span>, anderer_bruch):</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> <span class="bu">isinstance</span>(anderer_bruch, Fraction):</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>            <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">&quot;Der Parameter muss ein Objekt vom Typ Fraction sein.&quot;</span>)</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>        erg_zaehler <span class="op">=</span> <span class="va">self</span>.zaehler <span class="op">*</span> anderer_bruch.zaehler</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>        erg_nenner <span class="op">=</span> <span class="va">self</span>.nenner <span class="op">*</span> anderer_bruch.nenner</span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>        erg_bruch <span class="op">=</span> Fraction(erg_zaehler, erg_nenner)</span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>        erg_bruch.kuerzen()</span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> erg_bruch</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<p>Wir probieren es aus:</p>
+<div id="5c8a9e6c" class="cell" data-execution_count="15">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>fractest.py</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>bruch1 <span class="op">=</span> Fraction(<span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>bruch2 <span class="op">=</span> Fraction(<span class="dv">4</span>, <span class="dv">6</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span>bruch1<span class="sc">.</span>zaehler<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>bruch1<span class="sc">.</span>nenner<span class="sc">}</span><span class="ss"> * </span><span class="sc">{</span>bruch2<span class="sc">.</span>zaehler<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>bruch2<span class="sc">.</span>nenner<span class="sc">}</span><span class="ss"> ergibt:&quot;</span>)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>bruch3 <span class="op">=</span> bruch1 <span class="op">*</span> bruch2</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span>bruch3<span class="sc">.</span>zaehler<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>bruch3<span class="sc">.</span>nenner<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2/3 * 4/6 ergibt:
+4/9</code></pre>
+</div>
+</div>
+<p>Für die übrigen Grundrechenarten lauten die speziellen Methoden:</p>
+<ul>
+<li>Addition: <code>__add__(self, other)</code></li>
+<li>Subtraktion: <code>__sub__(self, other)</code></li>
+<li>Multiplikation: <code>__mul__(self, other)</code></li>
+<li>Division: <code>__truediv__(self, other)</code></li>
+</ul>
+<p>Eine vollständige Liste der speziellen Methoden in Python findet man in der <a href="https://docs.python.org/3/reference/datamodel.html#special-method-names">offiziellen Dokumentation</a>.</p>
+<p>Eine weitere nützliche spezielle Methode ist <code>__str__(self)</code>, die bei der Anwendung von <code>print</code> eine Rolle spielt. Ist <code>a</code> ein Objekt, dann ist <code>print(a)</code> eine Abkürzung für <code>print(a.__str__())</code>. Damit können wir die Ausgabe der Brüche vereinfachen:</p>
+<div id="36031868" class="cell" data-execution_count="16">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>fraction.py</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Fraction:</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, zaehler, nenner):</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> <span class="bu">isinstance</span>(zaehler, <span class="bu">int</span>) <span class="kw">or</span> <span class="kw">not</span> <span class="bu">isinstance</span>(nenner, <span class="bu">int</span>):</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>            <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">&quot;Zähler und Nenner müssen ganze Zahlen sein.&quot;</span>)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> nenner <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>            <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">&quot;Der Nenner darf nicht 0 sein.&quot;</span>)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.zaehler <span class="op">=</span> zaehler</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nenner <span class="op">=</span> nenner</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> kuerzen(<span class="va">self</span>):</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>        ggt <span class="op">=</span> math.gcd(<span class="va">self</span>.zaehler, <span class="va">self</span>.nenner)</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.zaehler <span class="op">=</span>  <span class="va">self</span>.zaehler <span class="op">//</span> ggt</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nenner <span class="op">=</span> <span class="va">self</span>.nenner <span class="op">//</span> ggt</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__mul__</span>(<span class="va">self</span>, anderer_bruch):</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> <span class="bu">isinstance</span>(anderer_bruch, Fraction):</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>            <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">&quot;Der Parameter muss ein Objekt vom Typ Fraction sein.&quot;</span>)</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>        erg_zaehler <span class="op">=</span> <span class="va">self</span>.zaehler <span class="op">*</span> anderer_bruch.zaehler</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>        erg_nenner <span class="op">=</span> <span class="va">self</span>.nenner <span class="op">*</span> anderer_bruch.nenner</span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>        erg_bruch <span class="op">=</span> Fraction(erg_zaehler, erg_nenner)</span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>        erg_bruch.kuerzen()</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> erg_bruch</span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f&quot;</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>zaehler<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>nenner<span class="sc">}</span><span class="ss">&quot;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<p>Nun funktioniert folgendes:</p>
+<div id="55c8361a" class="cell" data-execution_count="17">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>fractest.py</strong></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>bruch1 <span class="op">=</span> Fraction(<span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(bruch1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2/3</code></pre>
+</div>
+</div>
 
 
 </section>
